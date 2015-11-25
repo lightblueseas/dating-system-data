@@ -12,153 +12,87 @@ import de.alpharogroup.dating.system.entities.SearchCriteria;
 import de.alpharogroup.dating.system.entities.UserProfile;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.enums.Gender;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-public class ProfileModel implements LocationModel {
+/**
+ * The class {@link ProfileModel}.
+ */
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ProfileModel implements LocationModel<Addresses> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
+	/** The profile owner. */
 	private Users profileOwner;
 
+	/** The user profile. */
 	private UserProfile userProfile;
-	
+
 	/** The age search criteria starting 'from'. */
 	private Integer fromAge;
-	
+
 	/** The gender search criteria 'search'. */
 	private Gender searchGender;
-	
+
 	/** The age search criteria ending 'until'. */
 	private Integer untilAge;
-	
+
+	/** The website. */
 	private String website;
-	
+
+	/** The profile notice. */
 	private ProfileNotice profileNotice;
-	
+
+	/** The favorite members. */
 	private FavoriteMembers favoriteMembers;
-	
+
+	/** The friendship requests. */
 	private FriendshipRequests friendshipRequests;
-	
+
+	/** The profile visitors. */
 	private List<ProfileVisitors> profileVisitors;
-	
+
+	/** The gender. */
 	private Gender gender;
+	
+	/** The address. */
+	private Addresses address;
+	
+	/** The location. */
+	private String location;
+	
+	/** The selected country name. */
+	private String selectedCountryName;
 
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
-
-	public Integer getFromAge() {
-		return fromAge;
-	}
-
-	public Gender getSearchGender() {
-		return searchGender;
-	}
-
-	public Integer getUntilAge() {
-		return untilAge;
-	}
-
-	public void setFromAge(Integer fromAge) {
-		this.fromAge = fromAge;
-	}
-
-	public void setSearchGender(final Gender searchGender) {
-		this.searchGender = searchGender;
-	}
-
-	public void setUntilAge(Integer untilAge) {
-		this.untilAge = untilAge;
-	}
-
+	/**
+	 * Gets the search criteria.
+	 *
+	 * @return the search criteria
+	 */
 	public SearchCriteria getSearchCriteria() {
 		return userProfile.getSearchCriteria();
 	}
 
+	/**
+	 * Sets the search criteria.
+	 *
+	 * @param searchCriteria the new search criteria
+	 */
 	public void setSearchCriteria(SearchCriteria searchCriteria) {
 		userProfile.setSearchCriteria(searchCriteria);
 	}
-	
-	
-	public List<ProfileVisitors> getProfileVisitors() {
-		return profileVisitors;
-	}
 
-	public void setProfileVisitors(List<ProfileVisitors> profileVisitors) {
-		this.profileVisitors = profileVisitors;
-	}
-	private Addresses address;
-	private String location;
-	private String selectedCountryName;
-	
-	public FriendshipRequests getFriendshipRequests() {
-		return friendshipRequests;
-	}
-
-	public void setFriendshipRequests(FriendshipRequests friendshipRequests) {
-		this.friendshipRequests = friendshipRequests;
-	}
-
-	public FavoriteMembers getFavoriteMembers() {
-		return favoriteMembers;
-	}
-
-	public void setFavoriteMembers(FavoriteMembers favoriteMembers) {
-		this.favoriteMembers = favoriteMembers;
-	}
-
-	public ProfileNotice getProfileNotice() {
-		return profileNotice;
-	}
-
-	public void setProfileNotice(ProfileNotice profileNotice) {
-		this.profileNotice = profileNotice;
-	}
-
-
-	public Users getProfileOwner() {
-		return profileOwner;
-	}
-
-	public UserProfile getUserProfile() {
-		return userProfile;
-	}
-
-	public String getWebsite() {
-		return website;
-	}
-
-	public void setProfileOwner(Users profileOwner) {
-		this.profileOwner = profileOwner;
-	}
-
-	public void setUserProfile(UserProfile userProfile) {
-		this.userProfile = userProfile;
-	}
-
-	public void setWebsite(String website) {
-		this.website = website;
-	}
-
-	public Addresses getAddress() {
-		return address;
-	}
-	public String getLocation() {
-		return location;
-	}
-	public String getSelectedCountryName() {
-		return selectedCountryName;
-	}
-	public void setAddress(Addresses address) {
-		this.address = address;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	public void setSelectedCountryName(String selectedCountryName) {
-		this.selectedCountryName = selectedCountryName;
-	}
 }
