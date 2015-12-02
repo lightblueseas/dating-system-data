@@ -10,8 +10,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import de.alpharogroup.file.search.PathFinder;
-import de.alpharogroup.io.StreamUtils;
-import de.alpharogroup.jdbc.ConnectionsUtils;
+import de.alpharogroup.io.StreamExtensions;
+import de.alpharogroup.jdbc.ConnectionsExtensions;
 
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.IDatabaseConnection;
@@ -75,12 +75,12 @@ public class DatabaseImport {
 		File insertFederalStates = new File(insertsDir,
 				"insertAllFederalStates.sql");
 
-		ConnectionsUtils.executeSqlScript((BufferedReader) StreamUtils
+		ConnectionsExtensions.executeSqlScript((BufferedReader) StreamExtensions
 				.getReader(insertAllTopics, "UTF-8", false), jdbcConnection);
-		ConnectionsUtils.executeSqlScript((BufferedReader) StreamUtils
+		ConnectionsExtensions.executeSqlScript((BufferedReader) StreamExtensions
 				.getReader(insertCountries, "UTF-8", false), jdbcConnection);
-		ConnectionsUtils
-				.executeSqlScript((BufferedReader) StreamUtils.getReader(
+		ConnectionsExtensions
+				.executeSqlScript((BufferedReader) StreamExtensions.getReader(
 						insertFederalStates, "UTF-8", false), jdbcConnection);
 	}
 

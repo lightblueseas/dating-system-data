@@ -4,14 +4,14 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import de.alpharogroup.db.domain.BaseBusinessObject;
+import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.user.management.domain.User;
 
 @Getter
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
-public class FavoriteMember extends BaseBusinessObject<Integer> {
+public class FavoriteMember extends BaseDomainObject<Integer> {
 	/**
 	 * The Constant serialVersionUID.
 	 */

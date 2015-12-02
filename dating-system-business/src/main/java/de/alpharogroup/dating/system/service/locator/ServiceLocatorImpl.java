@@ -29,8 +29,8 @@ import de.alpharogroup.user.management.service.api.RobinsonsService;
 import de.alpharogroup.user.management.service.api.RolesService;
 import de.alpharogroup.user.management.service.api.RuleViolationsService;
 import de.alpharogroup.user.management.service.api.UserCreditsService;
-import de.alpharogroup.user.management.service.api.UserDataService;
-import de.alpharogroup.user.management.service.api.UserManagementService;
+import de.alpharogroup.user.management.service.api.UserDatasService;
+import de.alpharogroup.user.management.service.api.UsersManagementService;
 import de.alpharogroup.user.management.service.api.UsersService;
 
 /**
@@ -129,11 +129,11 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 
 	/** The users data business service. */
 	@Autowired
-	private UserDataService userDataService;
+	private UserDatasService userDataService;
 
 	/** The user management business service. */
 	@Autowired
-	private UserManagementService userManagementService;
+	private UsersManagementService userManagementService;
 
 	/** The user profile business service. */
 	@Autowired
@@ -326,7 +326,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
      * {@inheritDoc}
      */
     @Override
-	public UserDataService getUserDataService() {
+	public UserDatasService getUserDataService() {
 		return this.userDataService;
 	}
 
@@ -334,7 +334,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
      * {@inheritDoc}
      */
 	@Override
-	public UserManagementService getUserManagementService() {
+	public UsersManagementService getUserManagementService() {
 		return userManagementService;
 	}
 
@@ -524,7 +524,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
      * {@inheritDoc}
      */
     @Override
-	public void setUserDataService(UserDataService userDataService) {
+	public void setUserDataService(UserDatasService userDataService) {
 		this.userDataService = userDataService;		
 	}
 
@@ -533,7 +533,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
      */
 	@Override
 	public void setUserManagementService(
-			final UserManagementService userManagementService) {
+			final UsersManagementService userManagementService) {
 		this.userManagementService = userManagementService;
 	}
 

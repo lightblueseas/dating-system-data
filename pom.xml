@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-persistence-parent</artifactId>
-		<version>2.2.0</version>
+		<version>2.15.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -43,10 +43,10 @@
 		<module>dating-system-business</module>
 		<module>dating-system-init</module>
 	</modules>
-	
+
 	<properties>
-	</properties>	
-	
+	</properties>
+
 	<dependencyManagement>
 
 		<dependencies>
@@ -74,25 +74,37 @@
 				<artifactId>user-management-business</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>user-management-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>rating-system-entities</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>rating-system-business</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>rating-system-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>message-system-entities</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>message-system-business</artifactId>
@@ -102,20 +114,16 @@
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>resource-bundles-business</artifactId>
-				<version>3.2.0</version>
+				<version>3.5.0</version>
+			</dependency>
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>resource-system-domain</artifactId>
+				<version>3.1.0</version>
 			</dependency>
 
 		</dependencies>
 
 	</dependencyManagement>
 
-	<dependencies>
-		<!-- LOMBOK DEPENDENCIES -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-
-	</dependencies>
-	
 </project>

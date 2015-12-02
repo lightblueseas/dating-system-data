@@ -31,10 +31,10 @@ import de.alpharogroup.user.management.entities.Contactmethods;
 import de.alpharogroup.user.management.entities.Permissions;
 import de.alpharogroup.user.management.entities.ResetPasswords;
 import de.alpharogroup.user.management.entities.Roles;
-import de.alpharogroup.user.management.entities.UserData;
+import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.entities.Users;
-import de.alpharogroup.user.management.enums.Contactmethod;
-import de.alpharogroup.user.management.enums.Gender;
+import de.alpharogroup.user.management.enums.ContactmethodType;
+import de.alpharogroup.user.management.enums.GenderType;
 
 /**
  * A factory for creating DomainObject objects.
@@ -102,7 +102,7 @@ public class DomainObjectFactory implements Serializable {
 	 *            the contactvalue
 	 * @return the contacts
 	 */
-	public Contactmethods newContactmethods(final Contactmethod contactmethod,
+	public Contactmethods newContactmethods(final ContactmethodType contactmethod,
 			final String contactvalue) {
 		return flirtAndDateObjectFactory.newContactmethods(contactmethod,
 				contactvalue, null);
@@ -295,12 +295,12 @@ public class DomainObjectFactory implements Serializable {
 				weight, zodiacSign, searchCriteria);
 	}
 	
-	 public SearchCriteria newSearchCriteria(Integer fromAge, Integer untilAge, Gender searchGender){
+	 public SearchCriteria newSearchCriteria(Integer fromAge, Integer untilAge, GenderType searchGender){
 		 return flirtAndDateObjectFactory.newSearchCriteria(fromAge, untilAge, searchGender);
 	 }
 
 		public Users newUsers(Boolean active, String pw, String salt,
-				String username, Boolean locked, UserData userData, Set<Roles> roles) {
+				String username, Boolean locked, UserDatas userData, Set<Roles> roles) {
 		return flirtAndDateObjectFactory.newUsers(active, pw, salt, username, locked, userData, roles);
 	}
 

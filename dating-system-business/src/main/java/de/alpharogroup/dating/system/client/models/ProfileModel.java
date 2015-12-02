@@ -11,7 +11,7 @@ import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.entities.SearchCriteria;
 import de.alpharogroup.dating.system.entities.UserProfile;
 import de.alpharogroup.user.management.entities.Users;
-import de.alpharogroup.user.management.enums.Gender;
+import de.alpharogroup.user.management.enums.GenderType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -45,7 +45,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	private Integer fromAge;
 
 	/** The gender search criteria 'search'. */
-	private Gender searchGender;
+	private GenderType searchGender;
 
 	/** The age search criteria ending 'until'. */
 	private Integer untilAge;
@@ -66,7 +66,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	private List<ProfileVisitors> profileVisitors;
 
 	/** The gender. */
-	private Gender gender;
+	private GenderType gender;
 	
 	/** The address. */
 	private Addresses address;

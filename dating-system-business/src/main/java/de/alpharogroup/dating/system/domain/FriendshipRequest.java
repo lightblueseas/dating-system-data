@@ -3,7 +3,7 @@ package de.alpharogroup.dating.system.domain;
 import java.util.Date;
 
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
-import de.alpharogroup.db.domain.BaseBusinessObject;
+import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.user.management.domain.User;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
-public class FriendshipRequest extends BaseBusinessObject<Integer> {
+public class FriendshipRequest extends BaseDomainObject<Integer> {
 	/**
 	 * The Constant serialVersionUID.
 	 */

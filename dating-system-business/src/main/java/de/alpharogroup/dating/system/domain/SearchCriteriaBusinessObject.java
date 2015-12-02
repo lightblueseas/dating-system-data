@@ -1,7 +1,7 @@
 package de.alpharogroup.dating.system.domain;
 
-import de.alpharogroup.db.domain.BaseBusinessObject;
-import de.alpharogroup.user.management.enums.Gender;
+import de.alpharogroup.domain.BaseDomainObject;
+import de.alpharogroup.user.management.enums.GenderType;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
-public class SearchCriteriaBusinessObject extends BaseBusinessObject<Integer> {
+public class SearchCriteriaBusinessObject extends BaseDomainObject<Integer> {
 	/**
 	 * The Constant serialVersionUID.
 	 */
@@ -21,7 +21,7 @@ public class SearchCriteriaBusinessObject extends BaseBusinessObject<Integer> {
 	private Integer fromAge;
 	
 	/** The gender search criteria 'search'. */
-	private Gender searchGender;
+	private GenderType searchGender;
 	
 	/** The age search criteria ending 'until'. */
 	private Integer untilAge;

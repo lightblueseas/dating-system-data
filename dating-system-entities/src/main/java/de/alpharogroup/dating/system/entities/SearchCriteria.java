@@ -16,7 +16,7 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 
 import de.alpharogroup.db.entity.BaseEntity;
-import de.alpharogroup.user.management.enums.Gender;
+import de.alpharogroup.user.management.enums.GenderType;
 
 /**
  * Object mapping for hibernate-handled table: search_criteria.
@@ -46,7 +46,7 @@ implements Cloneable {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "search_gender")
 	@Type(type = "genderConverter")
-	private Gender searchGender;
+	private GenderType searchGender;
 	
 	/** The age search criteria ending 'until'. */
 	@Column( name="until_age"  )

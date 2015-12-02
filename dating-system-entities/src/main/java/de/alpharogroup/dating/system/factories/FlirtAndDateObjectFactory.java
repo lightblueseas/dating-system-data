@@ -34,10 +34,10 @@ import de.alpharogroup.user.management.entities.Contactmethods;
 import de.alpharogroup.user.management.entities.Permissions;
 import de.alpharogroup.user.management.entities.ResetPasswords;
 import de.alpharogroup.user.management.entities.Roles;
-import de.alpharogroup.user.management.entities.UserData;
+import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.entities.Users;
-import de.alpharogroup.user.management.enums.Contactmethod;
-import de.alpharogroup.user.management.enums.Gender;
+import de.alpharogroup.user.management.enums.ContactmethodType;
+import de.alpharogroup.user.management.enums.GenderType;
 import de.alpharogroup.user.management.factories.UserManagementFactory;
 
 /**
@@ -99,7 +99,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param id the id
 	 * @return ContactmethodsA Contactmethods object
 	 */
-	public Contactmethods newContactmethods(Contactmethod contactmethod,
+	public Contactmethods newContactmethods(ContactmethodType contactmethod,
 			String contactvalue, Integer id) {
 		return UserManagementFactory.getInstance().newContactmethods(
 				contactmethod, contactvalue, id);
@@ -259,7 +259,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @return UsersA Users object
 	 */
 	public Users newUsers(Boolean active, String pw, String salt,
-			String username, Boolean locked, UserData userData, Set<Roles> roles) {
+			String username, Boolean locked, UserDatas userData, Set<Roles> roles) {
 		return UserManagementFactory.getInstance().newUsers(active, pw, salt,
 				username, locked, userData, roles);
 	}
@@ -319,7 +319,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @return the search criteria
 	 */
 	public SearchCriteria newSearchCriteria(Integer fromAge, Integer untilAge,
-			Gender searchGender) {
+			GenderType searchGender) {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setFromAge(fromAge);
 		searchCriteria.setUntilAge(untilAge);

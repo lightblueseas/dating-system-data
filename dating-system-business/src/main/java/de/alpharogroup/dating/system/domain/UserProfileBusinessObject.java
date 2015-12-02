@@ -7,7 +7,7 @@ import de.alpharogroup.dating.system.enums.InterestsType;
 import de.alpharogroup.dating.system.enums.RelationshipState;
 import de.alpharogroup.dating.system.enums.SmokerState;
 import de.alpharogroup.dating.system.enums.ZodiacSignType;
-import de.alpharogroup.db.domain.BaseBusinessObject;
+import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.resource.system.domain.Resource;
 import de.alpharogroup.user.management.domain.User;
 import lombok.EqualsAndHashCode;
@@ -19,7 +19,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
-public class UserProfileBusinessObject extends BaseBusinessObject<Integer> {
+public class UserProfileBusinessObject extends BaseDomainObject<Integer> {
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 8626651299912885319L;
 	/** Field mapping */

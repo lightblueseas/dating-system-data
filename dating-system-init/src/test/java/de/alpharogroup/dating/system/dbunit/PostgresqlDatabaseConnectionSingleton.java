@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import de.alpharogroup.jdbc.ConnectionsUtils;
-import de.alpharogroup.lang.PropertiesUtils;
+import de.alpharogroup.jdbc.ConnectionsExtensions;
+import de.alpharogroup.resourcebundle.properties.PropertiesExtensions;
 
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConfig;
@@ -60,14 +60,14 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	 */
 	protected static Connection getJdbcConnection() throws IOException,
 			ClassNotFoundException, SQLException {
-		Properties dbProperties = PropertiesUtils
+		Properties dbProperties = PropertiesExtensions
 				.loadProperties("project.properties");
 		String dbHost = dbProperties.getProperty("jdbc.host");
 		String dbName = dbProperties.getProperty("jdbc.db.name");
 		String dbUser = dbProperties.getProperty("jdbc.user");
 		String dbPassword = dbProperties.getProperty("jdbc.password");
 		// Get jdbc connection...
-		final Connection jdbcConnection = ConnectionsUtils
+		final Connection jdbcConnection = ConnectionsExtensions
 				.getPostgreSQLConnection(dbHost, dbName, dbUser, dbPassword);
 		return jdbcConnection;
 	}

@@ -29,12 +29,27 @@
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
+			<artifactId>user-management-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
 			<artifactId>rating-system-business</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
+			<artifactId>rating-system-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
 			<artifactId>resource-bundles-business</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>resource-system-domain</artifactId>
 		</dependency>
 
 		<dependency>
