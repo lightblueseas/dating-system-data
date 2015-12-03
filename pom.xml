@@ -42,6 +42,10 @@
 		<module>dating-system-entities</module>
 		<module>dating-system-business</module>
 		<module>dating-system-init</module>
+		<module>dating-system-domain</module>
+		<module>dating-system-rest-api</module>
+		<module>dating-system-rest-client</module>
+		<module>dating-system-rest-web</module>
 	</modules>
 
 	<properties>
