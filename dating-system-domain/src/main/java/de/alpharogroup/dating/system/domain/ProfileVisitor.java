@@ -24,7 +24,7 @@ public class ProfileVisitor extends BaseDomainObject<Integer> {
 	/** The visitor of this profile. */
 	private User visitor;	
 	/** The visited profile. */
-	private UserProfileBusinessObject visitedProfile;
+	private UserProfile visitedProfile;
 	/** The count shows how many times a visitor visited this profile. */
 	private Integer count;
 }

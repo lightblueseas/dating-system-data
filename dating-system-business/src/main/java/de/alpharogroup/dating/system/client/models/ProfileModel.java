@@ -6,10 +6,10 @@ import de.alpharogroup.address.book.application.model.LocationModel;
 import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.dating.system.entities.FriendshipRequests;
-import de.alpharogroup.dating.system.entities.ProfileNotice;
+import de.alpharogroup.dating.system.entities.ProfileNotices;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
-import de.alpharogroup.dating.system.entities.SearchCriteria;
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.SearchCriterias;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.enums.GenderType;
 import lombok.AllArgsConstructor;
@@ -39,7 +39,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	private Users profileOwner;
 
 	/** The user profile. */
-	private UserProfile userProfile;
+	private UserProfiles userProfile;
 
 	/** The age search criteria starting 'from'. */
 	private Integer fromAge;
@@ -54,7 +54,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	private String website;
 
 	/** The profile notice. */
-	private ProfileNotice profileNotice;
+	private ProfileNotices profileNotice;
 
 	/** The favorite members. */
 	private FavoriteMembers favoriteMembers;
@@ -82,7 +82,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	 *
 	 * @return the search criteria
 	 */
-	public SearchCriteria getSearchCriteria() {
+	public SearchCriterias getSearchCriteria() {
 		return userProfile.getSearchCriteria();
 	}
 
@@ -91,7 +91,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	 *
 	 * @param searchCriteria the new search criteria
 	 */
-	public void setSearchCriteria(SearchCriteria searchCriteria) {
+	public void setSearchCriteria(SearchCriterias searchCriteria) {
 		userProfile.setSearchCriteria(searchCriteria);
 	}
 

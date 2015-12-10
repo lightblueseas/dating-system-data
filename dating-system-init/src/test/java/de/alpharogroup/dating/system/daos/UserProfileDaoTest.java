@@ -9,28 +9,28 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.dating.system.entities.UserProfile;
-import de.alpharogroup.dating.system.service.api.UserProfileService;
+import de.alpharogroup.dating.system.entities.UserProfiles;
+import de.alpharogroup.dating.system.service.api.UserProfilesService;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
 public class UserProfileDaoTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
-	private UserProfileService userProfileService;
+	private UserProfilesService userProfileService;
 
 	@Test
 	public void getAllUserProfile() {
 		initUserProfile() ;
-		List<UserProfile> list = userProfileService.findAll();
+		List<UserProfiles> list = userProfileService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
 	
 	protected void initUserProfile() {
-		UserProfile userProfile = new UserProfile();
+		UserProfiles userProfile = new UserProfiles();
 		// TODO init model class
 		userProfileService.merge(userProfile);
 
-		userProfile = new UserProfile();
+		userProfile = new UserProfiles();
 		// TODO init model class
 		userProfileService.merge(userProfile);
 

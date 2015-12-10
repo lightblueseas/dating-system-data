@@ -3,7 +3,7 @@ package de.alpharogroup.dating.system.service.api;
 import java.util.List;
 
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.db.service.jpa.BusinessService;
 import de.alpharogroup.user.management.entities.Users;
 
@@ -21,7 +21,7 @@ public interface FavoriteMembersService extends BusinessService<FavoriteMembers,
 	 * @param favorite the favorite
 	 * @return the favorite members
 	 */
-	FavoriteMembers find(Users owner, UserProfile favorite);
+	FavoriteMembers find(Users owner, UserProfiles favorite);
 	
 	/**
 	 * Gets a List from FavoriteMembers with the given parameters that can be
@@ -31,7 +31,7 @@ public interface FavoriteMembersService extends BusinessService<FavoriteMembers,
 	 * @param favorite the favorite
 	 * @return the list
 	 */
-	List<FavoriteMembers> findAll(Users owner, UserProfile favorite);
+	List<FavoriteMembers> findAll(Users owner, UserProfiles favorite);
 	
 	/**
 	 * Gets  a List from FavoriteMembers that own the given Users object.

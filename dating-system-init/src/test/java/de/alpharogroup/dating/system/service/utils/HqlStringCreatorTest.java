@@ -3,7 +3,7 @@ package de.alpharogroup.dating.system.service.utils;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.dating.system.service.utils.HqlStringCreator;
 import de.alpharogroup.user.management.entities.Users;
@@ -52,7 +52,7 @@ public class HqlStringCreatorTest {
 	public void testForFavoriteMembers() {
 		String actual;
 		String expected;		
-		actual = HqlStringCreator.forFavoriteMembers(new Users(), new UserProfile());
+		actual = HqlStringCreator.forFavoriteMembers(new Users(), new UserProfiles());
 		expected = "select fm from FavoriteMembers fm where fm.owner=:owner and fm.favorite=:favorite";		
 		AssertJUnit.assertEquals(expected, actual);
 		
@@ -60,7 +60,7 @@ public class HqlStringCreatorTest {
 		expected = "select fm from FavoriteMembers fm where fm.owner=:owner";		
 		AssertJUnit.assertEquals(expected, actual);
 		
-		actual = HqlStringCreator.forFavoriteMembers(null, new UserProfile());
+		actual = HqlStringCreator.forFavoriteMembers(null, new UserProfiles());
 		expected = "select fm from FavoriteMembers fm where fm.favorite=:favorite";		
 		AssertJUnit.assertEquals(expected, actual);
 		
@@ -73,7 +73,7 @@ public class HqlStringCreatorTest {
 	public void testForProfileNotice() {
 		String actual;
 		String expected;		
-		actual = HqlStringCreator.forProfileNotice(new Users(), new UserProfile());
+		actual = HqlStringCreator.forProfileNotice(new Users(), new UserProfiles());
 		expected = "select pr from ProfileNotice pr where pr.user=:user and pr.userProfile=:userProfile";		
 		AssertJUnit.assertEquals(expected, actual);
 		
@@ -81,7 +81,7 @@ public class HqlStringCreatorTest {
 		expected = "select pr from ProfileNotice pr where pr.user=:user";		
 		AssertJUnit.assertEquals(expected, actual);
 		
-		actual = HqlStringCreator.forProfileNotice(null, new UserProfile());
+		actual = HqlStringCreator.forProfileNotice(null, new UserProfiles());
 		expected = "select pr from ProfileNotice pr where pr.userProfile=:userProfile";		
 		AssertJUnit.assertEquals(expected, actual);
 		

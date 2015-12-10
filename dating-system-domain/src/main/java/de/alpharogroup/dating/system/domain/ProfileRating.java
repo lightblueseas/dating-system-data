@@ -17,5 +17,5 @@ public class ProfileRating extends Rating<Integer> {
 	 */
 	private static final long serialVersionUID = 1L;
 	/** The rated profile. */
-	private UserProfileBusinessObject ratedProfile;
+	private UserProfile ratedProfile;
 }

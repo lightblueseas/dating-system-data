@@ -34,11 +34,11 @@
 
 		<class>de.alpharogroup.dating.system.entities.FavoriteMembers</class>
 		<class>de.alpharogroup.dating.system.entities.FriendshipRequests</class>
-		<class>de.alpharogroup.dating.system.entities.ProfileNotice</class>
+		<class>de.alpharogroup.dating.system.entities.ProfileNotices</class>
 		<class>de.alpharogroup.dating.system.entities.ProfileRatings</class>
 		<class>de.alpharogroup.dating.system.entities.ProfileVisitors</class>
-		<class>de.alpharogroup.dating.system.entities.SearchCriteria</class>
-		<class>de.alpharogroup.dating.system.entities.UserProfile</class>
+		<class>de.alpharogroup.dating.system.entities.SearchCriterias</class>
+		<class>de.alpharogroup.dating.system.entities.UserProfiles</class>
 
 		<properties>
 			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />

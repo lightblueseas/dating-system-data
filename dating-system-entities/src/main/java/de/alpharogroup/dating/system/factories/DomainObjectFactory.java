@@ -10,10 +10,10 @@ import de.alpharogroup.address.book.entities.Federalstates;
 import de.alpharogroup.address.book.entities.Zipcodes;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.dating.system.entities.FriendshipRequests;
-import de.alpharogroup.dating.system.entities.ProfileNotice;
+import de.alpharogroup.dating.system.entities.ProfileNotices;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
-import de.alpharogroup.dating.system.entities.SearchCriteria;
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.SearchCriterias;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.enums.EducationState;
 import de.alpharogroup.dating.system.enums.FigureType;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
@@ -282,20 +282,20 @@ public class DomainObjectFactory implements Serializable {
 	 * @param searchCriteria the search criteria
 	 * @return the user profile
 	 */
-	public UserProfile newUserProfile(Integer age,
+	public UserProfiles newUserProfile(Integer age,
 			EducationState educationState, FigureType figure,
 			HaircolorType haircolor, Integer height,
 			InterestsType interests, String occupation, String profileText,
 			RelationshipState relationshipState, SmokerState smokerstate,
 			Users user, Resources userImage, Integer weight,
-			ZodiacSignType zodiacSign, SearchCriteria searchCriteria) {
+			ZodiacSignType zodiacSign, SearchCriterias searchCriteria) {
 		return flirtAndDateObjectFactory.newUserProfile(age, educationState,
 				figure, haircolor, height, interests, occupation,
 				profileText, relationshipState, smokerstate, user, userImage,
 				weight, zodiacSign, searchCriteria);
 	}
 	
-	 public SearchCriteria newSearchCriteria(Integer fromAge, Integer untilAge, GenderType searchGender){
+	 public SearchCriterias newSearchCriteria(Integer fromAge, Integer untilAge, GenderType searchGender){
 		 return flirtAndDateObjectFactory.newSearchCriteria(fromAge, untilAge, searchGender);
 	 }
 
@@ -317,12 +317,12 @@ public class DomainObjectFactory implements Serializable {
 				zipcode);
 	}
 	
-	public ProfileNotice newProfileNotice(String notice, Users user,
-			UserProfile userProfile) {
+	public ProfileNotices newProfileNotice(String notice, Users user,
+			UserProfiles userProfile) {
 		return flirtAndDateObjectFactory.newProfileNotice(notice, user, userProfile);		
 	}
 	
-	public FavoriteMembers newFavoriteMembers(UserProfile favorite, Users owner){
+	public FavoriteMembers newFavoriteMembers(UserProfiles favorite, Users owner){
 		return flirtAndDateObjectFactory.newFavoriteMembers(favorite, owner);
 	}
 	
@@ -330,7 +330,7 @@ public class DomainObjectFactory implements Serializable {
 		return flirtAndDateObjectFactory.newFriendshipRequests(requestor, requestedUser, state);
 	}
 	
-	public ProfileVisitors newProfileVisitors(Date visitingDate, Users visitor, UserProfile visitedProfile, Integer count){
+	public ProfileVisitors newProfileVisitors(Date visitingDate, Users visitor, UserProfiles visitedProfile, Integer count){
 		return flirtAndDateObjectFactory.newProfileVisitors(visitingDate, visitor, visitedProfile, count);
 	}
 

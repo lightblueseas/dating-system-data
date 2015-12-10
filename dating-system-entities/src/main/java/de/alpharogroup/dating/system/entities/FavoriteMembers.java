@@ -36,6 +36,6 @@ public class FavoriteMembers extends BaseEntity<Integer> implements Cloneable {
 	/** The reference to the user profile for this notice. */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "favorite_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_FAVORITE_MEMBERS_FAVORITE_ID"))
-	private UserProfile favorite;
+	private UserProfiles favorite;
 
 }

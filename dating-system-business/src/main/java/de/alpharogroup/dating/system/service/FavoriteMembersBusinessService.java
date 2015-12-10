@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import de.alpharogroup.dating.system.daos.FavoriteMembersDao;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.service.api.FavoriteMembersService;
 import de.alpharogroup.dating.system.service.utils.HqlStringCreator;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
@@ -30,7 +30,7 @@ public class FavoriteMembersBusinessService extends AbstractBusinessService<Favo
 		setDao(favoriteMembersDao);
 	}
 	@Transactional
-	public FavoriteMembers find(Users owner, UserProfile favorite) {
+	public FavoriteMembers find(Users owner, UserProfiles favorite) {
 		final List<FavoriteMembers> favoriteMembers = findAll(owner, favorite);
 		if(favoriteMembers != null && !favoriteMembers.isEmpty()){
 			return favoriteMembers.get(0);
@@ -39,7 +39,7 @@ public class FavoriteMembersBusinessService extends AbstractBusinessService<Favo
 	}
 	@Transactional
 	@SuppressWarnings("unchecked")	
-	public List<FavoriteMembers> findAll(Users owner, UserProfile favorite) {
+	public List<FavoriteMembers> findAll(Users owner, UserProfiles favorite) {
 		final String hqlString = HqlStringCreator.forFavoriteMembers(owner, favorite);
 		final Query query = getQuery(hqlString);
 		if(owner != null) {

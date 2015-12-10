@@ -1,6 +1,6 @@
 package de.alpharogroup.dating.system.service.utils;
 
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.user.management.entities.Users;
 
@@ -36,7 +36,7 @@ public class HqlStringCreator {
 		return sb.toString();
 	}
 
-	public static String forFavoriteMembers(Users owner, UserProfile favorite) {
+	public static String forFavoriteMembers(Users owner, UserProfiles favorite) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("select fm from FavoriteMembers fm");
 		boolean ownerIsNotNull = owner != null;
@@ -57,7 +57,7 @@ public class HqlStringCreator {
 		return sb.toString();
 	}
 
-	public static String forProfileNotice(Users user, UserProfile userProfile) {
+	public static String forProfileNotice(Users user, UserProfiles userProfile) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("select pr from ProfileNotice pr");
 		boolean ownerIsNotNull = user != null;
@@ -79,7 +79,7 @@ public class HqlStringCreator {
 	}
 
 	public static String forProfileVisitors(Users visitor,
-			UserProfile visitedProfile) {
+			UserProfiles visitedProfile) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("select pv from ProfileVisitors pv");
 		boolean ownerIsNotNull = visitor != null;

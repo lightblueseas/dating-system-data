@@ -11,11 +11,11 @@ import de.alpharogroup.address.book.service.api.FederalstatesService;
 import de.alpharogroup.address.book.service.api.ZipcodesService;
 import de.alpharogroup.dating.system.service.api.FavoriteMembersService;
 import de.alpharogroup.dating.system.service.api.FriendshipRequestsService;
-import de.alpharogroup.dating.system.service.api.ProfileNoticeService;
+import de.alpharogroup.dating.system.service.api.ProfileNoticesService;
 import de.alpharogroup.dating.system.service.api.ProfileRatingsService;
 import de.alpharogroup.dating.system.service.api.ProfileVisitorsService;
-import de.alpharogroup.dating.system.service.api.SearchCriteriaService;
-import de.alpharogroup.dating.system.service.api.UserProfileService;
+import de.alpharogroup.dating.system.service.api.SearchCriteriasService;
+import de.alpharogroup.dating.system.service.api.UserProfilesService;
 import de.alpharogroup.db.resource.bundles.service.api.ResourcebundlesService;
 import de.alpharogroup.message.system.service.api.MessageRecipientsService;
 import de.alpharogroup.message.system.service.api.MessagesService;
@@ -32,12 +32,18 @@ import de.alpharogroup.user.management.service.api.UserCreditsService;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 import de.alpharogroup.user.management.service.api.UsersManagementService;
 import de.alpharogroup.user.management.service.api.UsersService;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * The Class ServiceLocatorImpl.
- * 
+ *
  * @author Asterios Raptis
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Service("serviceLocator")
 public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 
@@ -45,7 +51,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
-		
+
 	/** The RecommendationsService service. */
 	@Autowired
 	private RecommendationsService recommendationsService;
@@ -53,7 +59,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 	/** The addresses business service. */
 	@Autowired
 	private AddressesService addressesService;
-	
+
 	/** The RelationPermissions business service. */
 	@Autowired
 	private RelationPermissionsService relationPermissionsService;
@@ -93,11 +99,11 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 
 	/** The permission business service. */
 	@Autowired
-	private PermissionsService permissionService;
+	private PermissionsService permissionsService;
 
 	/** The Profile Notice business service. */
 	@Autowired
-	private ProfileNoticeService profileNoticeService;
+	private ProfileNoticesService profileNoticesService;
 
 	/** The ProfileRatings business service. */
 	@Autowired
@@ -121,7 +127,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 
 	/** The search criteria business service. */
 	@Autowired
-	private SearchCriteriaService searchCriteriaService;
+	private SearchCriteriasService searchCriteriasService;
 
 	/** The UserCredits business service. */
 	@Autowired
@@ -129,7 +135,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 
 	/** The users data business service. */
 	@Autowired
-	private UserDatasService userDataService;
+	private UserDatasService userDatasService;
 
 	/** The user management business service. */
 	@Autowired
@@ -137,7 +143,7 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 
 	/** The user profile business service. */
 	@Autowired
-	private UserProfileService userProfileService;
+	private UserProfilesService userProfilesService;
 
 	/** The users business service. */
 	@Autowired
@@ -154,463 +160,5 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 	/** The Robinsons business service. */
 	@Autowired
 	private RobinsonsService robinsonsService;
-
-	/**
-	 * Instantiates a new service locator.
-	 */
-	public ServiceLocatorImpl() {
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public RelationPermissionsService getRelationPermissionsService() {
-		return relationPermissionsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setRelationPermissionsService(
-			RelationPermissionsService relationPermissionsService) {
-		this.relationPermissionsService = relationPermissionsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public AddressesService getAddressesService() {
-		return addressesService;
-	}
-
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public ContactmethodsService getContactmethodsService() {
-		return contactmethodsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public CountriesService getCountriesService() {
-		return countriesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public FavoriteMembersService getFavoriteMembersService() {
-		return favoriteMembersService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public FederalstatesService getFederalstatesService() {
-		return federalstatesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public FriendshipRequestsService getFriendshipRequestsService() {
-		return this.friendshipRequestsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ResourcesService getResourcesService() {
-		return resourcesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public MessageRecipientsService getMessageRecipientsService() {
-		return messageRecipientsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public MessagesService getMessagesService() {
-		return messagesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public PermissionsService getPermissionService() {
-		return permissionService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ProfileNoticeService getProfileNoticeService() {
-		return profileNoticeService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ProfileRatingsService getProfileRatingsService() {
-		return this.profileRatingsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ProfileVisitorsService getProfileVisitorsService() {
-		return this.profileVisitorsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ResetPasswordsService getResetPasswordsService() {
-		return resetPasswordsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ResourcebundlesService getResourcebundlesService() {
-		return resourcebundlesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public RolesService getRolesService() {
-		return rolesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-    public SearchCriteriaService getSearchCriteriaService() {
-		return searchCriteriaService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public UserCreditsService getUserCreditsService() {
-		return this.userCreditsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-	public UserDatasService getUserDataService() {
-		return this.userDataService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public UsersManagementService getUserManagementService() {
-		return userManagementService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-    public UserProfileService getUserProfileService() {
-		return userProfileService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public UsersService getUsersService() {
-		return usersService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public ZipcodesService getZipcodesService() {
-		return zipcodesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setAddressesService(
-			final AddressesService addressesService) {
-		this.addressesService = addressesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setContactmethodsService(
-			ContactmethodsService contactmethodsService) {
-		this.contactmethodsService = contactmethodsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setCountriesService(
-			final CountriesService countriesService) {
-		this.countriesService = countriesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setFavoriteMembersService(
-			FavoriteMembersService favoriteMembersService) {
-		this.favoriteMembersService = favoriteMembersService;		
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setFederalstatesService(
-			final FederalstatesService federalstatesService) {
-		this.federalstatesService = federalstatesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setFriendshipRequestsService(
-			FriendshipRequestsService friendshipRequestsService) {
-		this.friendshipRequestsService = friendshipRequestsService;		
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setResourcesService(
-			final ResourcesService imagesService) {
-		this.resourcesService = imagesService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setMessageRecipientsService(
-			MessageRecipientsService messageRecipientsService) {
-		this.messageRecipientsService = messageRecipientsService;
-	}
-
-    /**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setMessagesService(
-			final MessagesService messagesService) {
-		this.messagesService = messagesService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setPermissionService(
-			final PermissionsService permissionService) {
-		this.permissionService = permissionService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setProfileNoticeService(
-			ProfileNoticeService profileNoticeService) {
-		this.profileNoticeService = profileNoticeService;		
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setProfileRatingsService(
-			ProfileRatingsService profileRatingsService) {
-		this.profileRatingsService = profileRatingsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setProfileVisitorsService(
-			ProfileVisitorsService profileVisitorsService) {
-		this.profileVisitorsService = profileVisitorsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setResetPasswordsService(
-			ResetPasswordsService resetPasswordsService) {
-		this.resetPasswordsService = resetPasswordsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setResourcebundlesService(
-			ResourcebundlesService resourcebundlesService) {
-		this.resourcebundlesService = resourcebundlesService;		
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setRolesService(
-			final RolesService rolesService) {
-		this.rolesService = rolesService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-    public void setSearchCriteriaService(SearchCriteriaService searchCriteriaService) {
-		this.searchCriteriaService = searchCriteriaService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setUserCreditsService(UserCreditsService userCreditsService) {
-		this.userCreditsService = userCreditsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-    @Override
-	public void setUserDataService(UserDatasService userDataService) {
-		this.userDataService = userDataService;		
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setUserManagementService(
-			final UsersManagementService userManagementService) {
-		this.userManagementService = userManagementService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setUserProfileService(UserProfileService userProfileService) {
-		this.userProfileService = userProfileService;		
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setUsersService(
-			final UsersService usersService) {
-		this.usersService = usersService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setZipcodesService(
-			final ZipcodesService zipcodesService) {
-		this.zipcodesService = zipcodesService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public RuleViolationsService getRuleViolationsService() {
-		return ruleViolationsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setRuleViolationsService(RuleViolationsService ruleViolationsService) {
-		this.ruleViolationsService = ruleViolationsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public RobinsonsService getRobinsonsService() {
-		return robinsonsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setRobinsonsService(RobinsonsService robinsonsService) {
-		this.robinsonsService = robinsonsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public RecommendationsService getRecommendationsService() {
-		return recommendationsService;
-	}
-
-	/**
-     * {@inheritDoc}
-     */
-	@Override
-	public void setRecommendationsService(
-			RecommendationsService recommendationsService) {
-		this.recommendationsService = recommendationsService;
-		
-	}
 
 }

@@ -11,10 +11,10 @@ import de.alpharogroup.address.book.entities.Zipcodes;
 import de.alpharogroup.address.book.factories.AddressBookFactory;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.dating.system.entities.FriendshipRequests;
-import de.alpharogroup.dating.system.entities.ProfileNotice;
+import de.alpharogroup.dating.system.entities.ProfileNotices;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
-import de.alpharogroup.dating.system.entities.SearchCriteria;
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.SearchCriterias;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.enums.EducationState;
 import de.alpharogroup.dating.system.enums.FigureType;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
@@ -284,14 +284,14 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param searchCriteria the search criteria
 	 * @return the user profile
 	 */
-	public UserProfile newUserProfile(Integer age,
+	public UserProfiles newUserProfile(Integer age,
 			EducationState educationState, FigureType figure,
 			HaircolorType haircolor, Integer height, InterestsType interests,
 			String occupation, String profileText,
 			RelationshipState relationshipState, SmokerState smokerstate,
 			Users user, Resources userImage, Integer weight,
-			ZodiacSignType zodiacSign, SearchCriteria searchCriteria) {
-		UserProfile userProfile = new UserProfile();
+			ZodiacSignType zodiacSign, SearchCriterias searchCriteria) {
+		UserProfiles userProfile = new UserProfiles();
 		userProfile.setAge(age);
 		userProfile.setEducationState(educationState);
 		userProfile.setFigure(figure);
@@ -318,9 +318,9 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param searchGender the search gender
 	 * @return the search criteria
 	 */
-	public SearchCriteria newSearchCriteria(Integer fromAge, Integer untilAge,
+	public SearchCriterias newSearchCriteria(Integer fromAge, Integer untilAge,
 			GenderType searchGender) {
-		SearchCriteria searchCriteria = new SearchCriteria();
+		SearchCriterias searchCriteria = new SearchCriterias();
 		searchCriteria.setFromAge(fromAge);
 		searchCriteria.setUntilAge(untilAge);
 		searchCriteria.setSearchGender(searchGender);
@@ -349,9 +349,9 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param userProfile the user profile
 	 * @return the profile notice
 	 */
-	public ProfileNotice newProfileNotice(String notice, Users user,
-			UserProfile userProfile) {
-		ProfileNotice profileNotice = new ProfileNotice();
+	public ProfileNotices newProfileNotice(String notice, Users user,
+			UserProfiles userProfile) {
+		ProfileNotices profileNotice = new ProfileNotices();
 		profileNotice.setNotice(notice);
 		profileNotice.setUser(user);
 		profileNotice.setUserProfile(userProfile);
@@ -365,7 +365,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param owner the owner
 	 * @return the favorite members
 	 */
-	public FavoriteMembers newFavoriteMembers(UserProfile favorite, Users owner){
+	public FavoriteMembers newFavoriteMembers(UserProfiles favorite, Users owner){
 		FavoriteMembers favoriteMembers = new FavoriteMembers();
 		favoriteMembers.setFavorite(favorite);
 		favoriteMembers.setOwner(owner);
@@ -397,7 +397,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param count the count
 	 * @return the profile visitors
 	 */
-	public ProfileVisitors newProfileVisitors(Date visitingDate, Users visitor, UserProfile visitedProfile, Integer count){
+	public ProfileVisitors newProfileVisitors(Date visitingDate, Users visitor, UserProfiles visitedProfile, Integer count){
 		ProfileVisitors profileVisitors = new ProfileVisitors();
 		profileVisitors.setVisitor(visitor);
 		profileVisitors.setVisitedProfile(visitedProfile);

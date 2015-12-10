@@ -37,6 +37,6 @@ public class ProfileRatings extends Ratings {
 	/** The rated profile. */
 	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "rated_profile")
-	private UserProfile ratedProfile;
+	private UserProfiles ratedProfile;
 
 }

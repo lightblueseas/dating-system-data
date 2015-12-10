@@ -47,7 +47,7 @@ implements Cloneable {
 	/** The visited profile. */
 	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "visited_profile")
-	private UserProfile visitedProfile;
+	private UserProfiles visitedProfile;
 	/** The count shows how many times a visitor visited this profile. */
 	@Column(name = "count", nullable = true)	
 	private Integer count;	

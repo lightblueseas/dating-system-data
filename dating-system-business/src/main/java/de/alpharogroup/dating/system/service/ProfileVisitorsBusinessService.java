@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import de.alpharogroup.dating.system.daos.ProfileVisitorsDao;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
-import de.alpharogroup.dating.system.entities.UserProfile;
+import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.service.api.ProfileVisitorsService;
 import de.alpharogroup.dating.system.service.utils.HqlStringCreator;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
@@ -32,7 +32,7 @@ public class ProfileVisitorsBusinessService extends AbstractBusinessService<Prof
 	
 
 	
-	public ProfileVisitors find(Users visitor, UserProfile visitedProfile) {
+	public ProfileVisitors find(Users visitor, UserProfiles visitedProfile) {
 		final List<ProfileVisitors> profileVisitors = findAll(visitor, visitedProfile);
 		if(profileVisitors != null && !profileVisitors.isEmpty()){
 			return profileVisitors.get(0);
@@ -41,7 +41,7 @@ public class ProfileVisitorsBusinessService extends AbstractBusinessService<Prof
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<ProfileVisitors> findAll(Users visitor, UserProfile visitedProfile){
+	public List<ProfileVisitors> findAll(Users visitor, UserProfiles visitedProfile){
 		final String hqlString = HqlStringCreator.forProfileVisitors(visitor, visitedProfile);
 		final Query query = getQuery(hqlString);
 		if(visitor != null) {
@@ -54,7 +54,7 @@ public class ProfileVisitorsBusinessService extends AbstractBusinessService<Prof
 		return profileVisitors;
 	}
 	
-	public List<ProfileVisitors> findProfileVisitors(UserProfile visitedProfile) {
+	public List<ProfileVisitors> findProfileVisitors(UserProfiles visitedProfile) {
 		final List<ProfileVisitors> profileVisitors = findAll(null, visitedProfile);
 		return profileVisitors;
 	}

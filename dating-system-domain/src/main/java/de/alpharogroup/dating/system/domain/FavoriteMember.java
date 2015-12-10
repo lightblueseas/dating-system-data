@@ -21,5 +21,5 @@ public class FavoriteMember extends BaseDomainObject<Integer> {
 	private User owner;
 
 	/** The reference to the user profile for this notice. */
-	private UserProfileBusinessObject favorite;
+	private UserProfile favorite;
 }

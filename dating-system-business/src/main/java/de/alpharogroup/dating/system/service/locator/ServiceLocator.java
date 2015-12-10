@@ -2,11 +2,11 @@ package de.alpharogroup.dating.system.service.locator;
 
 import de.alpharogroup.dating.system.service.api.FavoriteMembersService;
 import de.alpharogroup.dating.system.service.api.FriendshipRequestsService;
-import de.alpharogroup.dating.system.service.api.ProfileNoticeService;
+import de.alpharogroup.dating.system.service.api.ProfileNoticesService;
 import de.alpharogroup.dating.system.service.api.ProfileRatingsService;
 import de.alpharogroup.dating.system.service.api.ProfileVisitorsService;
-import de.alpharogroup.dating.system.service.api.SearchCriteriaService;
-import de.alpharogroup.dating.system.service.api.UserProfileService;
+import de.alpharogroup.dating.system.service.api.SearchCriteriasService;
+import de.alpharogroup.dating.system.service.api.UserProfilesService;
 
 /**
  * The Interface ServiceLocator.
@@ -39,7 +39,7 @@ de.alpharogroup.user.management.service.locator.ServiceLocator
 	 *
 	 * @return the profile notice service
 	 */
-	ProfileNoticeService getProfileNoticeService();
+	ProfileNoticesService getProfileNoticesService();
 
 	/**
 	 * Gets the profile ratings service.
@@ -60,14 +60,14 @@ de.alpharogroup.user.management.service.locator.ServiceLocator
 	 *
 	 * @return the search criteria service
 	 */
-	SearchCriteriaService getSearchCriteriaService();
+	SearchCriteriasService getSearchCriteriasService();
 
 	/**
 	 * Gets the user profile service.
 	 *
 	 * @return the user profile service
 	 */
-	UserProfileService getUserProfileService();
+	UserProfilesService getUserProfilesService();
 
 	/**
 	 * Sets the favorite members service.
@@ -88,7 +88,7 @@ de.alpharogroup.user.management.service.locator.ServiceLocator
 	 *
 	 * @param profileNoticeService the profile notice service
 	 */
-	void setProfileNoticeService(ProfileNoticeService profileNoticeService);
+	void setProfileNoticesService(ProfileNoticesService profileNoticeService);
 	
 	/**
 	 * Sets the profile ratings service.
@@ -109,7 +109,7 @@ de.alpharogroup.user.management.service.locator.ServiceLocator
 	 *
 	 * @param searchCriteriaService the search criteria service
 	 */
-	void setSearchCriteriaService(SearchCriteriaService searchCriteriaService);
+	void setSearchCriteriasService(SearchCriteriasService searchCriteriaService);
 	
 	/**
 	 * Sets the user profile business service.
@@ -117,6 +117,6 @@ de.alpharogroup.user.management.service.locator.ServiceLocator
 	 * @param userProfileService
 	 *            the new user profile business service
 	 */
-	void setUserProfileService(UserProfileService userProfileService );
+	void setUserProfilesService(UserProfilesService userProfileService );
 
 }
