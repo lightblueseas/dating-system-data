@@ -69,6 +69,12 @@
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
+				<artifactId>dating-system-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
 				<artifactId>dating-system-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
