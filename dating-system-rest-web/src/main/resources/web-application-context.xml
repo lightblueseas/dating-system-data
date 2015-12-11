@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                           http://cxf.apache.org/jaxrs
+                           http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<jaxrs:server id="service" address="/">
+		<jaxrs:serviceBeans>
+
+			<ref bean="addressesResource" />
+			<ref bean="countriesResource" />
+			<ref bean="federalstatesResource" />
+			<ref bean="zipcodesResource" />
+
+			<ref bean="resourcesResource" />
+
+			<ref bean="contactmethodsResource" />
+			<ref bean="permissionsResource" />
+			<ref bean="recommendationsResource" />
+			<ref bean="relationPermissionsResource" />
+			<ref bean="resetPasswordsResource" />
+			<ref bean="robinsonsResource" />
+			<ref bean="rolesResource" />
+			<ref bean="ruleViolationsResource" />
+			<ref bean="userCreditsResource" />
+			<ref bean="userDatasResource" />
+			<ref bean="usersResource" />
+
+			<ref bean="resourcebundlesResource" />
+
+			<ref bean="favoriteMembersResource" />
+			<ref bean="friendshipRequestsResource" />
+			<ref bean="profileNoticesResource" />
+			<ref bean="profileRatingsResource" />
+			<ref bean="profileVisitorsResource" />
+			<ref bean="searchCriteriasResource" />
+			<ref bean="userProfilesResource" />
+
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<!-- web resources -->
+
+	<bean id="addressesResource" class="de.alpharogroup.address.book.rest.AddressesRestResource">
+		<property name="domainService" ref="addressesDomainService"></property>
+	</bean>
+	<bean id="countriesResource" class="de.alpharogroup.address.book.rest.CountriesRestResource">
+		<property name="domainService" ref="countriesDomainService"></property>
+	</bean>
+	<bean id="federalstatesResource" class="de.alpharogroup.address.book.rest.FederalstatesRestResource">
+		<property name="domainService" ref="federalstatesDomainService"></property>
+	</bean>
+	<bean id="zipcodesResource" class="de.alpharogroup.address.book.rest.ZipcodesRestResource">
+		<property name="domainService" ref="zipcodesDomainService"></property>
+	</bean>
+
+	<bean id="resourcesResource" class="de.alpharogroup.resource.system.rest.ResourcesRestResource">
+		<property name="domainService" ref="resourceDomainService"></property>
+	</bean>
+
+	<bean id="contactmethodsResource" class="de.alpharogroup.user.management.rest.ContactmethodsRestResource">
+		<property name="domainService" ref="contactmethodDomainService"></property>
+	</bean>
+	<bean id="permissionsResource" class="de.alpharogroup.user.management.rest.PermissionsRestResource">
+		<property name="domainService" ref="permissionDomainService"></property>
+	</bean>
+	<bean id="recommendationsResource" class="de.alpharogroup.user.management.rest.RecommendationsRestResource">
+		<property name="domainService" ref="recommendationDomainService"></property>
+	</bean>
+	<bean id="relationPermissionsResource" class="de.alpharogroup.user.management.rest.RelationPermissionsRestResource">
+		<property name="domainService" ref="relationPermissionDomainService"></property>
+	</bean>
+	<bean id="resetPasswordsResource" class="de.alpharogroup.user.management.rest.ResetPasswordsRestResource">
+		<property name="domainService" ref="resetPasswordDomainService"></property>
+	</bean>
+	<bean id="robinsonsResource" class="de.alpharogroup.user.management.rest.RobinsonsRestResource">
+		<property name="domainService" ref="robinsonDomainService"></property>
+	</bean>
+	<bean id="rolesResource" class="de.alpharogroup.user.management.rest.RolesRestResource">
+		<property name="domainService" ref="roleDomainService"></property>
+	</bean>
+	<bean id="ruleViolationsResource" class="de.alpharogroup.user.management.rest.RuleViolationsRestResource">
+		<property name="domainService" ref="ruleViolationDomainService"></property>
+	</bean>
+	<bean id="userCreditsResource" class="de.alpharogroup.user.management.rest.UserCreditsRestResource">
+		<property name="domainService" ref="userCreditDomainService"></property>
+	</bean>
+	<bean id="userDatasResource" class="de.alpharogroup.user.management.rest.UserDatasRestResource">
+		<property name="domainService" ref="userDataDomainService"></property>
+	</bean>
+	<bean id="usersResource" class="de.alpharogroup.user.management.rest.UsersRestResource">
+		<property name="domainService" ref="userDomainService"></property>
+	</bean>
+
+	<bean id="resourcebundlesResource" class="de.alpharogroup.db.resource.bundles.rest.ResourcebundlesRestResource">
+		<property name="domainService" ref="resourcebundleDomainService"></property>
+	</bean>
+
+	<bean id="favoriteMembersResource" class="de.alpharogroup.dating.system.rest.FavoriteMembersRestResource">
+		<property name="domainService" ref="favoriteMemberDomainService"></property>
+	</bean>
+	<bean id="friendshipRequestsResource" class="de.alpharogroup.dating.system.rest.FriendshipRequestsRestResource">
+		<property name="domainService" ref="friendshipRequestDomainService"></property>
+	</bean>
+	<bean id="profileNoticesResource" class="de.alpharogroup.dating.system.rest.ProfileNoticesRestResource">
+		<property name="domainService" ref="profileNoticeDomainService"></property>
+	</bean>
+	<bean id="profileRatingsResource" class="de.alpharogroup.dating.system.rest.ProfileRatingsRestResource">
+		<property name="domainService" ref="profileRatingDomainService"></property>
+	</bean>
+	<bean id="profileVisitorsResource" class="de.alpharogroup.dating.system.rest.ProfileVisitorsRestResource">
+		<property name="domainService" ref="profileVisitorDomainService"></property>
+	</bean>
+	<bean id="searchCriteriasResource" class="de.alpharogroup.dating.system.rest.SearchCriteriasRestResource">
+		<property name="domainService" ref="searchCriteriaDomainService"></property>
+	</bean>
+	<bean id="userProfilesResource" class="de.alpharogroup.dating.system.rest.UserProfilesRestResource">
+		<property name="domainService" ref="userProfileDomainService"></property>
+	</bean>
+
+</beans>

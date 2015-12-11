@@ -1,5 +1,4 @@
 create table addresses (id int4 not null, address_comment varchar(100), geohash varchar(16), latitude varchar(12), longitude varchar(12), street varchar(64), streetnumber varchar(5), federalstate_id int4, zipcode_id int4, primary key (id));
-create table attributes (id int4 not null, name varchar(64), type varchar(256), value varchar(2048), primary key (id));
 create table blacklisted_contacts (user_data_id int4 not null, blacklisted_id int4 not null, primary key (user_data_id, blacklisted_id));
 create table contactmethods (id int4 not null, contactmethod varchar(255), contactvalue varchar(1024), primary key (id));
 create table countries (id int4 not null, iso3166_a2name varchar(2), iso3166_a3name varchar(3), iso3166_number varchar(3), name varchar(128), primary key (id));
@@ -11,7 +10,7 @@ create table message_recipients (id int4 not null, message_id int4, recipient_id
 create table messages (id int4 not null, failed2sentemail bool, folder varchar(64), messageContent varchar(21845), messagetype varchar(255), read_flag bool, recipient_deleted_flag bool, sender_deleted_flag bool, sent_date timestamp, spam_flag bool, state varchar(255), subject varchar(1000), parent int4, sender int4, sender_email int4, primary key (id));
 create table permissions (id int4 not null, description varchar(64), permissionName varchar(64) unique, shortcut varchar(10) unique, primary key (id));
 create table profile_notice (id int4 not null, notice varchar(1000), user_id int4, user_profile int4, primary key (id));
-create table profile_ratings (id int4 not null, rating_date timestamp, rating_description varchar(1024), ratingpoints int4, title_rating varchar(256), visibility varchar(255), rater int4, rated_profile int4, primary key (id));
+create table profile_ratings (id int4 not null, rating_date timestamp, rating_description varchar(1024), rating_points int4, title_rating varchar(256), visibility varchar(255), rater int4, rated_profile int4, primary key (id));
 create table profile_visitors (id int4 not null, count int4, visiting_date timestamp, visited_profile int4, visitor_id int4, primary key (id));
 create table recommendations (id int4 not null, email varchar(1024), invitation_text varchar(1024), sent bool, recommended_id int4, user_id int4, primary key (id));
 create table relation_permissions (id int4 not null, provider_id int4, subscriber_id int4, primary key (id));
