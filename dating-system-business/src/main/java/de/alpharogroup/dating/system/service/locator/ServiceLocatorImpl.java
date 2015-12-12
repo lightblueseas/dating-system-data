@@ -37,7 +37,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Class ServiceLocatorImpl.
+ * The class {@link ServiceLocatorImpl}.
  *
  * @author Asterios Raptis
  */

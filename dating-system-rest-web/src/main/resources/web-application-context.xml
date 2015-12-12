@@ -32,6 +32,9 @@
 			<ref bean="userDatasResource" />
 			<ref bean="usersResource" />
 
+			<ref bean="messagesResource" />
+			<ref bean="messageRecipientsResource" />
+
 			<ref bean="resourcebundlesResource" />
 
 			<ref bean="favoriteMembersResource" />
@@ -99,6 +102,13 @@
 	</bean>
 	<bean id="usersResource" class="de.alpharogroup.user.management.rest.UsersRestResource">
 		<property name="domainService" ref="userDomainService"></property>
+	</bean>
+
+	<bean id="messagesResource" class="de.alpharogroup.message.system.rest.MessagesRestResource">
+		<property name="domainService" ref="messageDomainService"></property>
+	</bean>
+	<bean id="messageRecipientsResource" class="de.alpharogroup.message.system.rest.MessageRecipientsRestResource">
+		<property name="domainService" ref="messageRecipientDomainService"></property>
 	</bean>
 
 	<bean id="resourcebundlesResource" class="de.alpharogroup.db.resource.bundles.rest.ResourcebundlesRestResource">
