@@ -18,13 +18,13 @@ public class ProfileRatingsDaoTest extends AbstractTestNGSpringContextTests {
     @Autowired
 	private ProfileRatingsService profileRatingsService;
 
-	@Test
+	@Test(enabled=false)
 	public void getAllProfileRatings() {
 		initProfileRatings();
-		List<ProfileRatings> list = profileRatingsService.findAll();
+		final List<ProfileRatings> list = profileRatingsService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
-	
+
 	protected void initProfileRatings() {
 		ProfileRatings profileRatings = new ProfileRatings();
 		// TODO init model class

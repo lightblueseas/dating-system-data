@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>dating-system-data</artifactId>
-		<version>3.1.0</version>
+		<version>3.6.0</version>
 	</parent>
 
 	<artifactId>dating-system-business</artifactId>
@@ -30,11 +30,6 @@
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>user-management-domain</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>rating-system-business</artifactId>
 		</dependency>
 
 		<dependency>

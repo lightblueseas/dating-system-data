@@ -24,19 +24,18 @@ Class-Path: dating-system-rest-api.jar classes classes classes hiberna
  classes classes classes auth-security-4.7.0.jar randomizer-4.7.0.jar 
  vintage-time-4.8.0.jar resourcebundle-inspector-2.7.0.jar test-object
  s-4.8.0.jar nv-i18n-1.11.jar classes classes classes classes classes 
- classes jgeohash-2.1.0.jar geoip-api-1.2.14.jar classes crypt-core-4.
- 7.0.jar classes dating-system-business.jar classes rating-system-busi
- ness-3.1.0.jar classes classes classes classes email-tails-4.8.0.jar 
- mail-1.4.5.jar activation-1.1.jar mime-util-2.1.3.jar net-extensions-
- 4.8.0.jar commons-email-1.4.jar javax.mail-1.5.2.jar classes classes 
- cxf-rt-frontend-jaxrs-3.1.4.jar cxf-core-3.1.4.jar woodstox-core-asl-
- 4.4.1.jar stax2-api-3.1.4.jar xmlschema-core-2.2.1.jar javax.annotati
- on-api-1.2.jar cxf-rt-transports-http-3.1.4.jar javax.servlet-api-3.1
- .0.jar classes classes classes classes classes spring-web-4.1.5.RELEA
- SE.jar jackson-jaxrs-json-provider-2.6.3.jar jackson-jaxrs-base-2.6.3
- .jar jackson-module-jaxb-annotations-2.6.3.jar hibernate-entitymanage
- r-4.3.8.Final.jar hibernate-ehcache-4.3.8.Final.jar ehcache-core-2.4.
- 3.jar hibernate-validator-5.1.3.Final.jar validation-api-1.1.0.Final.
- jar classmate-1.0.0.jar cglib-2.2.2.jar asm-3.3.1.jar h2-1.4.190.jar 
- jetty-jmx-9.3.0.v20150612.jar
+ classes jgeohash-2.2.0.jar geoip-api-1.2.14.jar classes crypt-core-4.
+ 7.0.jar classes dating-system-business.jar classes classes classes cl
+ asses classes email-tails-4.8.0.jar mail-1.4.5.jar activation-1.1.jar
+  mime-util-2.1.3.jar net-extensions-4.8.0.jar commons-email-1.4.jar j
+ avax.mail-1.5.2.jar classes classes cxf-rt-frontend-jaxrs-3.1.4.jar c
+ xf-core-3.1.4.jar woodstox-core-asl-4.4.1.jar stax2-api-3.1.4.jar xml
+ schema-core-2.2.1.jar javax.annotation-api-1.2.jar cxf-rt-transports-
+ http-3.1.4.jar javax.servlet-api-3.1.0.jar classes classes classes cl
+ asses classes spring-web-4.1.5.RELEASE.jar jackson-jaxrs-json-provide
+ r-2.6.3.jar jackson-jaxrs-base-2.6.3.jar jackson-module-jaxb-annotati
+ ons-2.6.3.jar hibernate-entitymanager-4.3.8.Final.jar hibernate-ehcac
+ he-4.3.8.Final.jar ehcache-core-2.4.3.jar hibernate-validator-5.1.3.F
+ inal.jar validation-api-1.1.0.Final.jar classmate-1.0.0.jar cglib-2.2
+ .2.jar asm-3.3.1.jar h2-1.4.190.jar jetty-jmx-9.3.0.v20150612.jar
 

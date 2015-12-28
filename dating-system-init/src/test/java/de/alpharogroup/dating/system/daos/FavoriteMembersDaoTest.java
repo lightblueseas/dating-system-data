@@ -16,15 +16,15 @@ import de.alpharogroup.dating.system.service.api.FavoriteMembersService;
 public class FavoriteMembersDaoTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
-    FavoriteMembersService favoriteMembersService; 
+    FavoriteMembersService favoriteMembersService;
 
-	@Test
+	@Test(enabled=false)
 	public void getAllFavoriteMembers() {
 		initFavoriteMembers();
-		List<FavoriteMembers> list = favoriteMembersService.findAll();
+		final List<FavoriteMembers> list = favoriteMembersService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
-	
+
 	protected void initFavoriteMembers() {
 		FavoriteMembers favoriteMembers = new FavoriteMembers();
 		// TODO init model class
