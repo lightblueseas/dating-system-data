@@ -13,10 +13,10 @@ import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.service.api.UserProfilesService;
 import de.alpharogroup.dating.system.service.utils.HqlStringCreator;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
+import de.alpharogroup.resource.system.application.model.ModelSynchronizer;
 import de.alpharogroup.resource.system.application.model.ResourcesModel;
 import de.alpharogroup.resource.system.entities.Resources;
 import de.alpharogroup.resource.system.service.api.ResourcesService;
-import de.alpharogroup.user.management.application.models.UserModelConverter;
 import de.alpharogroup.user.management.entities.Users;
 
 /**
@@ -93,7 +93,7 @@ public class UserProfilesBusinessService extends AbstractBusinessService<UserPro
 	 */
 	@Override
 	public Resources persistProfileImage(final ResourcesModel resourceModel, final Users user) {
-		Resources image = UserModelConverter.convert(resourceModel);
+		Resources image = ModelSynchronizer.convert(resourceModel);
 		UserProfiles profile = findUserProfile(user);
 		if(profile.getUserImage() != null) {
 			final Integer imgId = profile.getUserImage().getId();

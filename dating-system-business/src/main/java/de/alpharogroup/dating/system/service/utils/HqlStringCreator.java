@@ -1,21 +1,25 @@
 package de.alpharogroup.dating.system.service.utils;
 
+import de.alpharogroup.dating.system.entities.FavoriteMembers;
+import de.alpharogroup.dating.system.entities.FriendshipRequests;
+import de.alpharogroup.dating.system.entities.ProfileNotices;
+import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.user.management.entities.Users;
 
 public class HqlStringCreator {
 
-	public static String forFriendshipRequests(Users requestor,
-			Users requestedUser, FriendshipRequestsState state) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("select fr from FriendshipRequests fr");
-		boolean requestorIsNotNull = requestor != null;
+	public static String forFriendshipRequests(final Users requestor,
+			final Users requestedUser, final FriendshipRequestsState state) {
+		final StringBuilder sb = new StringBuilder();
+		sb.append("select fr from " + FriendshipRequests.class.getSimpleName() + " fr");
+		final boolean requestorIsNotNull = requestor != null;
 		if (requestorIsNotNull) {
 			sb.append(" ");
 			sb.append("where fr.requestor=:requestor");
 		}
-		boolean requestedUserIsNotNull = requestedUser != null;
+		final boolean requestedUserIsNotNull = requestedUser != null;
 		if (requestedUserIsNotNull) {
 			sb.append(" ");
 			if (requestorIsNotNull) {
@@ -24,7 +28,7 @@ public class HqlStringCreator {
 				sb.append("where fr.requestedUser=:requestedUser");
 			}
 		}
-		boolean stateIsNotNull = state != null;
+		final boolean stateIsNotNull = state != null;
 		if (stateIsNotNull) {
 			sb.append(" ");
 			if (!requestorIsNotNull && !requestedUserIsNotNull) {
@@ -36,16 +40,16 @@ public class HqlStringCreator {
 		return sb.toString();
 	}
 
-	public static String forFavoriteMembers(Users owner, UserProfiles favorite) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("select fm from FavoriteMembers fm");
-		boolean ownerIsNotNull = owner != null;
+	public static String forFavoriteMembers(final Users owner, final UserProfiles favorite) {
+		final StringBuilder sb = new StringBuilder();
+		sb.append("select fm from " + FavoriteMembers.class.getSimpleName() + " fm");
+		final boolean ownerIsNotNull = owner != null;
 		if (ownerIsNotNull) {
 			sb.append(" ");
 			sb.append("where fm.owner=:owner");
 
 		}
-		boolean favoriteIsNotNull = favorite != null;
+		final boolean favoriteIsNotNull = favorite != null;
 		if (favoriteIsNotNull) {
 			sb.append(" ");
 			if (ownerIsNotNull) {
@@ -57,16 +61,16 @@ public class HqlStringCreator {
 		return sb.toString();
 	}
 
-	public static String forProfileNotice(Users user, UserProfiles userProfile) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("select pr from ProfileNotice pr");
-		boolean ownerIsNotNull = user != null;
+	public static String forProfileNotice(final Users user, final UserProfiles userProfile) {
+		final StringBuilder sb = new StringBuilder();
+		sb.append("select pr from " + ProfileNotices.class.getSimpleName() + " pr");
+		final boolean ownerIsNotNull = user != null;
 		if (ownerIsNotNull) {
 			sb.append(" ");
 			sb.append("where pr.user=:user");
 
 		}
-		boolean favoriteIsNotNull = userProfile != null;
+		final boolean favoriteIsNotNull = userProfile != null;
 		if (favoriteIsNotNull) {
 			sb.append(" ");
 			if (ownerIsNotNull) {
@@ -78,17 +82,17 @@ public class HqlStringCreator {
 		return sb.toString();
 	}
 
-	public static String forProfileVisitors(Users visitor,
-			UserProfiles visitedProfile) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("select pv from ProfileVisitors pv");
-		boolean ownerIsNotNull = visitor != null;
+	public static String forProfileVisitors(final Users visitor,
+			final UserProfiles visitedProfile) {
+		final StringBuilder sb = new StringBuilder();
+		sb.append("select pv from " + ProfileVisitors.class.getSimpleName() + " pv");
+		final boolean ownerIsNotNull = visitor != null;
 		if (ownerIsNotNull) {
 			sb.append(" ");
 			sb.append("where pv.visitor=:visitor");
 
 		}
-		boolean favoriteIsNotNull = visitedProfile != null;
+		final boolean favoriteIsNotNull = visitedProfile != null;
 		if (favoriteIsNotNull) {
 			sb.append(" ");
 			if (ownerIsNotNull) {
@@ -100,10 +104,10 @@ public class HqlStringCreator {
 		return sb.toString();
 	}
 
-	public static String forUserProfile(Users user) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("select pr from UserProfile pr");
-		boolean userIsNotNull = user != null;
+	public static String forUserProfile(final Users user) {
+		final StringBuilder sb = new StringBuilder();
+		sb.append("select pr from " + UserProfiles.class.getSimpleName() + " pr");
+		final boolean userIsNotNull = user != null;
 		if (userIsNotNull) {
 			sb.append(" ");
 			sb.append("where pr.user=:user");
