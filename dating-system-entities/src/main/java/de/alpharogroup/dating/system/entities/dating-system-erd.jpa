@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xs="false" id="_14566702102509" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="Contactmethods" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025012">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="contactvalue" id="_145667021025539">
+                <jpa:column name="contactvalue" unique="false" nullable="true" insertable="true" updatable="true" table="contactmethods" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="contactmethod" id="_145667021025540">
+                <jpa:column name="contactmethod" unique="false" nullable="true" insertable="true" updatable="true" table="contactmethods"/>
+                <jpa:lob/>
+            </basic>
+            <one-to-many mapped-by="recipientEmail" connected-entity-id="_145667021025318" connected-attribute-id="_145667021025675" target-entity="MessageRecipients" visibile="true" name="messageRecipientsCollection" id="_145667021025542"/>
+            <one-to-many mapped-by="senderEmail" connected-entity-id="_145667021025335" connected-attribute-id="_1456670210258229" target-entity="Messages" visibile="true" name="messagesCollection" id="_145667021025543"/>
+            <many-to-many connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257166" target-entity="UserData" visibile="true" name="userDataCollection" id="_145667021025541">
+                <join-table name="user_contactmethods">
+                    <jpa:join-column name="contactmethods_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_data_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025538">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="contactmethods"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="contactmethods"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="RelationPermissions" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025313">
+        <jpa:attributes>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258188" target-entity="Users" visibile="true" name="subscriberId" id="_145667021025546">
+                <join-column name="subscriber_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258189" target-entity="Users" visibile="true" name="providerId" id="_145667021025547">
+                <join-column name="provider_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-many mapped-by="relationPermissionsCollection" connected-entity-id="_145667021025324" connected-attribute-id="_1456670210257125" target-entity="Permissions" visibile="true" name="permissionsCollection" id="_145667021025545"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025544">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="relation_permissions"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="relation_permissions"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Addresses" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025314">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="addressComment" id="_145667021025549">
+                <jpa:column name="address_comment" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="geohash" id="_145667021025550">
+                <jpa:column name="geohash" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="16"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="latitude" id="_145667021025551">
+                <jpa:column name="latitude" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="12"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="longitude" id="_145667021025552">
+                <jpa:column name="longitude" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="12"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="street" id="_145667021025553">
+                <jpa:column name="street" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="streetnumber" id="_145667021025554">
+                <jpa:column name="streetnumber" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="5"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025319" connected-attribute-id="_145667021025683" target-entity="Federalstates" visibile="true" name="federalstateId" id="_145667021025556">
+                <join-column name="federalstate_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025327" connected-attribute-id="_1456670210257135" target-entity="Zipcodes" visibile="true" name="zipcodeId" id="_145667021025557">
+                <join-column name="zipcode_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="primaryAddressId" connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257169" target-entity="UserData" visibile="true" name="userDataCollection1" id="_145667021025558"/>
+            <many-to-many connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257167" target-entity="UserData" visibile="true" name="userDataCollection" id="_145667021025555">
+                <join-table name="user_addresses">
+                    <jpa:join-column name="addresses_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_data_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025548">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="addresses"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="addresses"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Resourcebundles" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025315">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="baseName" id="_145667021025560">
+                <jpa:column name="base_name" unique="false" nullable="true" insertable="true" updatable="true" table="resourcebundles" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="propertiesKey" id="_145667021025561">
+                <jpa:column name="properties_key" unique="false" nullable="true" insertable="true" updatable="true" table="resourcebundles" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="locale" id="_145667021025562">
+                <jpa:column name="locale" unique="false" nullable="true" insertable="true" updatable="true" table="resourcebundles" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="value" id="_145667021025563">
+                <jpa:column name="value" unique="false" nullable="true" insertable="true" updatable="true" table="resourcebundles" length="2048"/>
+            </basic>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025559">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="resourcebundles"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="resourcebundles"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="RuleViolations" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025316">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_145667021025565">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="rule_violations" length="1000"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="reason" id="_145667021025566">
+                <jpa:column name="reason" unique="false" nullable="true" insertable="true" updatable="true" table="rule_violations"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258190" target-entity="Users" visibile="true" name="detectorUserId" id="_145667021025567">
+                <join-column name="detector_user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258191" target-entity="Users" visibile="true" name="violatorUserId" id="_145667021025568">
+                <join-column name="violator_user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025564">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="rule_violations"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="rule_violations"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Roles" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025317">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_145667021025570">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="roles" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="rolename" id="_145667021025571">
+                <jpa:column name="rolename" unique="false" nullable="true" insertable="true" updatable="true" table="roles" length="64"/>
+            </basic>
+            <many-to-many connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258185" target-entity="Users" visibile="true" name="usersCollection" id="_145667021025672">
+                <join-table name="user_roles">
+                    <jpa:join-column name="role_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many mapped-by="rolesCollection" connected-entity-id="_145667021025324" connected-attribute-id="_1456670210257126" target-entity="Permissions" visibile="true" name="permissionsCollection" id="_145667021025673"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025569">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="roles"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="roles">
+            <jpa:unique-constraint>
+                <jpa:column-name>rolename</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="MessageRecipients" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025318">
+        <jpa:attributes>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025012" connected-attribute-id="_145667021025542" target-entity="Contactmethods" visibile="true" name="recipientEmail" id="_145667021025675">
+                <join-column name="recipient_email" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025335" connected-attribute-id="_1456670210258228" target-entity="Messages" visibile="true" name="messageId" id="_145667021025676">
+                <join-column name="message_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258192" target-entity="Users" visibile="true" name="recipientId" id="_145667021025677">
+                <join-column name="recipient_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025674">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="message_recipients"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="message_recipients"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Federalstates" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025319">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166A2code" id="_145667021025679">
+                <jpa:column name="iso3166_a2code" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="6"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_145667021025680">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="128"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="subdivisionCategory" id="_145667021025681">
+                <jpa:column name="subdivision_category" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="128"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="subdivisionName" id="_145667021025682">
+                <jpa:column name="subdivision_name" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="56"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025329" connected-attribute-id="_1456670210257154" target-entity="Countries" visibile="true" name="countryId" id="_145667021025684">
+                <join-column name="country_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="federalstateId" connected-entity-id="_145667021025314" connected-attribute-id="_145667021025556" target-entity="Addresses" visibile="true" name="addressesCollection" id="_145667021025683"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025678">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="federalstates"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="federalstates"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="ProfileVisitors" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025320">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="count" id="_145667021025686">
+                <jpa:column name="count" unique="false" nullable="true" insertable="true" updatable="true" table="profile_visitors"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="visitingDate" id="_145667021025687">
+                <jpa:column name="visiting_date" unique="false" nullable="true" insertable="true" updatable="true" table="profile_visitors"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256103" target-entity="UserProfile" visibile="true" name="visitedProfile" id="_145667021025688">
+                <join-column name="visited_profile" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258193" target-entity="Users" visibile="true" name="visitorId" id="_145667021025689">
+                <join-column name="visitor_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025685">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="profile_visitors"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="profile_visitors"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="UserProfile" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025321">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="age" id="_145667021025691">
+                <jpa:column name="age" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+            </basic>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="height" id="_145667021025692">
+                <jpa:column name="height" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="occupation" id="_145667021025693">
+                <jpa:column name="occupation" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile" length="50"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="profileText" id="_145667021025694">
+                <jpa:column name="profile_text" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile" length="1000"/>
+            </basic>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="weight" id="_145667021025695">
+                <jpa:column name="weight" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="relationshipStatus" id="_145667021025696">
+                <jpa:column name="relationship_status" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="smokerstate" id="_145667021025697">
+                <jpa:column name="smokerstate" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="zodiacSign" id="_145667021025698">
+                <jpa:column name="zodiac_sign" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="haircolor" id="_145667021025699">
+                <jpa:column name="haircolor" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="interests" id="_1456670210256100">
+                <jpa:column name="interests" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="educationState" id="_1456670210256101">
+                <jpa:column name="education_state" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="figure" id="_1456670210256102">
+                <jpa:column name="figure" unique="false" nullable="true" insertable="true" updatable="true" table="user_profile"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025328" connected-attribute-id="_1456670210257148" target-entity="Resources" visibile="true" name="imageId" id="_1456670210256104">
+                <join-column name="image_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025323" connected-attribute-id="_1456670210257120" target-entity="SearchCriteria" visibile="true" name="searchCriteria" id="_1456670210256105">
+                <join-column name="search_criteria" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258194" target-entity="Users" visibile="true" name="userId" id="_1456670210256106">
+                <join-column name="user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="visitedProfile" connected-entity-id="_145667021025320" connected-attribute-id="_145667021025688" target-entity="ProfileVisitors" visibile="true" name="profileVisitorsCollection" id="_1456670210256103"/>
+            <one-to-many mapped-by="favoriteId" connected-entity-id="_145667021025331" connected-attribute-id="_1456670210257172" target-entity="FavoriteMembers" visibile="true" name="favoriteMembersCollection" id="_1456670210256107"/>
+            <one-to-many mapped-by="ratedProfile" connected-entity-id="_145667021025334" connected-attribute-id="_1456670210258213" target-entity="ProfileRatings" visibile="true" name="profileRatingsCollection" id="_1456670210256108"/>
+            <one-to-many mapped-by="userProfile" connected-entity-id="_145667021025336" connected-attribute-id="_1456670210258235" target-entity="ProfileNotice" visibile="true" name="profileNoticeCollection" id="_1456670210256109"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145667021025690">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="user_profile"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="user_profile"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Recommendations" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025322">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="email" id="_1456670210256111">
+                <jpa:column name="email" unique="false" nullable="true" insertable="true" updatable="true" table="recommendations" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="invitationText" id="_1456670210256112">
+                <jpa:column name="invitation_text" unique="false" nullable="true" insertable="true" updatable="true" table="recommendations" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="sent" id="_1456670210256113">
+                <jpa:column name="sent" unique="false" nullable="true" insertable="true" updatable="true" table="recommendations"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258195" target-entity="Users" visibile="true" name="userId" id="_1456670210256114">
+                <join-column name="user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258196" target-entity="Users" visibile="true" name="recommendedId" id="_1456670210256115">
+                <join-column name="recommended_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210256110">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="recommendations"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="recommendations"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="SearchCriteria" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025323">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="fromAge" id="_1456670210257117">
+                <jpa:column name="from_age" unique="false" nullable="true" insertable="true" updatable="true" table="search_criteria"/>
+            </basic>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="untilAge" id="_1456670210257118">
+                <jpa:column name="until_age" unique="false" nullable="true" insertable="true" updatable="true" table="search_criteria"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="searchGender" id="_1456670210257119">
+                <jpa:column name="search_gender" unique="false" nullable="true" insertable="true" updatable="true" table="search_criteria"/>
+                <jpa:lob/>
+            </basic>
+            <one-to-many mapped-by="searchCriteria" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256105" target-entity="UserProfile" visibile="true" name="userProfileCollection" id="_1456670210257120"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257116">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="search_criteria"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="search_criteria"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Permissions" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025324">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_1456670210257122">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="permissions" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="permissionname" id="_1456670210257123">
+                <jpa:column name="permissionname" unique="false" nullable="true" insertable="true" updatable="true" table="permissions" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="shortcut" id="_1456670210257124">
+                <jpa:column name="shortcut" unique="false" nullable="true" insertable="true" updatable="true" table="permissions" length="10"/>
+            </basic>
+            <many-to-many connected-entity-id="_145667021025313" connected-attribute-id="_145667021025545" target-entity="RelationPermissions" visibile="true" name="relationPermissionsCollection" id="_1456670210257125">
+                <join-table name="user_relation_permissions">
+                    <jpa:join-column name="permission_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_relation_permission_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many connected-entity-id="_145667021025317" connected-attribute-id="_145667021025673" target-entity="Roles" visibile="true" name="rolesCollection" id="_1456670210257126">
+                <join-table name="role_permissions">
+                    <jpa:join-column name="permission_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="role_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257121">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="permissions"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="permissions">
+            <jpa:unique-constraint>
+                <jpa:column-name>shortcut</jpa:column-name>
+            </jpa:unique-constraint>
+            <jpa:unique-constraint>
+                <jpa:column-name>permissionname</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="UserCredits" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025325">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="credits" id="_1456670210257128">
+                <jpa:column name="credits" unique="false" nullable="true" insertable="true" updatable="true" table="user_credits"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258197" target-entity="Users" visibile="true" name="userId" id="_1456670210257129">
+                <join-column name="user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257127">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="user_credits"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="user_credits"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Robinsons" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025326">
+        <jpa:attributes>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258198" target-entity="Users" visibile="true" name="robinsonUserId" id="_1456670210257131">
+                <join-column name="robinson_user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257130">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="robinsons"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="robinsons"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Zipcodes" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025327">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="city" id="_1456670210257133">
+                <jpa:column name="city" unique="false" nullable="true" insertable="true" updatable="true" table="zipcodes" length="128"/>
+            </basic>
+            <basic optional="false" attribute-type="String" visibile="true" name="zipcode" id="_1456670210257134">
+                <jpa:column name="zipcode" unique="false" nullable="false" insertable="true" updatable="true" table="zipcodes" length="10"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025329" connected-attribute-id="_1456670210257155" target-entity="Countries" visibile="true" name="countryId" id="_1456670210257136">
+                <join-column name="country_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="zipcodeId" connected-entity-id="_145667021025314" connected-attribute-id="_145667021025557" target-entity="Addresses" visibile="true" name="addressesCollection" id="_1456670210257135"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257132">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="zipcodes"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="zipcodes"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Resources" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025328">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="checksum" id="_1456670210257138">
+                <jpa:column name="checksum" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="255"/>
+            </basic>
+            <basic optional="true" attribute-type="byte []" visibile="true" name="content" id="_1456670210257139">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="resources"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="contenttype" id="_1456670210257140">
+                <jpa:column name="contenttype" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="created" id="_1456670210257141">
+                <jpa:column name="created" unique="false" nullable="true" insertable="true" updatable="true" table="resources"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="deletedFlag" id="_1456670210257142">
+                <jpa:column name="deleted_flag" unique="false" nullable="true" insertable="true" updatable="true" table="resources"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_1456670210257143">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="filename" id="_1456670210257144">
+                <jpa:column name="filename" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="filesize" id="_1456670210257145">
+                <jpa:column name="filesize" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="64"/>
+            </basic>
+            <one-to-many mapped-by="imageId" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256104" target-entity="UserProfile" visibile="true" name="userProfileCollection" id="_1456670210257148"/>
+            <many-to-many connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257164" target-entity="UserData" visibile="true" name="userDataCollection" id="_1456670210257146">
+                <join-table name="user_resources">
+                    <jpa:join-column name="resources_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_data_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many mapped-by="resourcesCollection" connected-entity-id="_145667021025335" connected-attribute-id="_1456670210258227" target-entity="Messages" visibile="true" name="messagesCollection" id="_1456670210257147"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257137">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="resources"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="resources"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Countries" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025329">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166A2name" id="_1456670210257150">
+                <jpa:column name="iso3166_a2name" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="2"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166A3name" id="_1456670210257151">
+                <jpa:column name="iso3166_a3name" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="3"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166Number" id="_1456670210257152">
+                <jpa:column name="iso3166_number" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="3"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_1456670210257153">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="128"/>
+            </basic>
+            <one-to-many mapped-by="countryId" connected-entity-id="_145667021025319" connected-attribute-id="_145667021025684" target-entity="Federalstates" visibile="true" name="federalstatesCollection" id="_1456670210257154"/>
+            <one-to-many mapped-by="countryId" connected-entity-id="_145667021025327" connected-attribute-id="_1456670210257136" target-entity="Zipcodes" visibile="true" name="zipcodesCollection" id="_1456670210257155"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257149">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="countries"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="countries"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="UserData" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025330">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="birthname" id="_1456670210257157">
+                <jpa:column name="birthname" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="dateofbirth" id="_1456670210257158">
+                <jpa:column name="dateofbirth" unique="false" nullable="true" insertable="true" updatable="true" table="user_data"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="firstname" id="_1456670210257159">
+                <jpa:column name="firstname" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="ipAddress" id="_1456670210257160">
+                <jpa:column name="ip_address" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="16"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="lastname" id="_1456670210257161">
+                <jpa:column name="lastname" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="locale" id="_1456670210257162">
+                <jpa:column name="locale" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="12"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="gender" id="_1456670210257163">
+                <jpa:column name="gender" unique="false" nullable="true" insertable="true" updatable="true" table="user_data"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025314" connected-attribute-id="_145667021025558" target-entity="Addresses" visibile="true" name="primaryAddressId" id="_1456670210257169">
+                <join-column name="primary_address_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="userData" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258202" target-entity="Users" visibile="true" name="usersCollection2" id="_1456670210257170"/>
+            <many-to-many mapped-by="userDataCollection" connected-entity-id="_145667021025328" connected-attribute-id="_1456670210257146" target-entity="Resources" visibile="true" name="resourcesCollection" id="_1456670210257164"/>
+            <many-to-many connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258186" target-entity="Users" visibile="true" name="usersCollection" id="_1456670210257165">
+                <join-table name="blacklisted_contacts">
+                    <jpa:join-column name="user_data_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="blacklisted_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many mapped-by="userDataCollection" connected-entity-id="_145667021025012" connected-attribute-id="_145667021025541" target-entity="Contactmethods" visibile="true" name="contactmethodsCollection" id="_1456670210257166"/>
+            <many-to-many mapped-by="userDataCollection" connected-entity-id="_145667021025314" connected-attribute-id="_145667021025555" target-entity="Addresses" visibile="true" name="addressesCollection" id="_1456670210257167"/>
+            <many-to-many connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258187" target-entity="Users" visibile="true" name="usersCollection1" id="_1456670210257168">
+                <join-table name="user_contacts">
+                    <jpa:join-column name="user_data_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_contact_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257156">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="user_data"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="user_data"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="FavoriteMembers" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025331">
+        <jpa:attributes>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256107" target-entity="UserProfile" visibile="true" name="favoriteId" id="_1456670210257172">
+                <join-column name="favorite_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258199" target-entity="Users" visibile="true" name="ownerId" id="_1456670210257173">
+                <join-column name="owner_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210257171">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="favorite_members"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="favorite_members"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="FriendshipRequests" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025332">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="acceptedDate" id="_1456670210258175">
+                <jpa:column name="accepted_date" unique="false" nullable="true" insertable="true" updatable="true" table="friendship_requests"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="state" id="_1456670210258176">
+                <jpa:column name="state" unique="false" nullable="true" insertable="true" updatable="true" table="friendship_requests"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258200" target-entity="Users" visibile="true" name="requestorId" id="_1456670210258177">
+                <join-column name="requestor_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258201" target-entity="Users" visibile="true" name="requestedUserId" id="_1456670210258178">
+                <join-column name="requested_user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210258174">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="friendship_requests"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="friendship_requests"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Users" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025333">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="active" id="_1456670210258180">
+                <jpa:column name="active" unique="false" nullable="true" insertable="true" updatable="true" table="users"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="locked" id="_1456670210258181">
+                <jpa:column name="locked" unique="false" nullable="true" insertable="true" updatable="true" table="users"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="pw" id="_1456670210258182">
+                <jpa:column name="pw" unique="false" nullable="true" insertable="true" updatable="true" table="users" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="salt" id="_1456670210258183">
+                <jpa:column name="salt" unique="false" nullable="true" insertable="true" updatable="true" table="users" length="8"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="username" id="_1456670210258184">
+                <jpa:column name="username" unique="false" nullable="true" insertable="true" updatable="true" table="users" length="256"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257170" target-entity="UserData" visibile="true" name="userData" id="_1456670210258202">
+                <join-column name="user_data" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="subscriberId" connected-entity-id="_145667021025313" connected-attribute-id="_145667021025546" target-entity="RelationPermissions" visibile="true" name="relationPermissionsCollection" id="_1456670210258188"/>
+            <one-to-many mapped-by="providerId" connected-entity-id="_145667021025313" connected-attribute-id="_145667021025547" target-entity="RelationPermissions" visibile="true" name="relationPermissionsCollection1" id="_1456670210258189"/>
+            <one-to-many mapped-by="detectorUserId" connected-entity-id="_145667021025316" connected-attribute-id="_145667021025567" target-entity="RuleViolations" visibile="true" name="ruleViolationsCollection" id="_1456670210258190"/>
+            <one-to-many mapped-by="violatorUserId" connected-entity-id="_145667021025316" connected-attribute-id="_145667021025568" target-entity="RuleViolations" visibile="true" name="ruleViolationsCollection1" id="_1456670210258191"/>
+            <one-to-many mapped-by="recipientId" connected-entity-id="_145667021025318" connected-attribute-id="_145667021025677" target-entity="MessageRecipients" visibile="true" name="messageRecipientsCollection" id="_1456670210258192"/>
+            <one-to-many mapped-by="visitorId" connected-entity-id="_145667021025320" connected-attribute-id="_145667021025689" target-entity="ProfileVisitors" visibile="true" name="profileVisitorsCollection" id="_1456670210258193"/>
+            <one-to-many mapped-by="userId" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256106" target-entity="UserProfile" visibile="true" name="userProfileCollection" id="_1456670210258194"/>
+            <one-to-many mapped-by="userId" connected-entity-id="_145667021025322" connected-attribute-id="_1456670210256114" target-entity="Recommendations" visibile="true" name="recommendationsCollection" id="_1456670210258195"/>
+            <one-to-many mapped-by="recommendedId" connected-entity-id="_145667021025322" connected-attribute-id="_1456670210256115" target-entity="Recommendations" visibile="true" name="recommendationsCollection1" id="_1456670210258196"/>
+            <one-to-many mapped-by="userId" connected-entity-id="_145667021025325" connected-attribute-id="_1456670210257129" target-entity="UserCredits" visibile="true" name="userCreditsCollection" id="_1456670210258197"/>
+            <one-to-many mapped-by="robinsonUserId" connected-entity-id="_145667021025326" connected-attribute-id="_1456670210257131" target-entity="Robinsons" visibile="true" name="robinsonsCollection" id="_1456670210258198"/>
+            <one-to-many mapped-by="ownerId" connected-entity-id="_145667021025331" connected-attribute-id="_1456670210257173" target-entity="FavoriteMembers" visibile="true" name="favoriteMembersCollection" id="_1456670210258199"/>
+            <one-to-many mapped-by="requestorId" connected-entity-id="_145667021025332" connected-attribute-id="_1456670210258177" target-entity="FriendshipRequests" visibile="true" name="friendshipRequestsCollection" id="_1456670210258200"/>
+            <one-to-many mapped-by="requestedUserId" connected-entity-id="_145667021025332" connected-attribute-id="_1456670210258178" target-entity="FriendshipRequests" visibile="true" name="friendshipRequestsCollection1" id="_1456670210258201"/>
+            <one-to-many mapped-by="rater" connected-entity-id="_145667021025334" connected-attribute-id="_1456670210258214" target-entity="ProfileRatings" visibile="true" name="profileRatingsCollection" id="_1456670210258203"/>
+            <one-to-many mapped-by="sender" connected-entity-id="_145667021025335" connected-attribute-id="_1456670210258232" target-entity="Messages" visibile="true" name="messagesCollection" id="_1456670210258204"/>
+            <one-to-many mapped-by="userId" connected-entity-id="_145667021025336" connected-attribute-id="_1456670210258236" target-entity="ProfileNotice" visibile="true" name="profileNoticeCollection" id="_1456670210258205"/>
+            <one-to-many mapped-by="userId" connected-entity-id="_145667021025337" connected-attribute-id="_1456670210258241" target-entity="ResetPasswords" visibile="true" name="resetPasswordsCollection" id="_1456670210258206"/>
+            <many-to-many mapped-by="usersCollection" connected-entity-id="_145667021025317" connected-attribute-id="_145667021025672" target-entity="Roles" visibile="true" name="rolesCollection" id="_1456670210258185"/>
+            <many-to-many mapped-by="usersCollection" connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257165" target-entity="UserData" visibile="true" name="userDataCollection" id="_1456670210258186"/>
+            <many-to-many mapped-by="usersCollection1" connected-entity-id="_145667021025330" connected-attribute-id="_1456670210257168" target-entity="UserData" visibile="true" name="userDataCollection1" id="_1456670210258187"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210258179">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="users"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="users">
+            <jpa:unique-constraint>
+                <jpa:column-name>username</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="ProfileRatings" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025334">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="ratingDate" id="_1456670210258208">
+                <jpa:column name="rating_date" unique="false" nullable="true" insertable="true" updatable="true" table="profile_ratings"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="ratingDescription" id="_1456670210258209">
+                <jpa:column name="rating_description" unique="false" nullable="true" insertable="true" updatable="true" table="profile_ratings" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="ratingPoints" id="_1456670210258210">
+                <jpa:column name="rating_points" unique="false" nullable="true" insertable="true" updatable="true" table="profile_ratings"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="titleRating" id="_1456670210258211">
+                <jpa:column name="title_rating" unique="false" nullable="true" insertable="true" updatable="true" table="profile_ratings" length="256"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="visibility" id="_1456670210258212">
+                <jpa:column name="visibility" unique="false" nullable="true" insertable="true" updatable="true" table="profile_ratings"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256108" target-entity="UserProfile" visibile="true" name="ratedProfile" id="_1456670210258213">
+                <join-column name="rated_profile" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258203" target-entity="Users" visibile="true" name="rater" id="_1456670210258214">
+                <join-column name="rater" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210258207">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="profile_ratings"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="profile_ratings"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Messages" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025335">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="failed2sentemail" id="_1456670210258216">
+                <jpa:column name="failed2sentemail" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="folder" id="_1456670210258217">
+                <jpa:column name="folder" unique="false" nullable="true" insertable="true" updatable="true" table="messages" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="messagecontent" id="_1456670210258218">
+                <jpa:column name="messagecontent" unique="false" nullable="true" insertable="true" updatable="true" table="messages" length="21845"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="readFlag" id="_1456670210258219">
+                <jpa:column name="read_flag" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="recipientDeletedFlag" id="_1456670210258220">
+                <jpa:column name="recipient_deleted_flag" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="senderDeletedFlag" id="_1456670210258221">
+                <jpa:column name="sender_deleted_flag" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="sentDate" id="_1456670210258222">
+                <jpa:column name="sent_date" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="spamFlag" id="_1456670210258223">
+                <jpa:column name="spam_flag" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="subject" id="_1456670210258224">
+                <jpa:column name="subject" unique="false" nullable="true" insertable="true" updatable="true" table="messages" length="1000"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="state" id="_1456670210258225">
+                <jpa:column name="state" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="messagetype" id="_1456670210258226">
+                <jpa:column name="messagetype" unique="false" nullable="true" insertable="true" updatable="true" table="messages"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025012" connected-attribute-id="_145667021025543" target-entity="Contactmethods" visibile="true" name="senderEmail" id="_1456670210258229">
+                <join-column name="sender_email" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025335" connected-attribute-id="_1456670210258230" target-entity="Messages" visibile="true" name="parent" id="_1456670210258231">
+                <join-column name="parent" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258204" target-entity="Users" visibile="true" name="sender" id="_1456670210258232">
+                <join-column name="sender" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many mapped-by="messageId" connected-entity-id="_145667021025318" connected-attribute-id="_145667021025676" target-entity="MessageRecipients" visibile="true" name="messageRecipientsCollection" id="_1456670210258228"/>
+            <one-to-many mapped-by="parent" connected-entity-id="_145667021025335" connected-attribute-id="_1456670210258231" target-entity="Messages" visibile="true" name="messagesCollection" id="_1456670210258230"/>
+            <many-to-many connected-entity-id="_145667021025328" connected-attribute-id="_1456670210257147" target-entity="Resources" visibile="true" name="resourcesCollection" id="_1456670210258227">
+                <join-table name="message_attachments">
+                    <jpa:join-column name="message_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="resource_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210258215">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="messages"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="messages"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="ProfileNotice" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025336">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="notice" id="_1456670210258234">
+                <jpa:column name="notice" unique="false" nullable="true" insertable="true" updatable="true" table="profile_notice" length="1000"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025321" connected-attribute-id="_1456670210256109" target-entity="UserProfile" visibile="true" name="userProfile" id="_1456670210258235">
+                <join-column name="user_profile" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258205" target-entity="Users" visibile="true" name="userId" id="_1456670210258236">
+                <join-column name="user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210258233">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="profile_notice"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="profile_notice"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="ResetPasswords" visibile="true" minimized="false" rootElement="_14566702102509" id="_145667021025337">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="expiryDate" id="_1456670210258238">
+                <jpa:column name="expiry_date" unique="false" nullable="true" insertable="true" updatable="true" table="reset_passwords"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="generatedPassword" id="_1456670210258239">
+                <jpa:column name="generated_password" unique="false" nullable="true" insertable="true" updatable="true" table="reset_passwords" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="starttime" id="_1456670210258240">
+                <jpa:column name="starttime" unique="false" nullable="true" insertable="true" updatable="true" table="reset_passwords"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_145667021025333" connected-attribute-id="_1456670210258206" target-entity="Users" visibile="true" name="userId" id="_1456670210258241">
+                <join-column name="user_id" referenced-column-name="id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1456670210258237">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="reset_passwords"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="reset_passwords"/>
+    </jpa:entity>
+    <jpa:diagram id="_145667021025010">
+        <plane elementRef="_14566702102509" id="_145667021025011_p">
+            <shape elementRef="_145667021025012" id="_145667021025012_gui">
+                <Bounds x="1798.0" y="1400.0" width="240.0" height="178.0"/>
+            </shape>
+            <shape elementRef="_145667021025313" id="_145667021025313_gui">
+                <Bounds x="578.0" y="1400.0" width="241.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_145667021025314" id="_145667021025314_gui">
+                <Bounds x="2102.0" y="1682.0" width="184.0" height="278.0"/>
+            </shape>
+            <shape elementRef="_145667021025315" id="_145667021025315_gui">
+                <Bounds x="1798.0" y="476.0" width="219.0" height="146.0"/>
+            </shape>
+            <shape elementRef="_145667021025316" id="_145667021025316_gui">
+                <Bounds x="1195.0" y="476.0" width="198.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_145667021025317" id="_145667021025317_gui">
+                <Bounds x="1195.0" y="32.0" width="193.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_145667021025318" id="_145667021025318_gui">
+                <Bounds x="1500.0" y="1158.0" width="234.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_145667021025319" id="_145667021025319_gui">
+                <Bounds x="2350.0" y="1400.0" width="196.0" height="198.0"/>
+            </shape>
+            <shape elementRef="_145667021025320" id="_145667021025320_gui">
+                <Bounds x="32.0" y="476.0" width="196.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_145667021025321" id="_145667021025321_gui">
+                <Bounds x="292.0" y="1682.0" width="222.0" height="458.0"/>
+            </shape>
+            <shape elementRef="_145667021025322" id="_145667021025322_gui">
+                <Bounds x="891.0" y="1158.0" width="226.0" height="178.0"/>
+            </shape>
+            <shape elementRef="_145667021025323" id="_145667021025323_gui">
+                <Bounds x="578.0" y="2204.0" width="198.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_145667021025324" id="_145667021025324_gui">
+                <Bounds x="1195.0" y="2204.0" width="241.0" height="178.0"/>
+            </shape>
+            <shape elementRef="_145667021025325" id="_145667021025325_gui">
+                <Bounds x="292.0" y="254.0" width="180.0" height="118.0"/>
+            </shape>
+            <shape elementRef="_145667021025326" id="_145667021025326_gui">
+                <Bounds x="292.0" y="1158.0" width="170.0" height="86.0"/>
+            </shape>
+            <shape elementRef="_145667021025327" id="_145667021025327_gui">
+                <Bounds x="2350.0" y="2204.0" width="184.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_145667021025328" id="_145667021025328_gui">
+                <Bounds x="1798.0" y="2204.0" width="185.0" height="298.0"/>
+            </shape>
+            <shape elementRef="_145667021025329" id="_145667021025329_gui">
+                <Bounds x="2610.0" y="2566.0" width="202.0" height="198.0"/>
+            </shape>
+            <shape elementRef="_145667021025330" id="_145667021025330_gui">
+                <Bounds x="1500.0" y="1682.0" width="221.0" height="358.0"/>
+            </shape>
+            <shape elementRef="_145667021025331" id="_145667021025331_gui">
+                <Bounds x="578.0" y="32.0" width="219.0" height="106.0"/>
+            </shape>
+            <shape elementRef="_145667021025332" id="_145667021025332_gui">
+                <Bounds x="1195.0" y="1400.0" width="238.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_145667021025333" id="_145667021025333_gui">
+                <Bounds x="553.0" y="437.0" width="249.0" height="618.0"/>
+            </shape>
+            <shape elementRef="_145667021025334" id="_145667021025334_gui">
+                <Bounds x="32.0" y="1400.0" width="196.0" height="218.0"/>
+            </shape>
+            <shape elementRef="_145667021025335" id="_145667021025335_gui">
+                <Bounds x="891.0" y="1682.0" width="240.0" height="418.0"/>
+            </shape>
+            <shape elementRef="_145667021025336" id="_145667021025336_gui">
+                <Bounds x="32.0" y="32.0" width="187.0" height="138.0"/>
+            </shape>
+            <shape elementRef="_145667021025337" id="_145667021025337_gui">
+                <Bounds x="891.0" y="254.0" width="215.0" height="158.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
