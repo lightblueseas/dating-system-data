@@ -1,15 +1,21 @@
 package de.alpharogroup.dating.system.domain;
 
+import de.alpharogroup.rating.system.domain.Rating;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import de.alpharogroup.rating.system.domain.Rating;
 
 @Getter
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ProfileRating extends Rating<Integer> {
 	
 	/**

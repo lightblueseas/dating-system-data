@@ -5,8 +5,11 @@ import java.util.Date;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.user.management.domain.User;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -14,6 +17,9 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class FriendshipRequest extends BaseDomainObject<Integer> {
 	/**
 	 * The Constant serialVersionUID.

@@ -1,5 +1,6 @@
 package de.alpharogroup.dating.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,5 +19,16 @@ public class UserProfileDomainService
 	implements
 		UserProfileService
 {
+	/**
+	 * Sets the specific {@link UserProfilesMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link UserProfilesMapper}.
+	 */
+	@Autowired
+	public void setUserProfilesMapper(UserProfilesMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }

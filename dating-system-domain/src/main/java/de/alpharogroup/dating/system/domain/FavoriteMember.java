@@ -1,16 +1,22 @@
 package de.alpharogroup.dating.system.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.user.management.domain.User;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class FavoriteMember extends BaseDomainObject<Integer> {
 	/**
 	 * The Constant serialVersionUID.

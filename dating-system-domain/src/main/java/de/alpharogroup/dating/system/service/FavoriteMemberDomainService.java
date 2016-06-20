@@ -1,5 +1,6 @@
 package de.alpharogroup.dating.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,5 +19,16 @@ public class FavoriteMemberDomainService
 	implements
 		FavoriteMemberService
 {
+	/**
+	 * Sets the specific {@link FavoriteMembersMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link FavoriteMembersMapper}.
+	 */
+	@Autowired
+	public void setFavoriteMembersMapper(FavoriteMembersMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }

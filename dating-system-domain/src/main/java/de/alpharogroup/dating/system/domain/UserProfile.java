@@ -10,8 +10,11 @@ import de.alpharogroup.dating.system.enums.ZodiacSignType;
 import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.resource.system.domain.Resource;
 import de.alpharogroup.user.management.domain.User;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -19,6 +22,9 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UserProfile extends BaseDomainObject<Integer> {
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 8626651299912885319L;

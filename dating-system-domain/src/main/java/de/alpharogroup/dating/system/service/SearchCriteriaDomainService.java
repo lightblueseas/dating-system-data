@@ -1,5 +1,6 @@
 package de.alpharogroup.dating.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,5 +19,16 @@ public class SearchCriteriaDomainService
 	implements
 		SearchCriteriaService
 {
+	/**
+	 * Sets the specific {@link SearchCriteriasMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link SearchCriteriasMapper}.
+	 */
+	@Autowired
+	public void setSearchCriteriasMapper(SearchCriteriasMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }
