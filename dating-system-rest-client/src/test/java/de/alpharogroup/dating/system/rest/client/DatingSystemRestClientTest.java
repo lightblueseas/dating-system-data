@@ -55,7 +55,7 @@ public class DatingSystemRestClientTest {
 	 * Test method for {@link ResourcebundlesResource#getString(BundleKey)}.
 	 */
 	@SuppressWarnings("unchecked")
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void testGetStringWithBundleKey()
 	{
 		final String baseName = "test";
