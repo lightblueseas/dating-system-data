@@ -4,7 +4,7 @@ import java.util.List;
 
 import de.alpharogroup.dating.system.entities.FriendshipRequests;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.user.management.entities.Users;
 
 /**

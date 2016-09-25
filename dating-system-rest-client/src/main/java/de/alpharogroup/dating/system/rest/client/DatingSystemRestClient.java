@@ -8,6 +8,7 @@ import de.alpharogroup.dating.system.rest.api.ProfileRatingsResource;
 import de.alpharogroup.dating.system.rest.api.ProfileVisitorsResource;
 import de.alpharogroup.dating.system.rest.api.SearchCriteriasResource;
 import de.alpharogroup.dating.system.rest.api.UserProfilesResource;
+import de.alpharogroup.db.resource.bundles.rest.api.ResourcebundlesResource;
 import lombok.Getter;
 
 /**
@@ -17,6 +18,12 @@ import lombok.Getter;
 public class DatingSystemRestClient extends AbstractRestClient
 {
 
+	/**
+	 * The {@link ResourcebundlesResource}.
+	 */
+	@Getter
+	private final ResourcebundlesResource resourcebundlesResource;
+	
 	/**
 	 * The {@link FavoriteMembersResource}.
 	 */
@@ -84,6 +91,7 @@ public class DatingSystemRestClient extends AbstractRestClient
 		profileVisitorsResource = newResource(ProfileVisitorsResource.class);
 		searchCriteriasResource = newResource(SearchCriteriasResource.class);
 		userProfilesResource = newResource(UserProfilesResource.class);
+		resourcebundlesResource = newResource(ResourcebundlesResource.class);
 	}
 
 }

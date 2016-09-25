@@ -3,7 +3,7 @@ package de.alpharogroup.dating.system.service.api;
 import java.util.List;
 
 import de.alpharogroup.dating.system.entities.UserProfiles;
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.resource.system.application.model.ResourcesModel;
 import de.alpharogroup.resource.system.entities.Resources;
 import de.alpharogroup.user.management.entities.Users;

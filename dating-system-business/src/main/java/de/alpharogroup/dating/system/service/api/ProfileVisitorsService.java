@@ -4,7 +4,7 @@ import java.util.List;
 
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.entities.UserProfiles;
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.user.management.entities.Users;
 
 // TODO: Auto-generated Javadoc

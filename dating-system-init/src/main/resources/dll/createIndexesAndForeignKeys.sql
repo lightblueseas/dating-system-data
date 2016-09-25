@@ -1,7 +1,13 @@
 alter table addresses add constraint FK34207BA2FBFE6130 foreign key (zipcode_id) references zipcodes;
 alter table addresses add constraint FK34207BA27EE00646 foreign key (federalstate_id) references federalstates;
+alter table application_bundlenames add constraint FK6BD3939781FDD8D7 foreign key (bundlenames_id) references bundlenames;
+alter table application_bundlenames add constraint FK6BD3939764F45D92 foreign key (application_id) references bundle_applications;
 alter table blacklisted_contacts add constraint FKA1253AB66926A1DE foreign key (blacklisted_id) references users;
 alter table blacklisted_contacts add constraint FKA1253AB64E23EC72 foreign key (user_data_id) references user_data;
+alter table bundlenames add constraint FKF230A806D4CC327E foreign key (locale_id) references language_locales;
+alter table bundlenames add constraint FKF230A80663C76715 foreign key (base_name_id) references basenames;
+alter table default_locale_basenames add constraint FKC87181B017DEE600 foreign key (default_locale_id) references language_locales;
+alter table default_locale_basenames add constraint FKC87181B0BE71D570 foreign key (bundlename_id) references bundlenames;
 alter table favorite_members add constraint FKE79ADD7665501247 foreign key (owner_id) references users;
 alter table favorite_members add constraint FKE79ADD7620FE8067 foreign key (favorite_id) references user_profile;
 alter table federalstates add constraint FK1A5486DFAE853FD9 foreign key (country_id) references countries;
@@ -26,6 +32,8 @@ alter table recommendations add constraint FK9357B7DAC50FA59F foreign key (recom
 alter table relation_permissions add constraint FK634032C15FEFE072 foreign key (subscriber_id) references users;
 alter table relation_permissions add constraint FK634032C17D3F4E49 foreign key (provider_id) references users;
 alter table reset_passwords add constraint FK35B79A48F969622F foreign key (user_id) references users;
+alter table resourcebundles add constraint FKD0A7106365054731 foreign key (properties_key_id) references properties_keys;
+alter table resourcebundles add constraint FKD0A71063BE71D570 foreign key (bundlename_id) references bundlenames;
 alter table robinsons add constraint FKAAF79CBC06DC98 foreign key (robinson_user_id) references users;
 alter table role_permissions add constraint FKEAD9D23B54140A59 foreign key (role_id) references roles;
 alter table role_permissions add constraint FKEAD9D23BB7538E27 foreign key (permission_id) references permissions;

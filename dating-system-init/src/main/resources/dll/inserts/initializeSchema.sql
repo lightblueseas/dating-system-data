@@ -11,10 +11,34 @@
         zipcode_id int4,
         primary key (id)
     );
+create table application_bundlenames (
+        application_id int4 not null,
+        bundlenames_id int4 not null,
+        primary key (application_id, bundlenames_id)
+    );
+create table basenames (
+        id int4 not null,
+        version int4,
+        name varchar(512),
+        primary key (id)
+    );
 create table blacklisted_contacts (
         user_data_id int4 not null,
         blacklisted_id int4 not null,
         primary key (user_data_id, blacklisted_id)
+    );
+create table bundle_applications (
+        id int4 not null,
+        version int4,
+        name varchar(1024) unique,
+        primary key (id)
+    );
+create table bundlenames (
+        id int4 not null,
+        version int4,
+        base_name_id int4,
+        locale_id int4,
+        primary key (id)
     );
 create table contactmethods (
         id int4 not null,
@@ -28,6 +52,13 @@ create table countries (
         iso3166_a3name varchar(3),
         iso3166_number varchar(3),
         name varchar(128),
+        primary key (id)
+    );
+create table default_locale_basenames (
+        id int4 not null,
+        version int4,
+        bundlename_id int4,
+        default_locale_id int4,
         primary key (id)
     );
 create table favorite_members (
@@ -51,6 +82,19 @@ create table friendship_requests (
         state varchar(255),
         requested_user_id int4,
         requestor_id int4,
+        primary key (id)
+    );
+create table language_locales (
+        id int4 not null,
+        version int4,
+        locale varchar(64) unique,
+        primary key (id)
+    );
+create table languages (
+        id int4 not null,
+        version int4,
+        name varchar(64) unique,
+        iso639_1 varchar(2),
         primary key (id)
     );
 create table message_attachments (
@@ -116,6 +160,12 @@ create table profile_visitors (
         visitor_id int4,
         primary key (id)
     );
+create table properties_keys (
+        id int4 not null,
+        version int4,
+        name varchar(1024),
+        primary key (id)
+    );
 create table recommendations (
         id int4 not null,
         email varchar(1024),
@@ -141,10 +191,10 @@ create table reset_passwords (
     );
 create table resourcebundles (
         id int4 not null,
-        base_name varchar(1024),
-        properties_key varchar(1024),
-        locale varchar(64),
+        version int4,
         value varchar(2048),
+        bundlename_id int4,
+        properties_key_id int4,
         primary key (id)
     );
 create table resources (
@@ -368,8 +418,14 @@ alter table rule_violations drop column reason;
 alter table rule_violations add reason ruleviolationreasontype;
 alter table addresses add constraint FK34207BA2FBFE6130 foreign key (zipcode_id) references zipcodes;
 alter table addresses add constraint FK34207BA27EE00646 foreign key (federalstate_id) references federalstates;
+alter table application_bundlenames add constraint FK6BD3939781FDD8D7 foreign key (bundlenames_id) references bundlenames;
+alter table application_bundlenames add constraint FK6BD3939764F45D92 foreign key (application_id) references bundle_applications;
 alter table blacklisted_contacts add constraint FKA1253AB66926A1DE foreign key (blacklisted_id) references users;
 alter table blacklisted_contacts add constraint FKA1253AB64E23EC72 foreign key (user_data_id) references user_data;
+alter table bundlenames add constraint FKF230A806D4CC327E foreign key (locale_id) references language_locales;
+alter table bundlenames add constraint FKF230A80663C76715 foreign key (base_name_id) references basenames;
+alter table default_locale_basenames add constraint FKC87181B017DEE600 foreign key (default_locale_id) references language_locales;
+alter table default_locale_basenames add constraint FKC87181B0BE71D570 foreign key (bundlename_id) references bundlenames;
 alter table favorite_members add constraint FKE79ADD7665501247 foreign key (owner_id) references users;
 alter table favorite_members add constraint FKE79ADD7620FE8067 foreign key (favorite_id) references user_profile;
 alter table federalstates add constraint FK1A5486DFAE853FD9 foreign key (country_id) references countries;
@@ -394,6 +450,8 @@ alter table recommendations add constraint FK9357B7DAC50FA59F foreign key (recom
 alter table relation_permissions add constraint FK634032C15FEFE072 foreign key (subscriber_id) references users;
 alter table relation_permissions add constraint FK634032C17D3F4E49 foreign key (provider_id) references users;
 alter table reset_passwords add constraint FK35B79A48F969622F foreign key (user_id) references users;
+alter table resourcebundles add constraint FKD0A7106365054731 foreign key (properties_key_id) references properties_keys;
+alter table resourcebundles add constraint FKD0A71063BE71D570 foreign key (bundlename_id) references bundlenames;
 alter table robinsons add constraint FKAAF79CBC06DC98 foreign key (robinson_user_id) references users;
 alter table role_permissions add constraint FKEAD9D23B54140A59 foreign key (role_id) references roles;
 alter table role_permissions add constraint FKEAD9D23BB7538E27 foreign key (permission_id) references permissions;

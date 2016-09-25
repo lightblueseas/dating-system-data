@@ -51,8 +51,7 @@
 		</jaxrs:providers>
 	</jaxrs:server>
 
-	<!-- web resources -->
-
+	<!-- web resources address-book-rest-api -->
 	<bean id="addressesResource" class="de.alpharogroup.address.book.rest.AddressesRestResource">
 		<property name="domainService" ref="addressesDomainService"></property>
 	</bean>
@@ -65,11 +64,11 @@
 	<bean id="zipcodesResource" class="de.alpharogroup.address.book.rest.ZipcodesRestResource">
 		<property name="domainService" ref="zipcodesDomainService"></property>
 	</bean>
-
+	<!-- web resources resource-system-rest-api -->
 	<bean id="resourcesResource" class="de.alpharogroup.resource.system.rest.ResourcesRestResource">
 		<property name="domainService" ref="resourceDomainService"></property>
 	</bean>
-
+	<!-- web resources user-management-rest-api -->
 	<bean id="contactmethodsResource" class="de.alpharogroup.user.management.rest.ContactmethodsRestResource">
 		<property name="domainService" ref="contactmethodDomainService"></property>
 	</bean>
@@ -103,18 +102,18 @@
 	<bean id="usersResource" class="de.alpharogroup.user.management.rest.UsersRestResource">
 		<property name="domainService" ref="userDomainService"></property>
 	</bean>
-
+	<!-- web resources message-system-rest-api -->
 	<bean id="messagesResource" class="de.alpharogroup.message.system.rest.MessagesRestResource">
 		<property name="domainService" ref="messageDomainService"></property>
 	</bean>
 	<bean id="messageRecipientsResource" class="de.alpharogroup.message.system.rest.MessageRecipientsRestResource">
 		<property name="domainService" ref="messageRecipientDomainService"></property>
 	</bean>
-
+	<!-- web resources resource-bundles-rest-api -->
 	<bean id="resourcebundlesResource" class="de.alpharogroup.db.resource.bundles.rest.ResourcebundlesRestResource">
 		<property name="domainService" ref="resourcebundleDomainService"></property>
 	</bean>
-
+	<!-- web resources dating-system-rest-api -->
 	<bean id="favoriteMembersResource" class="de.alpharogroup.dating.system.rest.FavoriteMembersRestResource">
 		<property name="domainService" ref="favoriteMemberDomainService"></property>
 	</bean>

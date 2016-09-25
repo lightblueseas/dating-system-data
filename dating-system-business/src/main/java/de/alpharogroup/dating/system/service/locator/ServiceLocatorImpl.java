@@ -16,6 +16,13 @@ import de.alpharogroup.dating.system.service.api.ProfileRatingsService;
 import de.alpharogroup.dating.system.service.api.ProfileVisitorsService;
 import de.alpharogroup.dating.system.service.api.SearchCriteriasService;
 import de.alpharogroup.dating.system.service.api.UserProfilesService;
+import de.alpharogroup.db.resource.bundles.service.api.BaseNamesService;
+import de.alpharogroup.db.resource.bundles.service.api.BundleApplicationsService;
+import de.alpharogroup.db.resource.bundles.service.api.BundleNamesService;
+import de.alpharogroup.db.resource.bundles.service.api.DefaultLocaleBaseNamesService;
+import de.alpharogroup.db.resource.bundles.service.api.LanguageLocalesService;
+import de.alpharogroup.db.resource.bundles.service.api.LanguagesService;
+import de.alpharogroup.db.resource.bundles.service.api.PropertiesKeysService;
 import de.alpharogroup.db.resource.bundles.service.api.ResourcebundlesService;
 import de.alpharogroup.message.system.service.api.MessageRecipientsService;
 import de.alpharogroup.message.system.service.api.MessagesService;
@@ -160,5 +167,33 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 	/** The Robinsons business service. */
 	@Autowired
 	private RobinsonsService robinsonsService;
+	
+	/** The base names service. */
+	@Autowired
+	private BaseNamesService baseNamesService;
+	
+	/** The bundle applications service. */
+	@Autowired
+	private BundleApplicationsService bundleApplicationsService;
+	
+	/** The default locale base names service. */
+	@Autowired
+	private DefaultLocaleBaseNamesService defaultLocaleBaseNamesService;
+	
+	/** The language locales service. */
+	@Autowired
+	private LanguageLocalesService languageLocalesService;
+	
+	/** The languages service. */
+	@Autowired
+	private LanguagesService languagesService;
+	
+	/** The properties keys service. */
+	@Autowired
+	private PropertiesKeysService propertiesKeysService;
+	
+	/** The bundle names service. */
+	@Autowired
+	private BundleNamesService bundleNamesService;
 
 }
