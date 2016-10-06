@@ -10,12 +10,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.lang.object.CompareObjectExtensions;
+import de.alpharogroup.user.management.entities.Users;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import de.alpharogroup.db.entity.BaseEntity;
-import de.alpharogroup.lang.ObjectExtensions;
-import de.alpharogroup.user.management.entities.Users;
 
 /**
  * The Entity class {@link ProfileNotices} is keeping the
@@ -56,7 +56,7 @@ implements Cloneable, Comparable<ProfileNotices> {
      */
 	@Override
 	public int compareTo(ProfileNotices o) {
-		return ObjectExtensions.compareToQuietly(this.getUser(), o.getUser(), "username");
+		return CompareObjectExtensions.compareToQuietly(this.getUser(), o.getUser(), "username");
 	}
 
 }
