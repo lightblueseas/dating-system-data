@@ -60,13 +60,13 @@ public class DatingSystemRestClient extends AbstractRestClient
 	 */
 	@Getter
 	private final ZipcodesResource zipcodesResource;
-	
+
 	/**
 	 * The {@link ResourcebundlesResource}.
 	 */
 	@Getter
 	private final ResourcebundlesResource resourcebundlesResource;
-	
+
 	/**
 	 * The {@link FavoriteMembersResource}.
 	 */
@@ -108,7 +108,7 @@ public class DatingSystemRestClient extends AbstractRestClient
 	 */
 	@Getter
 	private final UserProfilesResource userProfilesResource;
-	
+
 	/**
 	 * The {@link ResourcesResource}.
 	 */
@@ -120,7 +120,7 @@ public class DatingSystemRestClient extends AbstractRestClient
 	 */
 	@Getter
 	private final AuthenticationsResource authenticationsResource;
-	
+
 	/**
 	 * The {@link ContactmethodsResource}.
 	 */
@@ -185,7 +185,7 @@ public class DatingSystemRestClient extends AbstractRestClient
 	 * The {@link UsersResource}.
 	 */
 	@Getter
-	private final UsersResource usersResource;	
+	private final UsersResource usersResource;
 
 	/**
 	 * The {@link MessagesResource}.
@@ -204,7 +204,7 @@ public class DatingSystemRestClient extends AbstractRestClient
 	 */
 	public DatingSystemRestClient()
 	{
-		this(DEFAULT_BASE_URL);
+		this(DEFAULT_BASE_HTTP_URL);
 	}
 
 	/**
@@ -224,15 +224,15 @@ public class DatingSystemRestClient extends AbstractRestClient
 		profileVisitorsResource = newResource(ProfileVisitorsResource.class);
 		searchCriteriasResource = newResource(SearchCriteriasResource.class);
 		userProfilesResource = newResource(UserProfilesResource.class);
-		
+
 		resourcebundlesResource = newResource(ResourcebundlesResource.class);
 
 		addressesResource = newResource(AddressesResource.class);
 		countriesResource = newResource(CountriesResource.class);
 		federalstatesResource = newResource(FederalstatesResource.class);
-		zipcodesResource =  newResource(ZipcodesResource.class);		
+		zipcodesResource =  newResource(ZipcodesResource.class);
 
-        resourcesResource  = newResource(ResourcesResource.class);        
+        resourcesResource  = newResource(ResourcesResource.class);
 
 		authenticationsResource = newResource(AuthenticationsResource.class);
 		contactmethodsResource = newResource(ContactmethodsResource.class);
@@ -245,7 +245,7 @@ public class DatingSystemRestClient extends AbstractRestClient
 		ruleViolationsResource = newResource(RuleViolationsResource.class);
 		userCreditsResource = newResource(UserCreditsResource.class);
 		userDatasResource = newResource(UserDatasResource.class);
-		usersResource = newResource(UsersResource.class);		
+		usersResource = newResource(UsersResource.class);
 
 		messagesResource = newResource(MessagesResource.class);
 		messageRecipientsResource = newResource(MessageRecipientsResource.class);
