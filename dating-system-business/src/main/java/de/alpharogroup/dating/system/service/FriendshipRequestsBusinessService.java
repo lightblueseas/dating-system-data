@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.dating.system.daos.FriendshipRequestsDao;
 import de.alpharogroup.dating.system.entities.FriendshipRequests;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
@@ -36,10 +37,7 @@ public class FriendshipRequestsBusinessService extends AbstractBusinessService<F
 	
 	public FriendshipRequests find(Users requestor, Users requestedUser, FriendshipRequestsState state) {
 		final List<FriendshipRequests> friendshipRequests = findAll(requestor, requestedUser, state);
-		if(friendshipRequests != null && !friendshipRequests.isEmpty()){
-			return friendshipRequests.get(0);
-		}
-		return null;	
+		return ListExtensions.getFirst(friendshipRequests);	
 	}
 	
 	@SuppressWarnings("unchecked")

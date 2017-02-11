@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.dating.system.daos.ProfileNoticesDao;
 import de.alpharogroup.dating.system.entities.ProfileNotices;
 import de.alpharogroup.dating.system.entities.UserProfiles;
@@ -31,10 +32,7 @@ public class ProfileNoticesBusinessService extends AbstractBusinessService<Profi
 	@Override
 	public ProfileNotices findProfileNotice(final Users user, final UserProfiles userProfile) {
 		final List<ProfileNotices> profileNotices = findAll(user, userProfile);
-		if(profileNotices != null && !profileNotices.isEmpty()){
-			return profileNotices.get(0);
-		}
-		return null;
+		return ListExtensions.getFirst(profileNotices);
 	}
 
 	@Override

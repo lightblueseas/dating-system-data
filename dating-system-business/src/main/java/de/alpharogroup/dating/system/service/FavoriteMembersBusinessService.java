@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.dating.system.daos.FavoriteMembersDao;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.dating.system.entities.UserProfiles;
@@ -32,10 +33,7 @@ public class FavoriteMembersBusinessService extends AbstractBusinessService<Favo
 	@Transactional
 	public FavoriteMembers find(Users owner, UserProfiles favorite) {
 		final List<FavoriteMembers> favoriteMembers = findAll(owner, favorite);
-		if(favoriteMembers != null && !favoriteMembers.isEmpty()){
-			return favoriteMembers.get(0);
-		}
-		return null;	
+		return ListExtensions.getFirst(favoriteMembers);	
 	}
 	@Transactional
 	@SuppressWarnings("unchecked")	

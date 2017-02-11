@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.dating.system.daos.ProfileVisitorsDao;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.entities.UserProfiles;
@@ -34,10 +35,7 @@ public class ProfileVisitorsBusinessService extends AbstractBusinessService<Prof
 	
 	public ProfileVisitors find(Users visitor, UserProfiles visitedProfile) {
 		final List<ProfileVisitors> profileVisitors = findAll(visitor, visitedProfile);
-		if(profileVisitors != null && !profileVisitors.isEmpty()){
-			return profileVisitors.get(0);
-		}
-		return null;	
+		return ListExtensions.getFirst(profileVisitors);	
 	}
 	
 	@SuppressWarnings("unchecked")
