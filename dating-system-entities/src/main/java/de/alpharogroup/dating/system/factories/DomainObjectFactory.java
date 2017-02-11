@@ -31,7 +31,6 @@ import de.alpharogroup.user.management.entities.Contactmethods;
 import de.alpharogroup.user.management.entities.Permissions;
 import de.alpharogroup.user.management.entities.ResetPasswords;
 import de.alpharogroup.user.management.entities.Roles;
-import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.enums.ContactmethodType;
 import de.alpharogroup.user.management.enums.GenderType;
@@ -51,7 +50,7 @@ public class DomainObjectFactory implements Serializable {
 
 	/**
 	 * Gets the single instance of DomainObjectFactory.
-	 * 
+	 *
 	 * @return single instance of DomainObjectFactory
 	 */
 	public static DomainObjectFactory getInstance() {
@@ -59,7 +58,7 @@ public class DomainObjectFactory implements Serializable {
 	}
 
 	/** The seminars24 domain object factory. */
-	private FlirtAndDateObjectFactory flirtAndDateObjectFactory = FlirtAndDateObjectFactory
+	private final FlirtAndDateObjectFactory flirtAndDateObjectFactory = FlirtAndDateObjectFactory
 			.getInstance();
 
 	/**
@@ -87,15 +86,15 @@ public class DomainObjectFactory implements Serializable {
 			final java.math.BigDecimal latitude,
 			final java.math.BigDecimal longitude, final String street,
 			final String streetnumber, final Zipcodes zipcode) {
-		String lat = (latitude != null) ? latitude.toString() : "";
-		String lng = (longitude != null) ? longitude.toString() : "";
+		final String lat = (latitude != null) ? latitude.toString() : "";
+		final String lng = (longitude != null) ? longitude.toString() : "";
 		return flirtAndDateObjectFactory.newAddresses(addressComment,
 				federalstate, geohash, null, lat, lng, street, streetnumber, zipcode);
 	}
 
 	/**
 	 * Gets the contacts.
-	 * 
+	 *
 	 * @param contactmethod
 	 *            the contactmethod
 	 * @param contactvalue
@@ -110,7 +109,7 @@ public class DomainObjectFactory implements Serializable {
 
 	/**
 	 * Gets the countries.
-	 * 
+	 *
 	 * @param iso3166A2name
 	 *            the iso3166 a2name
 	 * @param iso3166A3name
@@ -130,7 +129,7 @@ public class DomainObjectFactory implements Serializable {
 
 	/**
 	 * Gets the federalstates.
-	 * 
+	 *
 	 * @param country
 	 *            the country
 	 * @param iso3166A2code
@@ -165,14 +164,14 @@ public class DomainObjectFactory implements Serializable {
 	 * @return the images
 	 */
 	public Resources newResources(final String description, final String filename,
-			final String filesize, final String filetype, final Byte[] image, Date created, Boolean deletedFlag, String checksum) {
+			final String filesize, final String filetype, final Byte[] image, final Date created, final Boolean deletedFlag, final String checksum) {
 		return flirtAndDateObjectFactory.newResources(description, filename,
 				filesize, filetype, null, image, created, deletedFlag, checksum);
 	}
 
 	/**
 	 * Gets the message recipients.
-	 * 
+	 *
 	 * @param message
 	 *            the message
 	 * @param recipient
@@ -208,7 +207,7 @@ public class DomainObjectFactory implements Serializable {
 			final String messageContent, final MessageType messagetype,
 			final Boolean readFlag, final Users sender, final Date sentDate,
 			final Boolean spamFlag, final MessageState state,
-			final String subject, Messages parent) {
+			final String subject, final Messages parent) {
 		return flirtAndDateObjectFactory.newMessages(deletedFlag,
 				failed2sentemail, folder, null, messageContent, messagetype, readFlag,
 				sender, sentDate, spamFlag, state, subject, parent);
@@ -216,7 +215,7 @@ public class DomainObjectFactory implements Serializable {
 
 	/**
 	 * Gets the permissions.
-	 * 
+	 *
 	 * @param description
 	 *            the description
 	 * @param permission
@@ -257,7 +256,7 @@ public class DomainObjectFactory implements Serializable {
 	 * @return the roles
 	 */
 	public Roles newRoles(final String description, final String rolename,
-			Set<Permissions> permissions) {
+			final Set<Permissions> permissions) {
 		return flirtAndDateObjectFactory.newRoles(description,
 				null, rolename, permissions);
 	}
@@ -282,26 +281,27 @@ public class DomainObjectFactory implements Serializable {
 	 * @param searchCriteria the search criteria
 	 * @return the user profile
 	 */
-	public UserProfiles newUserProfile(Integer age,
-			EducationState educationState, FigureType figure,
-			HaircolorType haircolor, Integer height,
-			InterestsType interests, String occupation, String profileText,
-			RelationshipState relationshipState, SmokerState smokerstate,
-			Users user, Resources userImage, Integer weight,
-			ZodiacSignType zodiacSign, SearchCriterias searchCriteria) {
+	public UserProfiles newUserProfile(final Integer age,
+			final EducationState educationState, final FigureType figure,
+			final HaircolorType haircolor, final Integer height,
+			final InterestsType interests, final String occupation, final String profileText,
+			final RelationshipState relationshipState, final SmokerState smokerstate,
+			final Users user, final Resources userImage, final Integer weight,
+			final ZodiacSignType zodiacSign, final SearchCriterias searchCriteria) {
 		return flirtAndDateObjectFactory.newUserProfile(age, educationState,
 				figure, haircolor, height, interests, occupation,
 				profileText, relationshipState, smokerstate, user, userImage,
 				weight, zodiacSign, searchCriteria);
 	}
-	
-	 public SearchCriterias newSearchCriteria(Integer fromAge, Integer untilAge, GenderType searchGender){
+
+	 public SearchCriterias newSearchCriteria(final Integer fromAge, final Integer untilAge, final GenderType searchGender){
 		 return flirtAndDateObjectFactory.newSearchCriteria(fromAge, untilAge, searchGender);
 	 }
 
-		public Users newUsers(Boolean active, String pw, String salt,
-				String username, Boolean locked, UserDatas userData, Set<Roles> roles) {
-		return flirtAndDateObjectFactory.newUsers(active, pw, salt, username, locked, userData, roles);
+	public Users newUsers(final Boolean active, final String pw, final String salt, final String username, final Boolean locked,
+		final Set<Roles> roles)
+	{
+		return flirtAndDateObjectFactory.newUsers(active, pw, salt, username, locked, roles);
 	}
 
 	/**
@@ -312,25 +312,25 @@ public class DomainObjectFactory implements Serializable {
 	 * @param zipcode            the zipcode
 	 * @return the zipcodes
 	 */
-	public Zipcodes newZipcodes(Countries country, String city, String zipcode) {
+	public Zipcodes newZipcodes(final Countries country, final String city, final String zipcode) {
 		return flirtAndDateObjectFactory.newZipcodes(null, country, city,
 				zipcode);
 	}
-	
-	public ProfileNotices newProfileNotice(String notice, Users user,
-			UserProfiles userProfile) {
-		return flirtAndDateObjectFactory.newProfileNotice(notice, user, userProfile);		
+
+	public ProfileNotices newProfileNotice(final String notice, final Users user,
+			final UserProfiles userProfile) {
+		return flirtAndDateObjectFactory.newProfileNotice(notice, user, userProfile);
 	}
-	
-	public FavoriteMembers newFavoriteMembers(UserProfiles favorite, Users owner){
+
+	public FavoriteMembers newFavoriteMembers(final UserProfiles favorite, final Users owner){
 		return flirtAndDateObjectFactory.newFavoriteMembers(favorite, owner);
 	}
-	
-	public FriendshipRequests newFriendshipRequests(Users requestor, Users requestedUser, FriendshipRequestsState state){
+
+	public FriendshipRequests newFriendshipRequests(final Users requestor, final Users requestedUser, final FriendshipRequestsState state){
 		return flirtAndDateObjectFactory.newFriendshipRequests(requestor, requestedUser, state);
 	}
-	
-	public ProfileVisitors newProfileVisitors(Date visitingDate, Users visitor, UserProfiles visitedProfile, Integer count){
+
+	public ProfileVisitors newProfileVisitors(final Date visitingDate, final Users visitor, final UserProfiles visitedProfile, final Integer count){
 		return flirtAndDateObjectFactory.newProfileVisitors(visitingDate, visitor, visitedProfile, count);
 	}
 

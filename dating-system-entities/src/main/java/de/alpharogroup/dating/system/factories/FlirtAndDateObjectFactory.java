@@ -34,7 +34,6 @@ import de.alpharogroup.user.management.entities.Contactmethods;
 import de.alpharogroup.user.management.entities.Permissions;
 import de.alpharogroup.user.management.entities.ResetPasswords;
 import de.alpharogroup.user.management.entities.Roles;
-import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.enums.ContactmethodType;
 import de.alpharogroup.user.management.enums.GenderType;
@@ -46,7 +45,7 @@ import de.alpharogroup.user.management.factories.UserManagementFactory;
 public class FlirtAndDateObjectFactory implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	/** The Constant instance. */
@@ -54,7 +53,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 
 	/**
 	 * Gets the single instance of DomainObjectFactory.
-	 * 
+	 *
 	 * @return single instance of DomainObjectFactory
 	 */
 	public static FlirtAndDateObjectFactory getInstance() {
@@ -82,10 +81,10 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param zipcode            A valid Zipcodes object
 	 * @return Addresses A Addresses object
 	 */
-	public Addresses newAddresses(String addressComment,
-			Federalstates federalstate, String geohash, Integer id,
-			String latitude, String longitude, String street,
-			String streetnumber, Zipcodes zipcode) {
+	public Addresses newAddresses(final String addressComment,
+			final Federalstates federalstate, final String geohash, final Integer id,
+			final String latitude, final String longitude, final String street,
+			final String streetnumber, final Zipcodes zipcode) {
 		return AddressBookFactory.getInstance().newAddresses(addressComment,
 				federalstate, geohash, id, latitude, longitude, street,
 				streetnumber, zipcode);
@@ -99,8 +98,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param id the id
 	 * @return ContactmethodsA Contactmethods object
 	 */
-	public Contactmethods newContactmethods(ContactmethodType contactmethod,
-			String contactvalue, Integer id) {
+	public Contactmethods newContactmethods(final ContactmethodType contactmethod,
+			final String contactvalue, final Integer id) {
 		return UserManagementFactory.getInstance().newContactmethods(
 				contactmethod, contactvalue, id);
 	}
@@ -115,8 +114,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param name the name
 	 * @return CountriesA Countries object
 	 */
-	public Countries newCountries(Integer id, String iso3166A2name,
-			String iso3166A3name, String iso3166Number, String name) {
+	public Countries newCountries(final Integer id, final String iso3166A2name,
+			final String iso3166A3name, final String iso3166Number, final String name) {
 		return AddressBookFactory.getInstance().newCountries(id,
 				iso3166A2name, iso3166A3name, iso3166Number, name);
 	}
@@ -132,9 +131,9 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param subdivisionName the subdivision name
 	 * @return Federalstates A Federalstates object
 	 */
-	public Federalstates newFederalstates(Countries country, Integer id,
-			String iso3166A2code, String name, String subdivisionCategory,
-			String subdivisionName) {
+	public Federalstates newFederalstates(final Countries country, final Integer id,
+			final String iso3166A2code, final String name, final String subdivisionCategory,
+			final String subdivisionName) {
 		return AddressBookFactory.getInstance().newFederalstates(country,
 				id, iso3166A2code, name, subdivisionCategory, subdivisionName);
 	}
@@ -153,8 +152,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param checksum the checksum
 	 * @return ImagesA Images object
 	 */
-	public Resources newResources(String description, String filename,
-			String filesize, String filetype, Integer id, Byte[] image, Date created, Boolean deletedFlag, String checksum) {
+	public Resources newResources(final String description, final String filename,
+			final String filesize, final String filetype, final Integer id, final Byte[] image, final Date created, final Boolean deletedFlag, final String checksum) {
 		return ResourceSystemFactory.getInstance().newResources(id, description,
 				filename, filesize, filetype, image, created, deletedFlag, checksum);
 	}
@@ -177,10 +176,10 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param parent the parent
 	 * @return Messages A Messages object
 	 */
-	public Messages newMessages(Boolean deletedFlag, Boolean failed2sentemail,
-			String folder, Integer id, String messageContent,
-			MessageType messagetype, Boolean readFlag, Users sender,
-			Date sentDate, Boolean spamFlag, MessageState state, String subject, Messages parent) {
+	public Messages newMessages(final Boolean deletedFlag, final Boolean failed2sentemail,
+			final String folder, final Integer id, final String messageContent,
+			final MessageType messagetype, final Boolean readFlag, final Users sender,
+			final Date sentDate, final Boolean spamFlag, final MessageState state, final String subject, final Messages parent) {
 		return MessageSystemFactory.getInstance().newMessages(deletedFlag,
 				failed2sentemail, folder, id, messageContent, messagetype,
 				readFlag, sender, sentDate, spamFlag, state, subject, parent, Boolean.FALSE);
@@ -194,8 +193,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param recipient            A valid Users object
 	 * @return MessageRecipients A MessageRecipients object
 	 */
-	public MessageRecipients newMessageRecipients(Integer id, Messages message,
-			Users recipient) {
+	public MessageRecipients newMessageRecipients(final Integer id, final Messages message,
+			final Users recipient) {
 		return MessageSystemFactory.getInstance().newMessageRecipients(id,
 				message, recipient);
 	}
@@ -209,8 +208,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param shortcut the shortcut
 	 * @return PermissionsA Permissions object
 	 */
-	public Permissions newPermissions(String description, Integer id,
-			String permission, String shortcut) {
+	public Permissions newPermissions(final String description, final Integer id,
+			final String permission, final String shortcut) {
 		return UserManagementFactory.getInstance().newPermissions(id,
 				permission, description, shortcut);
 	}
@@ -225,8 +224,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param user            A valid Users object
 	 * @return ResetPasswords A ResetPasswords object
 	 */
-	public ResetPasswords newResetPasswords(Integer id, Date expiryDate,
-			String generatedPassword, Date starttime, Users user) {
+	public ResetPasswords newResetPasswords(final Integer id, final Date expiryDate,
+			final String generatedPassword, final Date starttime, final Users user) {
 		return UserManagementFactory.getInstance().newResetPasswords(id,
 				expiryDate, generatedPassword, starttime, user);
 	}
@@ -240,8 +239,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param permissions the permissions
 	 * @return RolesA Roles object
 	 */
-	public Roles newRoles(String description, Integer id, String rolename,
-			Set<Permissions> permissions) {
+	public Roles newRoles(final String description, final Integer id, final String rolename,
+			final Set<Permissions> permissions) {
 		return UserManagementFactory.getInstance().newRoles(id, rolename,
 				description, permissions);
 	}
@@ -258,10 +257,10 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param roles the roles
 	 * @return UsersA Users object
 	 */
-	public Users newUsers(Boolean active, String pw, String salt,
-			String username, Boolean locked, UserDatas userData, Set<Roles> roles) {
+	public Users newUsers(final Boolean active, final String pw, final String salt,
+			final String username, final Boolean locked, final Set<Roles> roles) {
 		return UserManagementFactory.getInstance().newUsers(active, pw, salt,
-				username, locked, userData, roles);
+				username, locked, roles);
 	}
 
 	/**
@@ -284,14 +283,14 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param searchCriteria the search criteria
 	 * @return the user profile
 	 */
-	public UserProfiles newUserProfile(Integer age,
-			EducationState educationState, FigureType figure,
-			HaircolorType haircolor, Integer height, InterestsType interests,
-			String occupation, String profileText,
-			RelationshipState relationshipState, SmokerState smokerstate,
-			Users user, Resources userImage, Integer weight,
-			ZodiacSignType zodiacSign, SearchCriterias searchCriteria) {
-		UserProfiles userProfile = new UserProfiles();
+	public UserProfiles newUserProfile(final Integer age,
+			final EducationState educationState, final FigureType figure,
+			final HaircolorType haircolor, final Integer height, final InterestsType interests,
+			final String occupation, final String profileText,
+			final RelationshipState relationshipState, final SmokerState smokerstate,
+			final Users user, final Resources userImage, final Integer weight,
+			final ZodiacSignType zodiacSign, final SearchCriterias searchCriteria) {
+		final UserProfiles userProfile = new UserProfiles();
 		userProfile.setAge(age);
 		userProfile.setEducationState(educationState);
 		userProfile.setFigure(figure);
@@ -318,9 +317,9 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param searchGender the search gender
 	 * @return the search criteria
 	 */
-	public SearchCriterias newSearchCriteria(Integer fromAge, Integer untilAge,
-			GenderType searchGender) {
-		SearchCriterias searchCriteria = new SearchCriterias();
+	public SearchCriterias newSearchCriteria(final Integer fromAge, final Integer untilAge,
+			final GenderType searchGender) {
+		final SearchCriterias searchCriteria = new SearchCriterias();
 		searchCriteria.setFromAge(fromAge);
 		searchCriteria.setUntilAge(untilAge);
 		searchCriteria.setSearchGender(searchGender);
@@ -336,7 +335,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param zipcode the zipcode
 	 * @return ZipcodesA Zipcodes object
 	 */
-	public Zipcodes newZipcodes(Integer id, Countries country, String city, String zipcode) {
+	public Zipcodes newZipcodes(final Integer id, final Countries country, final String city, final String zipcode) {
 		return AddressBookFactory.getInstance().newZipcodes( id, country, city,
 				zipcode);
 	}
@@ -349,15 +348,15 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param userProfile the user profile
 	 * @return the profile notice
 	 */
-	public ProfileNotices newProfileNotice(String notice, Users user,
-			UserProfiles userProfile) {
-		ProfileNotices profileNotice = new ProfileNotices();
+	public ProfileNotices newProfileNotice(final String notice, final Users user,
+			final UserProfiles userProfile) {
+		final ProfileNotices profileNotice = new ProfileNotices();
 		profileNotice.setNotice(notice);
 		profileNotice.setUser(user);
 		profileNotice.setUserProfile(userProfile);
 		return profileNotice;
 	}
-	
+
 	/**
 	 * New favorite members.
 	 *
@@ -365,13 +364,13 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param owner the owner
 	 * @return the favorite members
 	 */
-	public FavoriteMembers newFavoriteMembers(UserProfiles favorite, Users owner){
-		FavoriteMembers favoriteMembers = new FavoriteMembers();
+	public FavoriteMembers newFavoriteMembers(final UserProfiles favorite, final Users owner){
+		final FavoriteMembers favoriteMembers = new FavoriteMembers();
 		favoriteMembers.setFavorite(favorite);
 		favoriteMembers.setOwner(owner);
 		return favoriteMembers;
 	}
-	
+
 	/**
 	 * New friendship requests.
 	 *
@@ -380,14 +379,14 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param state the state
 	 * @return the friendship requests
 	 */
-	public FriendshipRequests newFriendshipRequests(Users requestor, Users requestedUser, FriendshipRequestsState state){
-		FriendshipRequests friendshipRequests = new FriendshipRequests();
+	public FriendshipRequests newFriendshipRequests(final Users requestor, final Users requestedUser, final FriendshipRequestsState state){
+		final FriendshipRequests friendshipRequests = new FriendshipRequests();
 		friendshipRequests.setRequestor(requestor);
 		friendshipRequests.setRequestedUser(requestedUser);
 		friendshipRequests.setState(state);
 		return friendshipRequests;
 	}
-	
+
 	/**
 	 * New profile visitors.
 	 *
@@ -397,8 +396,8 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 * @param count the count
 	 * @return the profile visitors
 	 */
-	public ProfileVisitors newProfileVisitors(Date visitingDate, Users visitor, UserProfiles visitedProfile, Integer count){
-		ProfileVisitors profileVisitors = new ProfileVisitors();
+	public ProfileVisitors newProfileVisitors(final Date visitingDate, final Users visitor, final UserProfiles visitedProfile, final Integer count){
+		final ProfileVisitors profileVisitors = new ProfileVisitors();
 		profileVisitors.setVisitor(visitor);
 		profileVisitors.setVisitedProfile(visitedProfile);
 		profileVisitors.setVisitingDate(visitingDate);
