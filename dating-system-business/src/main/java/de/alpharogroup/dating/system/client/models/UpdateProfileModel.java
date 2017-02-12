@@ -1,6 +1,6 @@
 package de.alpharogroup.dating.system.client.models;
 
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.management.entities.UserDatas;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,6 +23,6 @@ public class UpdateProfileModel extends ProfileModel {
 	private static final long serialVersionUID = 1L;
 	
 	/** The profile visitor. */
-	private Users profileVisitor;
+	private UserDatas profileVisitor;
 
 }

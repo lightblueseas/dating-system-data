@@ -1,7 +1,7 @@
 create table addresses (id int4 not null, address_comment varchar(100), geohash varchar(16), latitude varchar(12), longitude varchar(12), street varchar(64), streetnumber varchar(5), federalstate_id int4, zipcode_id int4, primary key (id));
-create table application_bundlenames (application_id int4 not null, bundlenames_id int4 not null, primary key (application_id, bundlenames_id));
 create table basenames (id int4 not null, version int4, name varchar(512), primary key (id));
 create table blacklisted_contacts (user_data_id int4 not null, blacklisted_id int4 not null, primary key (user_data_id, blacklisted_id));
+create table bundle_application_bundlenames (application_id int4 not null, bundlenames_id int4 not null, primary key (application_id, bundlenames_id));
 create table bundle_applications (id int4 not null, version int4, name varchar(1024) unique, primary key (id));
 create table bundlenames (id int4 not null, version int4, base_name_id int4, locale_id int4, primary key (id));
 create table contactmethods (id int4 not null, contactmethod varchar(255), contactvalue varchar(1024), primary key (id));
@@ -34,10 +34,10 @@ create table user_addresses (user_data_id int4 not null, addresses_id int4 not n
 create table user_contactmethods (user_data_id int4 not null, contactmethods_id int4 not null, primary key (user_data_id, contactmethods_id));
 create table user_contacts (user_data_id int4 not null, user_contact_id int4 not null, primary key (user_data_id, user_contact_id));
 create table user_credits (id int4 not null, credits int4, user_id int4, primary key (id));
-create table user_data (id int4 not null, birthname varchar(64), dateofbirth timestamp, firstname varchar(64), gender varchar(255), ip_address varchar(16), lastname varchar(64), locale varchar(12), primary_address_id int4, primary key (id));
+create table user_data (id int4 not null, birthname varchar(64), dateofbirth timestamp, firstname varchar(64), gender varchar(255), ip_address varchar(16), lastname varchar(64), locale varchar(12), owner int4, primary_address_id int4, primary key (id));
 create table user_profile (id int4 not null, age int4, education_state varchar(255), figure varchar(255), haircolor varchar(255), height int4, interests varchar(255), occupation varchar(50), profile_text varchar(1000), relationship_status varchar(255), smokerstate varchar(255), weight int4, zodiac_sign varchar(255), search_criteria int4, user_id int4, image_id int4, primary key (id));
 create table user_relation_permissions (user_relation_permission_id int4 not null, permission_id int4 not null, primary key (user_relation_permission_id, permission_id));
 create table user_resources (user_data_id int4 not null, resources_id int4 not null, primary key (user_data_id, resources_id));
 create table user_roles (user_id int4 not null, role_id int4 not null, primary key (user_id, role_id));
-create table users (id int4 not null, active bool, locked bool, pw varchar(1024), salt varchar(8), username varchar(256) unique, user_data int4, primary key (id));
+create table users (id int4 not null, active bool, locked bool, pw varchar(1024), salt varchar(8), username varchar(256) unique, primary key (id));
 create table zipcodes (id int4 not null, city varchar(128), zipcode varchar(10) not null, country_id int4, primary key (id));

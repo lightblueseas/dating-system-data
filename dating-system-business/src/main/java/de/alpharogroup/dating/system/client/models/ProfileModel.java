@@ -10,7 +10,7 @@ import de.alpharogroup.dating.system.entities.ProfileNotices;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.entities.SearchCriterias;
 import de.alpharogroup.dating.system.entities.UserProfiles;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.enums.GenderType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,7 +36,7 @@ public class ProfileModel implements LocationModel<Addresses> {
 	private static final long serialVersionUID = 1L;
 
 	/** The profile owner. */
-	private Users profileOwner;
+	private UserDatas profileOwner;
 
 	/** The user profile. */
 	private UserProfiles userProfile;
