@@ -13,12 +13,52 @@
 
 	<!-- Enable annotation configuration -->
 	<context:annotation-config />
-	<!-- Scan sample packages for Spring annotations -->
-	<context:component-scan base-package="de.alpharogroup.scheduler.system.daos" />
-	<context:component-scan base-package="de.alpharogroup.scheduler.system.entities" />
-	<context:component-scan base-package="de.alpharogroup.scheduler.system.mapper" />
-	<context:component-scan base-package="de.alpharogroup.scheduler.system.service.api" />
-	<context:component-scan base-package="de.alpharogroup.scheduler.system.service" />
+    <!-- Scan sample packages for Spring annotations -->
+    <context:component-scan base-package="de.alpharogroup.address.book.daos" />
+	<context:component-scan base-package="de.alpharogroup.address.book.entities" />
+	<context:component-scan base-package="de.alpharogroup.address.book.mapper" />
+	<context:component-scan base-package="de.alpharogroup.address.book.service.api" />
+	<context:component-scan base-package="de.alpharogroup.address.book.service" />
+	<context:component-scan base-package="de.alpharogroup.address.book.service.mapper" />
+
+	<context:component-scan base-package="de.alpharogroup.resource.system.daos" />
+	<context:component-scan base-package="de.alpharogroup.resource.system.entities" />
+	<context:component-scan base-package="de.alpharogroup.resource.system.mapper" />
+	<context:component-scan base-package="de.alpharogroup.resource.system.service.api" />
+	<context:component-scan base-package="de.alpharogroup.resource.system.service" />
+	
+	<context:component-scan base-package="de.alpharogroup.user.repositories" />
+	<context:component-scan base-package="de.alpharogroup.user.entities" />
+	<context:component-scan base-package="de.alpharogroup.user.mapper" />
+	<context:component-scan base-package="de.alpharogroup.user.service.api" />
+	<context:component-scan base-package="de.alpharogroup.user.service" />
+	<context:component-scan base-package="de.alpharogroup.user.service.mapper" />
+
+	<context:component-scan base-package="de.alpharogroup.user.management.daos" />
+	<context:component-scan base-package="de.alpharogroup.user.management.entities" />
+	<context:component-scan base-package="de.alpharogroup.user.management.mapper" />
+	<context:component-scan base-package="de.alpharogroup.user.management.service.api" />
+	<context:component-scan base-package="de.alpharogroup.user.management.service" />
+	<context:component-scan base-package="de.alpharogroup.user.management.service.mapper" />
+
+    <context:component-scan base-package="de.alpharogroup.message.system.daos"/>
+    <context:component-scan base-package="de.alpharogroup.message.system.entities"/>
+    <context:component-scan base-package="de.alpharogroup.message.system.mapper"/>
+    <context:component-scan base-package="de.alpharogroup.message.system.service.api"/>
+    <context:component-scan base-package="de.alpharogroup.message.system.service"/>
+
+	<context:component-scan base-package="de.alpharogroup.db.resource.bundles.daos" />
+	<context:component-scan base-package="de.alpharogroup.db.resource.bundles.entities" />
+	<context:component-scan base-package="de.alpharogroup.db.resource.bundles.mapper" />
+	<context:component-scan base-package="de.alpharogroup.db.resource.bundles.service.api" />
+	<context:component-scan base-package="de.alpharogroup.db.resource.bundles.service" />
+
+    <context:component-scan base-package="de.alpharogroup.dating.system.daos"/>
+    <context:component-scan base-package="de.alpharogroup.dating.system.entities"/>
+    <context:component-scan base-package="de.alpharogroup.dating.system.mapper"/>
+    <context:component-scan base-package="de.alpharogroup.dating.system.service.api"/>
+    <context:component-scan base-package="de.alpharogroup.dating.system.service"/>
+    <context:component-scan base-package="de.alpharogroup.dating.system.service.locator"/>
 
 	<bean id="propertyPlaceholder"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
