@@ -28,10 +28,10 @@ import de.alpharogroup.message.system.enums.MessageState;
 import de.alpharogroup.message.system.enums.MessageType;
 import de.alpharogroup.resource.system.entities.Resources;
 import de.alpharogroup.user.management.entities.Contactmethods;
-import de.alpharogroup.user.management.entities.Permissions;
-import de.alpharogroup.user.management.entities.ResetPasswords;
-import de.alpharogroup.user.management.entities.Roles;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Permissions;
+import de.alpharogroup.user.entities.ResetPasswords;
+import de.alpharogroup.user.entities.Roles;
+import de.alpharogroup.user.entities.Users;
 import de.alpharogroup.user.management.enums.ContactmethodType;
 import de.alpharogroup.user.management.enums.GenderType;
 

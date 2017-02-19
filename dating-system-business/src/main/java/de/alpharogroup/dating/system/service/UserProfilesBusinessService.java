@@ -18,7 +18,7 @@ import de.alpharogroup.resource.system.application.model.ModelSynchronizer;
 import de.alpharogroup.resource.system.application.model.ResourcesModel;
 import de.alpharogroup.resource.system.entities.Resources;
 import de.alpharogroup.resource.system.service.api.ResourcesService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /**
  * The Class UserProfileBusinessService.

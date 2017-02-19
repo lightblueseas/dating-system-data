@@ -28,12 +28,12 @@ import de.alpharogroup.message.system.service.api.MessageRecipientsService;
 import de.alpharogroup.message.system.service.api.MessagesService;
 import de.alpharogroup.resource.system.service.api.ResourcesService;
 import de.alpharogroup.user.management.service.api.ContactmethodsService;
-import de.alpharogroup.user.management.service.api.PermissionsService;
+import de.alpharogroup.user.service.api.PermissionsService;
 import de.alpharogroup.user.management.service.api.RecommendationsService;
-import de.alpharogroup.user.management.service.api.RelationPermissionsService;
-import de.alpharogroup.user.management.service.api.ResetPasswordsService;
+import de.alpharogroup.user.service.api.RelationPermissionsService;
+import de.alpharogroup.user.service.api.ResetPasswordsService;
 import de.alpharogroup.user.management.service.api.RobinsonsService;
-import de.alpharogroup.user.management.service.api.RolesService;
+import de.alpharogroup.user.service.api.RolesService;
 import de.alpharogroup.user.management.service.api.RuleViolationsService;
 import de.alpharogroup.user.management.service.api.UserCreditsService;
 import de.alpharogroup.user.management.service.api.UserDatasService;
@@ -167,31 +167,31 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 	/** The Robinsons business service. */
 	@Autowired
 	private RobinsonsService robinsonsService;
-	
+
 	/** The base names service. */
 	@Autowired
 	private BaseNamesService baseNamesService;
-	
+
 	/** The bundle applications service. */
 	@Autowired
 	private BundleApplicationsService bundleApplicationsService;
-	
+
 	/** The default locale base names service. */
 	@Autowired
 	private DefaultLocaleBaseNamesService defaultLocaleBaseNamesService;
-	
+
 	/** The language locales service. */
 	@Autowired
 	private LanguageLocalesService languageLocalesService;
-	
+
 	/** The languages service. */
 	@Autowired
 	private LanguagesService languagesService;
-	
+
 	/** The properties keys service. */
 	@Autowired
 	private PropertiesKeysService propertiesKeysService;
-	
+
 	/** The bundle names service. */
 	@Autowired
 	private BundleNamesService bundleNamesService;

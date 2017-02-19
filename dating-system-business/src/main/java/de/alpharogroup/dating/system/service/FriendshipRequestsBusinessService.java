@@ -15,7 +15,7 @@ import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.dating.system.service.api.FriendshipRequestsService;
 import de.alpharogroup.dating.system.service.utils.HqlStringCreator;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("friendshipRequestsService")

@@ -6,7 +6,7 @@ import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.resource.system.application.model.ResourcesModel;
 import de.alpharogroup.resource.system.entities.Resources;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /**
  * The interface {@link UserProfilesService}.

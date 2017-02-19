@@ -22,7 +22,7 @@ import org.hibernate.annotations.TypeDef;
 
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.db.entity.BaseEntity;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 
 /** 

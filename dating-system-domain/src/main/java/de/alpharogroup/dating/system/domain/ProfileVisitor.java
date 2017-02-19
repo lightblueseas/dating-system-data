@@ -3,7 +3,7 @@ package de.alpharogroup.dating.system.domain;
 import java.util.Date;
 
 import de.alpharogroup.domain.BaseDomainObject;
-import de.alpharogroup.user.management.domain.User;
+import de.alpharogroup.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

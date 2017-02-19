@@ -30,7 +30,7 @@ import org.hibernate.annotations.TypeDefs;
 
 import de.alpharogroup.db.entity.BaseEntity;
 import de.alpharogroup.resource.system.entities.Resources;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /** 
  * Object mapping for hibernate-handled table: user_profile

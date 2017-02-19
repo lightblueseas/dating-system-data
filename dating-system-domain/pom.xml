@@ -32,6 +32,16 @@
 			<artifactId>user-management-domain</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>user-domain</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>rating-system-domain</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>

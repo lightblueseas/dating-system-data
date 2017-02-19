@@ -15,7 +15,7 @@ import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.service.api.ProfileNoticesService;
 import de.alpharogroup.dating.system.service.utils.HqlStringCreator;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("profileNoticesService")
