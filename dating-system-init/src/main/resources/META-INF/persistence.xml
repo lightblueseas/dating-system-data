@@ -13,7 +13,16 @@
 		<class>de.alpharogroup.address.book.entities.Federalstates</class>
 		<class>de.alpharogroup.address.book.entities.Zipcodes</class>
 				
-		<class>de.alpharogroup.resource.system.entities.Resources</class>
+		<class>de.alpharogroup.resource.system.entities.Resources</class>		
+		
+		<class>de.alpharogroup.db.resource.bundles.entities.BaseNames</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.BundleApplications</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.BundleNames</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.DefaultLocaleBaseNames</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.Languages</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.LanguageLocales</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.PropertiesKeys</class>
+		<class>de.alpharogroup.db.resource.bundles.entities.Resourcebundles</class>
 		
 		<class>de.alpharogroup.user.entities.Permissions</class>
 		<class>de.alpharogroup.user.entities.RelationPermissions</class>
@@ -30,16 +39,7 @@
 		<class>de.alpharogroup.user.management.entities.UserCredits</class>
 		
 		<class>de.alpharogroup.message.system.entities.Messages</class>
-		<class>de.alpharogroup.message.system.entities.MessageRecipients</class>			
-		
-		<class>de.alpharogroup.db.resource.bundles.entities.BaseNames</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.BundleApplications</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.BundleNames</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.DefaultLocaleBaseNames</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.Languages</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.LanguageLocales</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.PropertiesKeys</class>
-		<class>de.alpharogroup.db.resource.bundles.entities.Resourcebundles</class>
+		<class>de.alpharogroup.message.system.entities.MessageRecipients</class>	
 
 		<class>de.alpharogroup.dating.system.entities.FavoriteMembers</class>
 		<class>de.alpharogroup.dating.system.entities.FriendshipRequests</class>
