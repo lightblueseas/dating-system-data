@@ -479,7 +479,7 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	}
 
 	/**
-	 * Domain object factory for Users.
+	 * Domain object factory for create new users.
 	 *
 	 * @param active
 	 *            the active
@@ -491,11 +491,9 @@ public class FlirtAndDateObjectFactory implements Serializable {
 	 *            the username
 	 * @param locked
 	 *            the locked
-	 * @param userData
-	 *            the user data
 	 * @param roles
 	 *            the roles
-	 * @return UsersA Users object
+	 * @return the users
 	 */
 	public Users newUsers(final Boolean active, final String pw, final String salt, final String username,
 			final Boolean locked, final Set<Roles> roles) {
