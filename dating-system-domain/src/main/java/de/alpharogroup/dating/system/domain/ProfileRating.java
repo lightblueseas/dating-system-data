@@ -35,13 +35,13 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper=true)
-@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class ProfileRating extends Rating<Integer> {
-	
+
 	/**
 	 * The Constant serialVersionUID.
 	 */

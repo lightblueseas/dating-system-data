@@ -52,17 +52,17 @@ import de.alpharogroup.message.system.service.api.MessageRecipientsService;
 import de.alpharogroup.message.system.service.api.MessagesService;
 import de.alpharogroup.resource.system.service.api.ResourcesService;
 import de.alpharogroup.user.management.service.api.ContactmethodsService;
-import de.alpharogroup.user.service.api.PermissionsService;
 import de.alpharogroup.user.management.service.api.RecommendationsService;
-import de.alpharogroup.user.service.api.RelationPermissionsService;
-import de.alpharogroup.user.service.api.ResetPasswordsService;
 import de.alpharogroup.user.management.service.api.RobinsonsService;
-import de.alpharogroup.user.service.api.RolesService;
 import de.alpharogroup.user.management.service.api.RuleViolationsService;
 import de.alpharogroup.user.management.service.api.UserCreditsService;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 import de.alpharogroup.user.management.service.api.UsersManagementService;
 import de.alpharogroup.user.management.service.api.UsersService;
+import de.alpharogroup.user.service.api.PermissionsService;
+import de.alpharogroup.user.service.api.RelationPermissionsService;
+import de.alpharogroup.user.service.api.ResetPasswordsService;
+import de.alpharogroup.user.service.api.RolesService;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -102,7 +102,6 @@ public class ServiceLocatorImpl implements Serializable, ServiceLocator {
 	/** The countries business service. */
 	@Autowired
 	private CountriesService countriesService;
-
 
 	/** The Favorite Members business service. */
 	@Autowired

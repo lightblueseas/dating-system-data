@@ -43,44 +43,47 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("favoriteMembersService")
-public class FavoriteMembersBusinessService extends AbstractBusinessService<FavoriteMembers, Integer, FavoriteMembersDao> implements FavoriteMembersService {
-	
+public class FavoriteMembersBusinessService extends
+		AbstractBusinessService<FavoriteMembers, Integer, FavoriteMembersDao> implements FavoriteMembersService {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Autowired
-	public void setFavoriteMembersDao(FavoriteMembersDao favoriteMembersDao) {
-		setDao(favoriteMembersDao);
-	}
-	@Transactional
-	public FavoriteMembers find(Users owner, UserProfiles favorite) {
-		final List<FavoriteMembers> favoriteMembers = findAll(owner, favorite);
-		return ListExtensions.getFirst(favoriteMembers);	
-	}
-	@Transactional
-	@SuppressWarnings("unchecked")	
-	public List<FavoriteMembers> findAll(Users owner, UserProfiles favorite) {
-		final String hqlString = HqlStringCreator.forFavoriteMembers(owner, favorite);
-		final Query query = getQuery(hqlString);
-		if(owner != null) {
-			query.setParameter("owner", owner);
-		}
-		if(favorite != null) {
-			query.setParameter("favorite", favorite);
-		}
-		final List<FavoriteMembers> favoriteMembers = query.getResultList();
-		return favoriteMembers;
-	}
-	
 	@SuppressWarnings("unchecked")
-	public List<FavoriteMembers> find(Users owner){
+	public List<FavoriteMembers> find(Users owner) {
 		final String hqlString = HqlStringCreator.forFavoriteMembers(owner, null);
 		final Query query = getQuery(hqlString);
 		query.setParameter("owner", owner);
 		final List<FavoriteMembers> favoriteMembers = query.getResultList();
 		return favoriteMembers;
+	}
+
+	@Transactional
+	public FavoriteMembers find(Users owner, UserProfiles favorite) {
+		final List<FavoriteMembers> favoriteMembers = findAll(owner, favorite);
+		return ListExtensions.getFirst(favoriteMembers);
+	}
+
+	@Transactional
+	@SuppressWarnings("unchecked")
+	public List<FavoriteMembers> findAll(Users owner, UserProfiles favorite) {
+		final String hqlString = HqlStringCreator.forFavoriteMembers(owner, favorite);
+		final Query query = getQuery(hqlString);
+		if (owner != null) {
+			query.setParameter("owner", owner);
+		}
+		if (favorite != null) {
+			query.setParameter("favorite", favorite);
+		}
+		final List<FavoriteMembers> favoriteMembers = query.getResultList();
+		return favoriteMembers;
+	}
+
+	@Autowired
+	public void setFavoriteMembersDao(FavoriteMembersDao favoriteMembersDao) {
+		setDao(favoriteMembersDao);
 	}
 
 }

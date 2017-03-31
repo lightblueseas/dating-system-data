@@ -36,8 +36,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper=true)
-@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -47,12 +47,12 @@ public class ProfileNotice extends BaseDomainObject<Integer> {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/** The notice for this user profile.*/
+	/** The notice for this user profile. */
 	private String notice;
-	
+
 	/**
-	 * The user attribute that references to the Entity class {@link User}
-	 * that owns the notice for this user profile.
+	 * The user attribute that references to the Entity class {@link User} that
+	 * owns the notice for this user profile.
 	 */
 	private User user;
 	/** The reference to the user profile for this notice. */

@@ -35,7 +35,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Repository("searchCriteriasDao")
-public class SearchCriteriasDao extends JpaEntityManagerDao<SearchCriterias, Integer>{
+public class SearchCriteriasDao extends JpaEntityManagerDao<SearchCriterias, Integer> {
 	/**
 	 * The serialVersionUID.
 	 */

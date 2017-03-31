@@ -37,12 +37,9 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("searchCriteriaDomainService")
-public class SearchCriteriaDomainService
-	extends
+public class SearchCriteriaDomainService extends
 		AbstractDomainService<Integer, SearchCriteria, SearchCriterias, SearchCriteriasDao, SearchCriteriasMapper>
-	implements
-		SearchCriteriaService
-{
+		implements SearchCriteriaService {
 	/**
 	 * Sets the specific {@link SearchCriteriasMapper}.
 	 *
@@ -53,6 +50,5 @@ public class SearchCriteriaDomainService
 	public void setSearchCriteriasMapper(SearchCriteriasMapper mapper) {
 		setMapper(mapper);
 	}
-
 
 }

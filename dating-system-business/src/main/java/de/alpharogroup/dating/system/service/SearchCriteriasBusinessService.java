@@ -33,10 +33,10 @@ import de.alpharogroup.dating.system.entities.SearchCriterias;
 import de.alpharogroup.dating.system.service.api.SearchCriteriasService;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 
-
 @Transactional
 @Service("searchCriteriasService")
-public class SearchCriteriasBusinessService extends AbstractBusinessService<SearchCriterias, Integer, SearchCriteriasDao> implements SearchCriteriasService {
+public class SearchCriteriasBusinessService extends
+		AbstractBusinessService<SearchCriterias, Integer, SearchCriteriasDao> implements SearchCriteriasService {
 
 	private static final long serialVersionUID = 1L;
 

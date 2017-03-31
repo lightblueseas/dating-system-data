@@ -43,21 +43,11 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("profileNoticesService")
-public class ProfileNoticesBusinessService extends AbstractBusinessService<ProfileNotices, Integer, ProfileNoticesDao> implements ProfileNoticesService {
+public class ProfileNoticesBusinessService extends AbstractBusinessService<ProfileNotices, Integer, ProfileNoticesDao>
+		implements ProfileNoticesService {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-
-	@Autowired
-	public void setProfileNoticesDao(final ProfileNoticesDao profileNoticeDao) {
-		setDao(profileNoticeDao);
-	}
-
-	@Override
-	public ProfileNotices findProfileNotice(final Users user, final UserProfiles userProfile) {
-		final List<ProfileNotices> profileNotices = findAll(user, userProfile);
-		return ListExtensions.getFirst(profileNotices);
-	}
 
 	@Override
 	public List<ProfileNotices> find(final Users user) {
@@ -70,14 +60,25 @@ public class ProfileNoticesBusinessService extends AbstractBusinessService<Profi
 	public List<ProfileNotices> findAll(final Users user, final UserProfiles userProfile) {
 		final String hqlString = HqlStringCreator.forProfileNotice(user, userProfile);
 		final Query query = getQuery(hqlString);
-		if(user != null){
+		if (user != null) {
 			query.setParameter("user", user);
 		}
-		if(userProfile != null) {
+		if (userProfile != null) {
 			query.setParameter("userProfile", userProfile);
 		}
 		final List<ProfileNotices> profileNotices = query.getResultList();
 		return profileNotices;
+	}
+
+	@Override
+	public ProfileNotices findProfileNotice(final Users user, final UserProfiles userProfile) {
+		final List<ProfileNotices> profileNotices = findAll(user, userProfile);
+		return ListExtensions.getFirst(profileNotices);
+	}
+
+	@Autowired
+	public void setProfileNoticesDao(final ProfileNoticesDao profileNoticeDao) {
+		setDao(profileNoticeDao);
 	}
 
 }

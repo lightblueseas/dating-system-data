@@ -33,9 +33,9 @@ import de.alpharogroup.user.entities.Users;
 
 public interface ProfileNoticesService extends BusinessService<ProfileNotices, Integer> {
 
-	ProfileNotices findProfileNotice(Users user, UserProfiles userProfile);
-	
 	List<ProfileNotices> find(Users user);
-	
+
 	List<ProfileNotices> findAll(Users user, UserProfiles userProfile);
+
+	ProfileNotices findProfileNotice(Users user, UserProfiles userProfile);
 }

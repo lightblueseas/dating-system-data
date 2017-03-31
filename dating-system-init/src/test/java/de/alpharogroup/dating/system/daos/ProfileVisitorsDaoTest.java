@@ -24,7 +24,6 @@
  */
 package de.alpharogroup.dating.system.daos;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +38,10 @@ import de.alpharogroup.dating.system.service.api.ProfileVisitorsService;
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
 public class ProfileVisitorsDaoTest extends AbstractTestNGSpringContextTests {
 
-    @Autowired
+	@Autowired
 	private ProfileVisitorsService profileVisitorsService;
 
-	@Test(enabled=false)
+	@Test(enabled = false)
 	public void getAllProfileVisitors() {
 		initProfileVisitors();
 		final List<ProfileVisitors> list = profileVisitorsService.findAll();

@@ -30,7 +30,6 @@ import de.alpharogroup.dating.system.domain.FavoriteMember;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.db.entitymapper.AbstractEntityDOMapper;
 
-
 /**
  * The class {@link FavoriteMembersMapper}.
  */

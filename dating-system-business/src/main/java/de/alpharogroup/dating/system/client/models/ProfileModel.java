@@ -91,13 +91,13 @@ public class ProfileModel implements LocationModel<Addresses> {
 
 	/** The gender. */
 	private GenderType gender;
-	
+
 	/** The address. */
 	private Addresses address;
-	
+
 	/** The location. */
 	private String location;
-	
+
 	/** The selected country name. */
 	private String selectedCountryName;
 
@@ -113,7 +113,8 @@ public class ProfileModel implements LocationModel<Addresses> {
 	/**
 	 * Sets the search criteria.
 	 *
-	 * @param searchCriteria the new search criteria
+	 * @param searchCriteria
+	 *            the new search criteria
 	 */
 	public void setSearchCriteria(SearchCriterias searchCriteria) {
 		userProfile.setSearchCriteria(searchCriteria);

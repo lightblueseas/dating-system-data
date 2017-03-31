@@ -35,30 +35,35 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The Interface ProfileVisitorsService.
  */
-public interface ProfileVisitorsService extends BusinessService<ProfileVisitors, Integer>{
-	
+public interface ProfileVisitorsService extends BusinessService<ProfileVisitors, Integer> {
+
 	/**
 	 * Find the first occurence from the given parameters.
 	 *
-	 * @param visitor the visitor
-	 * @param visitedProfile the visited profile
+	 * @param visitor
+	 *            the visitor
+	 * @param visitedProfile
+	 *            the visited profile
 	 * @return the profile visitors
 	 */
 	ProfileVisitors find(Users visitor, UserProfiles visitedProfile);
-	
+
 	/**
 	 * Find all from the given parameters.
 	 *
-	 * @param visitor the visitor
-	 * @param visitedProfile the visited profile
+	 * @param visitor
+	 *            the visitor
+	 * @param visitedProfile
+	 *            the visited profile
 	 * @return the list
 	 */
 	List<ProfileVisitors> findAll(Users visitor, UserProfiles visitedProfile);
-	
+
 	/**
 	 * Find profile visitors from the given profile.
 	 *
-	 * @param visitedProfile the visited profile
+	 * @param visitedProfile
+	 *            the visited profile
 	 * @return the list
 	 */
 	List<ProfileVisitors> findProfileVisitors(UserProfiles visitedProfile);

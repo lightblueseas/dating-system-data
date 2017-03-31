@@ -38,11 +38,8 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 @Transactional
 @Service("profileRatingDomainService")
 public class ProfileRatingDomainService
-	extends
-		AbstractDomainService<Integer, ProfileRating, ProfileRatings, ProfileRatingsDao, ProfileRatingsMapper>
-	implements
-		ProfileRatingService
-{
+		extends AbstractDomainService<Integer, ProfileRating, ProfileRatings, ProfileRatingsDao, ProfileRatingsMapper>
+		implements ProfileRatingService {
 	/**
 	 * Sets the specific {@link ProfileRatingsMapper}.
 	 *
@@ -53,6 +50,5 @@ public class ProfileRatingDomainService
 	public void setProfileRatingsMapper(ProfileRatingsMapper mapper) {
 		setMapper(mapper);
 	}
-
 
 }

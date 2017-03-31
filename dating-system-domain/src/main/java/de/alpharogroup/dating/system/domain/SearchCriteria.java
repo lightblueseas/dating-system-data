@@ -36,8 +36,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper=true)
-@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -49,10 +49,10 @@ public class SearchCriteria extends BaseDomainObject<Integer> {
 
 	/** The age search criteria starting 'from'. */
 	private Integer fromAge;
-	
+
 	/** The gender search criteria 'search'. */
 	private GenderType searchGender;
-	
+
 	/** The age search criteria ending 'until'. */
 	private Integer untilAge;
 }

@@ -38,8 +38,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper=true)
-@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -48,11 +48,11 @@ public class ProfileVisitor extends BaseDomainObject<Integer> {
 	 * The Constant serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** Shows the last Date that the visitor visited this profile. */
-	private Date visitingDate;	
+	private Date visitingDate;
 	/** The visitor of this profile. */
-	private User visitor;	
+	private User visitor;
 	/** The visited profile. */
 	private UserProfile visitedProfile;
 	/** The count shows how many times a visitor visited this profile. */

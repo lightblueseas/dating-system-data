@@ -49,8 +49,8 @@ import de.alpharogroup.user.entities.Users;
  */
 @Transactional
 @Service("userProfilesService")
-public class UserProfilesBusinessService extends AbstractBusinessService<UserProfiles, Integer, UserProfilesDao> implements UserProfilesService {
-
+public class UserProfilesBusinessService extends AbstractBusinessService<UserProfiles, Integer, UserProfilesDao>
+		implements UserProfilesService {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -59,32 +59,26 @@ public class UserProfilesBusinessService extends AbstractBusinessService<UserPro
 	@Autowired
 	private ResourcesService resourcesService;
 
-	/**
-	 * Sets the user profile dao.
-	 *
-	 * @param userProfileDao the new user profile dao
-	 */
-	@Autowired
-	public void setUserProfilesDao(final UserProfilesDao userProfileDao) {
-		setDao(userProfileDao);
+	@SuppressWarnings("unchecked")
+	public List<UserProfiles> find(final Users user) {
+		if (user != null) {
+			final String hqlString = HqlStringCreator.forUserProfile(user);
+			final Query query = getQuery(hqlString);
+			query.setParameter("user", user);
+			final List<UserProfiles> userProfiles = query.getResultList();
+			return userProfiles;
+		}
+		return null;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<UserProfiles> findUserProfiles(final Users user) {
-		return find(user);
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<UserProfiles> find(final Users user) {
-		if(user != null) {
-			final String hqlString = HqlStringCreator.forUserProfile(user);
-			final Query query = getQuery(hqlString);
-			query.setParameter("user", user);
-			final List<UserProfiles> userProfiles = query.getResultList();
-			return userProfiles;
+	public Resources findProfileImage(final Users user) {
+		final UserProfiles profile = findUserProfile(user);
+		if (profile != null) {
+			return profile.getUserImage();
 		}
 		return null;
 	}
@@ -102,34 +96,8 @@ public class UserProfilesBusinessService extends AbstractBusinessService<UserPro
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Resources findProfileImage(final Users user) {
-		final UserProfiles profile = findUserProfile(user);
-		if( profile!=null) {
-			return profile.getUserImage();
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Resources persistProfileImage(final ResourcesModel resourceModel, final Users user) {
-		Resources image = ModelSynchronizer.convert(resourceModel);
-		UserProfiles profile = findUserProfile(user);
-		if(profile.getUserImage() != null) {
-			final Integer imgId = profile.getUserImage().getId();
-			profile.setUserImage(null);
-			profile = merge(profile);
-			// do not delete default images...
-			if(3<imgId) {
-				resourcesService.delete(imgId);
-			}
-		}
-		image = resourcesService.merge(image);
-		profile.setUserImage(image);
-		merge(profile);
-		return image;
+	public List<UserProfiles> findUserProfiles(final Users user) {
+		return find(user);
 	}
 
 	/**
@@ -147,17 +115,50 @@ public class UserProfilesBusinessService extends AbstractBusinessService<UserPro
 	@Override
 	public UserProfiles persistDefaultProfileImage(final Users user, final Resources defaultImage) {
 		UserProfiles profile = findUserProfile(user);
-		if(profile != null && profile.getUserImage() != null) {
+		if (profile != null && profile.getUserImage() != null) {
 			final Integer imgId = profile.getUserImage().getId();
-			if(3 < imgId) {
+			if (3 < imgId) {
 				return profile;
 			}
 		}
-		if(defaultImage != null && profile != null) {
+		if (defaultImage != null && profile != null) {
 			profile.setUserImage(defaultImage);
 			profile = merge(profile);
 		}
 		return profile;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Resources persistProfileImage(final ResourcesModel resourceModel, final Users user) {
+		Resources image = ModelSynchronizer.convert(resourceModel);
+		UserProfiles profile = findUserProfile(user);
+		if (profile.getUserImage() != null) {
+			final Integer imgId = profile.getUserImage().getId();
+			profile.setUserImage(null);
+			profile = merge(profile);
+			// do not delete default images...
+			if (3 < imgId) {
+				resourcesService.delete(imgId);
+			}
+		}
+		image = resourcesService.merge(image);
+		profile.setUserImage(image);
+		merge(profile);
+		return image;
+	}
+
+	/**
+	 * Sets the user profile dao.
+	 *
+	 * @param userProfileDao
+	 *            the new user profile dao
+	 */
+	@Autowired
+	public void setUserProfilesDao(final UserProfilesDao userProfileDao) {
+		setDao(userProfileDao);
 	}
 
 }

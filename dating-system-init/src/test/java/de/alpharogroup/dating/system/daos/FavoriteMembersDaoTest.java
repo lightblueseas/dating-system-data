@@ -24,7 +24,6 @@
  */
 package de.alpharogroup.dating.system.daos;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +38,10 @@ import de.alpharogroup.dating.system.service.api.FavoriteMembersService;
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
 public class FavoriteMembersDaoTest extends AbstractTestNGSpringContextTests {
 
-    @Autowired
-    FavoriteMembersService favoriteMembersService;
+	@Autowired
+	FavoriteMembersService favoriteMembersService;
 
-	@Test(enabled=false)
+	@Test(enabled = false)
 	public void getAllFavoriteMembers() {
 		initFavoriteMembers();
 		final List<FavoriteMembers> list = favoriteMembersService.findAll();

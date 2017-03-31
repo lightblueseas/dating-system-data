@@ -32,17 +32,17 @@ public enum ApplicationRoles {
 	/** The public. */
 	PUBLIC(ApplicationRoles.PUBLIC_ROLE),
 	/** The member. */
-	MEMBER(ApplicationRoles.MEMBER_ROLE), 
+	MEMBER(ApplicationRoles.MEMBER_ROLE),
 	/** The premium member. */
 	PREMIUM_MEMBER(ApplicationRoles.PREMIUM_MEMBER_ROLE),
 	/** The root. */
 	ROOT(ApplicationRoles.ROOT_ROLE);
-	
+
 	/** The Constant ROOT_ROLE. */
 	private static final String ROOT_ROLE = "root";
 	/** The Constant PROVIDER_ROLE. */
 	private static final String MEMBER_ROLE = "member";
-	
+
 	/** The Constant SUBSCRIBER_ROLE. */
 	private static final String PREMIUM_MEMBER_ROLE = "premium_member";
 

@@ -24,7 +24,6 @@
  */
 package de.alpharogroup.dating.system.daos;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +38,10 @@ import de.alpharogroup.dating.system.service.api.FriendshipRequestsService;
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
 public class FriendshipRequestsDaoTest extends AbstractTestNGSpringContextTests {
 
-    @Autowired
+	@Autowired
 	private FriendshipRequestsService friendshipRequestsService;
 
-	@Test(enabled=false)
+	@Test(enabled = false)
 	public void getAllFriendshipRequests() {
 		initFriendshipRequests();
 		final List<FriendshipRequests> list = friendshipRequestsService.findAll();

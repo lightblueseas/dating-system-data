@@ -34,8 +34,7 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The Interface FriendshipRequestsService.
  */
-public interface FriendshipRequestsService extends
-		BusinessService<FriendshipRequests, Integer> {
+public interface FriendshipRequestsService extends BusinessService<FriendshipRequests, Integer> {
 
 	/**
 	 * Gets a FriendshipRequests object from the given parameters. If no result
@@ -62,8 +61,7 @@ public interface FriendshipRequestsService extends
 	 *            the state
 	 * @return the friendship requests
 	 */
-	FriendshipRequests find(Users requestor, Users requestedUser,
-			FriendshipRequestsState state);
+	FriendshipRequests find(Users requestor, Users requestedUser, FriendshipRequestsState state);
 
 	/**
 	 * Gets a List from FriendshipRequests with the given parameters that can be
@@ -77,6 +75,5 @@ public interface FriendshipRequestsService extends
 	 *            the state
 	 * @return the list
 	 */
-	List<FriendshipRequests> findAll(Users requestor, Users requestedUser,
-			FriendshipRequestsState state);
+	List<FriendshipRequests> findAll(Users requestor, Users requestedUser, FriendshipRequestsState state);
 }

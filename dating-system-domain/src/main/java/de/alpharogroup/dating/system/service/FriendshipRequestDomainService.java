@@ -37,12 +37,9 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("friendshipRequestDomainService")
-public class FriendshipRequestDomainService
-	extends
+public class FriendshipRequestDomainService extends
 		AbstractDomainService<Integer, FriendshipRequest, FriendshipRequests, FriendshipRequestsDao, FriendshipRequestsMapper>
-	implements
-		FriendshipRequestService
-{
+		implements FriendshipRequestService {
 	/**
 	 * Sets the specific {@link FriendshipRequestsMapper}.
 	 *
@@ -53,6 +50,5 @@ public class FriendshipRequestDomainService
 	public void setFriendshipRequestsMapper(FriendshipRequestsMapper mapper) {
 		setMapper(mapper);
 	}
-
 
 }

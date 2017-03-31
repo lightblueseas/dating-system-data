@@ -33,7 +33,28 @@ import de.alpharogroup.user.entities.Users;
 
 public class HqlStringCreatorTest {
 
-	@Test(enabled=true)
+	@Test(enabled = true)
+	public void testForFavoriteMembers() {
+		String actual;
+		String expected;
+		actual = HqlStringCreator.forFavoriteMembers(new Users(), new UserProfiles());
+		expected = "select fm from FavoriteMembers fm where fm.owner=:owner and fm.favorite=:favorite";
+		AssertJUnit.assertEquals(expected, actual);
+
+		actual = HqlStringCreator.forFavoriteMembers(new Users(), null);
+		expected = "select fm from FavoriteMembers fm where fm.owner=:owner";
+		AssertJUnit.assertEquals(expected, actual);
+
+		actual = HqlStringCreator.forFavoriteMembers(null, new UserProfiles());
+		expected = "select fm from FavoriteMembers fm where fm.favorite=:favorite";
+		AssertJUnit.assertEquals(expected, actual);
+
+		actual = HqlStringCreator.forFavoriteMembers(null, null);
+		expected = "select fm from FavoriteMembers fm";
+		AssertJUnit.assertEquals(expected, actual);
+	}
+
+	@Test(enabled = true)
 	public void testForFriendshipRequests() {
 		String actual;
 		String expected;
@@ -71,28 +92,7 @@ public class HqlStringCreatorTest {
 		AssertJUnit.assertEquals(expected, actual);
 	}
 
-	@Test(enabled=true)
-	public void testForFavoriteMembers() {
-		String actual;
-		String expected;
-		actual = HqlStringCreator.forFavoriteMembers(new Users(), new UserProfiles());
-		expected = "select fm from FavoriteMembers fm where fm.owner=:owner and fm.favorite=:favorite";
-		AssertJUnit.assertEquals(expected, actual);
-
-		actual = HqlStringCreator.forFavoriteMembers(new Users(), null);
-		expected = "select fm from FavoriteMembers fm where fm.owner=:owner";
-		AssertJUnit.assertEquals(expected, actual);
-
-		actual = HqlStringCreator.forFavoriteMembers(null, new UserProfiles());
-		expected = "select fm from FavoriteMembers fm where fm.favorite=:favorite";
-		AssertJUnit.assertEquals(expected, actual);
-
-		actual = HqlStringCreator.forFavoriteMembers(null, null);
-		expected = "select fm from FavoriteMembers fm";
-		AssertJUnit.assertEquals(expected, actual);
-	}
-
-	@Test(enabled=true)
+	@Test(enabled = true)
 	public void testForProfileNotice() {
 		String actual;
 		String expected;

@@ -53,10 +53,8 @@ public class DatingSystemRestClientTest {
 	 *             the exception
 	 */
 	@BeforeMethod
-	public void setUpMethod() throws Exception
-	{
-		if (restClient == null)
-		{
+	public void setUpMethod() throws Exception {
+		if (restClient == null) {
 			restClient = new DatingSystemRestClient();
 			resourcebundlesResource = restClient.getResourcebundlesResource();
 			AssertJUnit.assertNotNull(resourcebundlesResource);
@@ -70,26 +68,24 @@ public class DatingSystemRestClientTest {
 	 *             the exception
 	 */
 	@AfterMethod
-	public void tearDownMethod() throws Exception
-	{
+	public void tearDownMethod() throws Exception {
 	}
-	
 
 	/**
 	 * Test method for {@link ResourcebundlesResource#getString(BundleKey)}.
 	 */
 	@SuppressWarnings("unchecked")
 	@Test(enabled = true)
-	public void testGetStringWithBundleKey()
-	{
+	public void testGetStringWithBundleKey() {
 		final String baseName = "test";
 		final String[] paramsBritain = { "Fritz", "Germany" };
-		// url can be invoked with a post request, so dont try this to invoke in a browser...
-		final Response response = resourcebundlesResource.getString(BundleKey.builder()
-			.baseName(baseName).locale(Locale.UK)
-			.resourceBundleKey(ResourceBundleKey.builder()
-				.key("com.example.gui.prop.with.params.label").parameters(paramsBritain).build())
-			.build());
+		// url can be invoked with a post request, so dont try this to invoke in
+		// a browser...
+		final Response response = resourcebundlesResource
+				.getString(BundleKey.builder().baseName(baseName)
+						.locale(Locale.UK).resourceBundleKey(ResourceBundleKey.builder()
+								.key("com.example.gui.prop.with.params.label").parameters(paramsBritain).build())
+						.build());
 		AssertJUnit.assertNotNull(response);
 
 		final KeyValuePair<String, String> keyValuePair = response.readEntity(KeyValuePair.class);

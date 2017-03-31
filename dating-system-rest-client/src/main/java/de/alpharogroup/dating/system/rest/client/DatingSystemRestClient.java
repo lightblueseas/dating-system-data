@@ -42,24 +42,23 @@ import de.alpharogroup.message.system.rest.api.MessagesResource;
 import de.alpharogroup.resource.system.rest.api.ResourcesResource;
 import de.alpharogroup.user.management.rest.api.AuthenticationsResource;
 import de.alpharogroup.user.management.rest.api.ContactmethodsResource;
-import de.alpharogroup.user.rest.api.PermissionsResource;
 import de.alpharogroup.user.management.rest.api.RecommendationsResource;
-import de.alpharogroup.user.rest.api.RelationPermissionsResource;
-import de.alpharogroup.user.rest.api.ResetPasswordsResource;
 import de.alpharogroup.user.management.rest.api.RobinsonsResource;
-import de.alpharogroup.user.rest.api.RolesResource;
 import de.alpharogroup.user.management.rest.api.RuleViolationsResource;
 import de.alpharogroup.user.management.rest.api.UserCreditsResource;
 import de.alpharogroup.user.management.rest.api.UserDatasResource;
 import de.alpharogroup.user.management.rest.api.UsersResource;
+import de.alpharogroup.user.rest.api.PermissionsResource;
+import de.alpharogroup.user.rest.api.RelationPermissionsResource;
+import de.alpharogroup.user.rest.api.ResetPasswordsResource;
+import de.alpharogroup.user.rest.api.RolesResource;
 import lombok.Getter;
 
 /**
  * The class {@link DatingSystemRestClient} is a rest client for the
  * dating-system that are persists in the database.
  */
-public class DatingSystemRestClient extends AbstractRestClient
-{
+public class DatingSystemRestClient extends AbstractRestClient {
 
 	/**
 	 * The {@link AddressesResource}.
@@ -224,10 +223,10 @@ public class DatingSystemRestClient extends AbstractRestClient
 	private final MessageRecipientsResource messageRecipientsResource;
 
 	/**
-	 * Instantiates a new {@link DatingSystemRestClient} with the default base url.
+	 * Instantiates a new {@link DatingSystemRestClient} with the default base
+	 * url.
 	 */
-	public DatingSystemRestClient()
-	{
+	public DatingSystemRestClient() {
 		this(DEFAULT_BASE_HTTP_URL);
 	}
 
@@ -237,14 +236,13 @@ public class DatingSystemRestClient extends AbstractRestClient
 	 * @param baseUrl
 	 *            the base url
 	 */
-	public DatingSystemRestClient(final String baseUrl)
-	{
+	public DatingSystemRestClient(final String baseUrl) {
 		super(baseUrl);
 
 		favoriteMembersResource = newResource(FavoriteMembersResource.class);
-		friendshipRequestsResource =  newResource(FriendshipRequestsResource.class);
-		profileNoticesResource =  newResource(ProfileNoticesResource.class);
-		profileRatingsResource =  newResource(ProfileRatingsResource.class);
+		friendshipRequestsResource = newResource(FriendshipRequestsResource.class);
+		profileNoticesResource = newResource(ProfileNoticesResource.class);
+		profileRatingsResource = newResource(ProfileRatingsResource.class);
 		profileVisitorsResource = newResource(ProfileVisitorsResource.class);
 		searchCriteriasResource = newResource(SearchCriteriasResource.class);
 		userProfilesResource = newResource(UserProfilesResource.class);
@@ -254,9 +252,9 @@ public class DatingSystemRestClient extends AbstractRestClient
 		addressesResource = newResource(AddressesResource.class);
 		countriesResource = newResource(CountriesResource.class);
 		federalstatesResource = newResource(FederalstatesResource.class);
-		zipcodesResource =  newResource(ZipcodesResource.class);
+		zipcodesResource = newResource(ZipcodesResource.class);
 
-        resourcesResource  = newResource(ResourcesResource.class);
+		resourcesResource = newResource(ResourcesResource.class);
 
 		authenticationsResource = newResource(AuthenticationsResource.class);
 		contactmethodsResource = newResource(ContactmethodsResource.class);

@@ -31,14 +31,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import de.alpharogroup.jdbc.ConnectionsExtensions;
-import de.alpharogroup.resourcebundle.properties.PropertiesExtensions;
-
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.ext.postgresql.PostgresqlDataTypeFactory;
+
+import de.alpharogroup.jdbc.ConnectionsExtensions;
+import de.alpharogroup.resourcebundle.properties.PropertiesExtensions;
 
 /**
  * The Class PostgresqlDatabaseConnectionSingleton holds an instance for the db
@@ -48,53 +48,6 @@ public final class PostgresqlDatabaseConnectionSingleton {
 
 	/** The connection. */
 	private static IDatabaseConnection connection;
-
-	/**
-	 * Gets the single instance of PostgresqlDatabaseConnectionSingleton.
-	 *
-	 * @return single instance of PostgresqlDatabaseConnectionSingleton
-	 * @throws DatabaseUnitException
-	 *             the database unit exception
-	 * @throws ClassNotFoundException
-	 *             the class not found exception
-	 * @throws SQLException
-	 *             the SQL exception
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static synchronized IDatabaseConnection getInstance()
-			throws DatabaseUnitException, ClassNotFoundException, SQLException,
-			IOException {
-		if (connection == null) {
-			connection = setFactory(getJdbcConnection());
-		}
-		return connection;
-	}
-
-	/**
-	 * Gets the jdbc connection.
-	 *
-	 * @return the jdbc connection
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 * @throws ClassNotFoundException
-	 *             the class not found exception
-	 * @throws SQLException
-	 *             the SQL exception
-	 */
-	protected static Connection getJdbcConnection() throws IOException,
-			ClassNotFoundException, SQLException {
-		Properties dbProperties = PropertiesExtensions
-				.loadProperties("project.properties");
-		String dbHost = dbProperties.getProperty("jdbc.host");
-		String dbName = dbProperties.getProperty("jdbc.db.name");
-		String dbUser = dbProperties.getProperty("jdbc.user");
-		String dbPassword = dbProperties.getProperty("jdbc.password");
-		// Get jdbc connection...
-		final Connection jdbcConnection = ConnectionsExtensions
-				.getPostgreSQLConnection(dbHost, dbName, dbUser, dbPassword);
-		return jdbcConnection;
-	}
 
 	/**
 	 * Gets a list with all postgresql enum names.
@@ -121,6 +74,50 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	}
 
 	/**
+	 * Gets the single instance of PostgresqlDatabaseConnectionSingleton.
+	 *
+	 * @return single instance of PostgresqlDatabaseConnectionSingleton
+	 * @throws DatabaseUnitException
+	 *             the database unit exception
+	 * @throws ClassNotFoundException
+	 *             the class not found exception
+	 * @throws SQLException
+	 *             the SQL exception
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static synchronized IDatabaseConnection getInstance()
+			throws DatabaseUnitException, ClassNotFoundException, SQLException, IOException {
+		if (connection == null) {
+			connection = setFactory(getJdbcConnection());
+		}
+		return connection;
+	}
+
+	/**
+	 * Gets the jdbc connection.
+	 *
+	 * @return the jdbc connection
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 * @throws ClassNotFoundException
+	 *             the class not found exception
+	 * @throws SQLException
+	 *             the SQL exception
+	 */
+	protected static Connection getJdbcConnection() throws IOException, ClassNotFoundException, SQLException {
+		Properties dbProperties = PropertiesExtensions.loadProperties("project.properties");
+		String dbHost = dbProperties.getProperty("jdbc.host");
+		String dbName = dbProperties.getProperty("jdbc.db.name");
+		String dbUser = dbProperties.getProperty("jdbc.user");
+		String dbPassword = dbProperties.getProperty("jdbc.password");
+		// Get jdbc connection...
+		final Connection jdbcConnection = ConnectionsExtensions.getPostgreSQLConnection(dbHost, dbName, dbUser,
+				dbPassword);
+		return jdbcConnection;
+	}
+
+	/**
 	 * Sets the factory.
 	 *
 	 * @param jdbcConnection
@@ -129,8 +126,7 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	 * @throws DatabaseUnitException
 	 *             the database unit exception
 	 */
-	protected static IDatabaseConnection setFactory(
-			final Connection jdbcConnection) throws DatabaseUnitException {
+	protected static IDatabaseConnection setFactory(final Connection jdbcConnection) throws DatabaseUnitException {
 		// Create the dbunit database connection...
 		IDatabaseConnection connection = new DatabaseConnection(jdbcConnection);
 		// Get database configuration...

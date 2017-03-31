@@ -44,8 +44,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper=true)
-@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -53,32 +53,32 @@ public class UserProfile extends BaseDomainObject<Integer> {
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 8626651299912885319L;
 	/** Field mapping */
-	private Integer age;	
+	private Integer age;
 	/** Field mapping */
-	private EducationState educationState;	
+	private EducationState educationState;
 	/** Field mapping */
-	private FigureType figure;	
+	private FigureType figure;
 	/** Field mapping */
-	private HaircolorType haircolor;	
+	private HaircolorType haircolor;
 	/** Field mapping */
-	private Integer height;	
+	private Integer height;
 	/** Field mapping */
-	private InterestsType interests;	
+	private InterestsType interests;
 	/** Field mapping */
-	private String occupation;	
+	private String occupation;
 	/** Field mapping */
-	private String profileText;	
+	private String profileText;
 	/** Field mapping */
 	private RelationshipState relationshipState;
 	/** Field mapping */
-    private SearchCriteria searchCriteria;	
+	private SearchCriteria searchCriteria;
 	/** Field mapping */
-	private SmokerState smokerstate;	
+	private SmokerState smokerstate;
 	/** The user attribute that references to the Entity class {@link User}. */
 	private User user;
 	/**
-	 * The image from the profile. The userImage attribute that references to the Entity class {@link Resource
-	 * }.
+	 * The image from the profile. The userImage attribute that references to
+	 * the Entity class {@link Resource }.
 	 */
 	private Resource userImage;
 	/** Field mapping */

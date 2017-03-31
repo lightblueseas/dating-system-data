@@ -38,11 +38,8 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 @Transactional
 @Service("userProfileDomainService")
 public class UserProfileDomainService
-	extends
-		AbstractDomainService<Integer, UserProfile, UserProfiles, UserProfilesDao, UserProfilesMapper>
-	implements
-		UserProfileService
-{
+		extends AbstractDomainService<Integer, UserProfile, UserProfiles, UserProfilesDao, UserProfilesMapper>
+		implements UserProfileService {
 	/**
 	 * Sets the specific {@link UserProfilesMapper}.
 	 *
@@ -53,6 +50,5 @@ public class UserProfileDomainService
 	public void setUserProfilesMapper(UserProfilesMapper mapper) {
 		setMapper(mapper);
 	}
-
 
 }

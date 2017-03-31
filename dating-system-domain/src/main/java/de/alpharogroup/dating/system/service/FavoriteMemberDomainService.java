@@ -37,12 +37,9 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("favoriteMemberDomainService")
-public class FavoriteMemberDomainService
-	extends
+public class FavoriteMemberDomainService extends
 		AbstractDomainService<Integer, FavoriteMember, FavoriteMembers, FavoriteMembersDao, FavoriteMembersMapper>
-	implements
-		FavoriteMemberService
-{
+		implements FavoriteMemberService {
 	/**
 	 * Sets the specific {@link FavoriteMembersMapper}.
 	 *
@@ -53,6 +50,5 @@ public class FavoriteMemberDomainService
 	public void setFavoriteMembersMapper(FavoriteMembersMapper mapper) {
 		setMapper(mapper);
 	}
-
 
 }

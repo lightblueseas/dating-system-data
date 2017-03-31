@@ -37,7 +37,7 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
@@ -45,7 +45,7 @@ public class UpdateProfileModel extends ProfileModel {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
+
 	/** The profile visitor. */
 	private UserDatas profileVisitor;
 

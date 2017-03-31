@@ -35,8 +35,9 @@ import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 
 @Transactional
 @Service("profileRatingsService")
-public class ProfileRatingsBusinessService extends AbstractBusinessService<ProfileRatings, Integer, ProfileRatingsDao> implements ProfileRatingsService {
-	
+public class ProfileRatingsBusinessService extends AbstractBusinessService<ProfileRatings, Integer, ProfileRatingsDao>
+		implements ProfileRatingsService {
+
 	/**
 	 * 
 	 */

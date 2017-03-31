@@ -39,8 +39,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper=true)
-@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -50,9 +50,9 @@ public class FriendshipRequest extends BaseDomainObject<Integer> {
 	 */
 	private static final long serialVersionUID = 1L;
 	/** Field mapping */
-	private User requestedUser;	
+	private User requestedUser;
 	/** Field mapping */
-	private FriendshipRequestsState state;	
+	private FriendshipRequestsState state;
 	/** Field mapping */
 	private User requestor;
 	/** Shows the Date that the friendship is accepted. */
