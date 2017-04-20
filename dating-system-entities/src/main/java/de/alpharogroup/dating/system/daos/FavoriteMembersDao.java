@@ -30,7 +30,8 @@ import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 
 @Repository("favoriteMembersDao")
-public class FavoriteMembersDao extends JpaEntityManagerDao<FavoriteMembers, Integer> {
+public class FavoriteMembersDao extends JpaEntityManagerDao<FavoriteMembers, Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

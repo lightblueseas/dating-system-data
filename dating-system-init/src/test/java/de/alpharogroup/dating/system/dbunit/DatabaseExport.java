@@ -48,7 +48,8 @@ import de.alpharogroup.file.search.PathFinder;
  * 
  * @author Asterios Raptis
  */
-public class DatabaseExport {
+public class DatabaseExport
+{
 
 	/**
 	 * The main method.
@@ -60,8 +61,9 @@ public class DatabaseExport {
 	 * @throws Exception
 	 *             the exception
 	 */
-	public static void main(final String[] args)
-			throws ClassNotFoundException, SQLException, DatabaseUnitException, FileNotFoundException, IOException {
+	public static void main(final String[] args) throws ClassNotFoundException, SQLException,
+		DatabaseUnitException, FileNotFoundException, IOException
+	{
 
 		final IDatabaseConnection connection = PostgresqlDatabaseConnectionSingleton.getInstance();
 

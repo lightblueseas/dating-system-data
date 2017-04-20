@@ -54,7 +54,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProfileModel implements LocationModel<Addresses> {
+public class ProfileModel implements LocationModel<Addresses>
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -106,7 +107,8 @@ public class ProfileModel implements LocationModel<Addresses> {
 	 *
 	 * @return the search criteria
 	 */
-	public SearchCriterias getSearchCriteria() {
+	public SearchCriterias getSearchCriteria()
+	{
 		return userProfile.getSearchCriteria();
 	}
 
@@ -116,7 +118,8 @@ public class ProfileModel implements LocationModel<Addresses> {
 	 * @param searchCriteria
 	 *            the new search criteria
 	 */
-	public void setSearchCriteria(SearchCriterias searchCriteria) {
+	public void setSearchCriteria(SearchCriterias searchCriteria)
+	{
 		userProfile.setSearchCriteria(searchCriteria);
 	}
 

@@ -41,7 +41,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateProfileModel extends ProfileModel {
+public class UpdateProfileModel extends ProfileModel
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

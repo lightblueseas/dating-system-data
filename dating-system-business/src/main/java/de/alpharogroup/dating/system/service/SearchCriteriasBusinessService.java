@@ -35,13 +35,18 @@ import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 
 @Transactional
 @Service("searchCriteriasService")
-public class SearchCriteriasBusinessService extends
-		AbstractBusinessService<SearchCriterias, Integer, SearchCriteriasDao> implements SearchCriteriasService {
+public class SearchCriteriasBusinessService
+	extends
+		AbstractBusinessService<SearchCriterias, Integer, SearchCriteriasDao>
+	implements
+		SearchCriteriasService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	public void setSearchCriteriasDao(final SearchCriteriasDao searchCriteriaDao) {
+	public void setSearchCriteriasDao(final SearchCriteriasDao searchCriteriaDao)
+	{
 		setDao(searchCriteriaDao);
 	}
 

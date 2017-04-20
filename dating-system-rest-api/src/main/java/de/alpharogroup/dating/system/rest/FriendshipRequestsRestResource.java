@@ -30,7 +30,10 @@ import de.alpharogroup.dating.system.service.api.FriendshipRequestService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
 public class FriendshipRequestsRestResource
-		extends AbstractRestfulResource<Integer, FriendshipRequest, FriendshipRequestService>
-		implements FriendshipRequestsResource {
+	extends
+		AbstractRestfulResource<Integer, FriendshipRequest, FriendshipRequestService>
+	implements
+		FriendshipRequestsResource
+{
 
 }

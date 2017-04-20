@@ -41,7 +41,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProfileNotice extends BaseDomainObject<Integer> {
+public class ProfileNotice extends BaseDomainObject<Integer>
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */
@@ -51,8 +52,8 @@ public class ProfileNotice extends BaseDomainObject<Integer> {
 	private String notice;
 
 	/**
-	 * The user attribute that references to the Entity class {@link User} that
-	 * owns the notice for this user profile.
+	 * The user attribute that references to the Entity class {@link User} that owns the notice for
+	 * this user profile.
 	 */
 	private User user;
 	/** The reference to the user profile for this notice. */

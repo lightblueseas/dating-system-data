@@ -30,7 +30,8 @@ import de.alpharogroup.dating.system.entities.ProfileRatings;
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 
 @Repository("profileRatingsDao")
-public class ProfileRatingsDao extends JpaEntityManagerDao<ProfileRatings, Integer> {
+public class ProfileRatingsDao extends JpaEntityManagerDao<ProfileRatings, Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

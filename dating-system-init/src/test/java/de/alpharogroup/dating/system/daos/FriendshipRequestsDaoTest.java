@@ -36,19 +36,22 @@ import de.alpharogroup.dating.system.entities.FriendshipRequests;
 import de.alpharogroup.dating.system.service.api.FriendshipRequestsService;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class FriendshipRequestsDaoTest extends AbstractTestNGSpringContextTests {
+public class FriendshipRequestsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private FriendshipRequestsService friendshipRequestsService;
 
 	@Test(enabled = false)
-	public void getAllFriendshipRequests() {
+	public void getAllFriendshipRequests()
+	{
 		initFriendshipRequests();
 		final List<FriendshipRequests> list = friendshipRequestsService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
 
-	protected void initFriendshipRequests() {
+	protected void initFriendshipRequests()
+	{
 		FriendshipRequests friendshipRequests = new FriendshipRequests();
 		// TODO init model class
 		friendshipRequestsService.merge(friendshipRequests);

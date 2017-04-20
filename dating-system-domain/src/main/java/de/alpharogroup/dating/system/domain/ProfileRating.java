@@ -40,7 +40,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProfileRating extends Rating<Integer> {
+public class ProfileRating extends Rating<Integer>
+{
 
 	/**
 	 * The Constant serialVersionUID.

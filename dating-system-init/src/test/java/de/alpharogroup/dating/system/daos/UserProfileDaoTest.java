@@ -36,19 +36,22 @@ import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.service.api.UserProfilesService;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class UserProfileDaoTest extends AbstractTestNGSpringContextTests {
+public class UserProfileDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private UserProfilesService userProfileService;
 
 	@Test(enabled = false)
-	public void getAllUserProfile() {
+	public void getAllUserProfile()
+	{
 		initUserProfile();
 		final List<UserProfiles> list = userProfileService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
 
-	protected void initUserProfile() {
+	protected void initUserProfile()
+	{
 		UserProfiles userProfile = new UserProfiles();
 		// TODO init model class
 		userProfileService.merge(userProfile);

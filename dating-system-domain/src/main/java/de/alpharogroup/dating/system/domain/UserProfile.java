@@ -49,7 +49,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserProfile extends BaseDomainObject<Integer> {
+public class UserProfile extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 8626651299912885319L;
 	/** Field mapping */
@@ -77,8 +78,8 @@ public class UserProfile extends BaseDomainObject<Integer> {
 	/** The user attribute that references to the Entity class {@link User}. */
 	private User user;
 	/**
-	 * The image from the profile. The userImage attribute that references to
-	 * the Entity class {@link Resource }.
+	 * The image from the profile. The userImage attribute that references to the Entity class
+	 * {@link Resource }.
 	 */
 	private Resource userImage;
 	/** Field mapping */

@@ -48,8 +48,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Object mapping for hibernate-handled table: friendship_requests author:
- * auto-generated
+ * Object mapping for hibernate-handled table: friendship_requests author: auto-generated
  */
 @Entity
 @Table(name = "friendship_requests")
@@ -58,7 +57,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class FriendshipRequests extends BaseEntity<Integer> implements Cloneable {
+public class FriendshipRequests extends BaseEntity<Integer> implements Cloneable
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

@@ -37,9 +37,12 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("profileVisitorDomainService")
-public class ProfileVisitorDomainService extends
+public class ProfileVisitorDomainService
+	extends
 		AbstractDomainService<Integer, ProfileVisitor, ProfileVisitors, ProfileVisitorsDao, ProfileVisitorsMapper>
-		implements ProfileVisitorService {
+	implements
+		ProfileVisitorService
+{
 	/**
 	 * Sets the specific {@link ProfileVisitorsMapper}.
 	 *
@@ -47,7 +50,8 @@ public class ProfileVisitorDomainService extends
 	 *            the new {@link ProfileVisitorsMapper}.
 	 */
 	@Autowired
-	public void setProfileVisitorsMapper(ProfileVisitorsMapper mapper) {
+	public void setProfileVisitorsMapper(ProfileVisitorsMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

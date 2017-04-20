@@ -38,15 +38,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Object mapping for hibernate-handled table: favorite_members author:
- * auto-generated
+ * Object mapping for hibernate-handled table: favorite_members author: auto-generated
  */
 @Entity
 @Table(name = "favorite_members")
 @Getter
 @Setter
 @NoArgsConstructor
-public class FavoriteMembers extends BaseEntity<Integer> implements Cloneable {
+public class FavoriteMembers extends BaseEntity<Integer> implements Cloneable
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

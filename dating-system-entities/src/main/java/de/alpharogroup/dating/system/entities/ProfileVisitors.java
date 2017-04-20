@@ -43,15 +43,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Object mapping for hibernate-handled table: profile_visitors author:
- * auto-generated.
+ * Object mapping for hibernate-handled table: profile_visitors author: auto-generated.
  */
 @Entity
 @Table(name = "profile_visitors")
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProfileVisitors extends BaseEntity<Integer> implements Cloneable {
+public class ProfileVisitors extends BaseEntity<Integer> implements Cloneable
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

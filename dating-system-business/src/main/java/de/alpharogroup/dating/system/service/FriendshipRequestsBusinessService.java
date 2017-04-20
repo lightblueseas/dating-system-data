@@ -44,34 +44,47 @@ import de.alpharogroup.user.entities.Users;
 @Transactional
 @Service("friendshipRequestsService")
 public class FriendshipRequestsBusinessService
-		extends AbstractBusinessService<FriendshipRequests, Integer, FriendshipRequestsDao>
-		implements FriendshipRequestsService {
+	extends
+		AbstractBusinessService<FriendshipRequests, Integer, FriendshipRequestsDao>
+	implements
+		FriendshipRequestsService
+{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public FriendshipRequests find(Users requestor, Users requestedUser) {
+	public FriendshipRequests find(Users requestor, Users requestedUser)
+	{
 		return find(requestor, requestedUser, null);
 	}
 
-	public FriendshipRequests find(Users requestor, Users requestedUser, FriendshipRequestsState state) {
-		final List<FriendshipRequests> friendshipRequests = findAll(requestor, requestedUser, state);
+	public FriendshipRequests find(Users requestor, Users requestedUser,
+		FriendshipRequestsState state)
+	{
+		final List<FriendshipRequests> friendshipRequests = findAll(requestor, requestedUser,
+			state);
 		return ListExtensions.getFirst(friendshipRequests);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<FriendshipRequests> findAll(Users requestor, Users requestedUser, FriendshipRequestsState state) {
-		final String hqlString = HqlStringCreator.forFriendshipRequests(requestor, requestedUser, state);
+	public List<FriendshipRequests> findAll(Users requestor, Users requestedUser,
+		FriendshipRequestsState state)
+	{
+		final String hqlString = HqlStringCreator.forFriendshipRequests(requestor, requestedUser,
+			state);
 		final Query query = getQuery(hqlString);
-		if (requestor != null) {
+		if (requestor != null)
+		{
 			query.setParameter("requestor", requestor);
 		}
-		if (requestedUser != null) {
+		if (requestedUser != null)
+		{
 			query.setParameter("requestedUser", requestedUser);
 		}
-		if (state != null) {
+		if (state != null)
+		{
 			query.setParameter("state", state);
 		}
 		final List<FriendshipRequests> friendshipRequests = query.getResultList();
@@ -79,7 +92,8 @@ public class FriendshipRequestsBusinessService
 	}
 
 	@Autowired
-	public void setFriendshipRequestsDao(FriendshipRequestsDao friendshipRequestsDao) {
+	public void setFriendshipRequestsDao(FriendshipRequestsDao friendshipRequestsDao)
+	{
 		setDao(friendshipRequestsDao);
 	}
 }

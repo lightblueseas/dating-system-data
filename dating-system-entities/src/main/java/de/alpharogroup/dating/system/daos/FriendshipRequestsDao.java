@@ -30,7 +30,8 @@ import de.alpharogroup.dating.system.entities.FriendshipRequests;
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 
 @Repository("friendshipRequestsDao")
-public class FriendshipRequestsDao extends JpaEntityManagerDao<FriendshipRequests, Integer> {
+public class FriendshipRequestsDao extends JpaEntityManagerDao<FriendshipRequests, Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

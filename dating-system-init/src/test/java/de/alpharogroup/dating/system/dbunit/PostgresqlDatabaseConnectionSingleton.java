@@ -41,10 +41,11 @@ import de.alpharogroup.jdbc.ConnectionsExtensions;
 import de.alpharogroup.resourcebundle.properties.PropertiesExtensions;
 
 /**
- * The Class PostgresqlDatabaseConnectionSingleton holds an instance for the db
- * connection with dbunit for im- and export of a database.
+ * The Class PostgresqlDatabaseConnectionSingleton holds an instance for the db connection with
+ * dbunit for im- and export of a database.
  */
-public final class PostgresqlDatabaseConnectionSingleton {
+public final class PostgresqlDatabaseConnectionSingleton
+{
 
 	/** The connection. */
 	private static IDatabaseConnection connection;
@@ -54,7 +55,8 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	 *
 	 * @return the enum names
 	 */
-	protected static List<String> getEnumNames() {
+	protected static List<String> getEnumNames()
+	{
 		List<String> enumNames = new ArrayList<String>();
 		enumNames.add("contactmethodtype");
 		enumNames.add("educationstate");
@@ -87,8 +89,10 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	 *             Signals that an I/O exception has occurred.
 	 */
 	public static synchronized IDatabaseConnection getInstance()
-			throws DatabaseUnitException, ClassNotFoundException, SQLException, IOException {
-		if (connection == null) {
+		throws DatabaseUnitException, ClassNotFoundException, SQLException, IOException
+	{
+		if (connection == null)
+		{
 			connection = setFactory(getJdbcConnection());
 		}
 		return connection;
@@ -105,15 +109,17 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	 * @throws SQLException
 	 *             the SQL exception
 	 */
-	protected static Connection getJdbcConnection() throws IOException, ClassNotFoundException, SQLException {
+	protected static Connection getJdbcConnection()
+		throws IOException, ClassNotFoundException, SQLException
+	{
 		Properties dbProperties = PropertiesExtensions.loadProperties("project.properties");
 		String dbHost = dbProperties.getProperty("jdbc.host");
 		String dbName = dbProperties.getProperty("jdbc.db.name");
 		String dbUser = dbProperties.getProperty("jdbc.user");
 		String dbPassword = dbProperties.getProperty("jdbc.password");
 		// Get jdbc connection...
-		final Connection jdbcConnection = ConnectionsExtensions.getPostgreSQLConnection(dbHost, dbName, dbUser,
-				dbPassword);
+		final Connection jdbcConnection = ConnectionsExtensions.getPostgreSQLConnection(dbHost,
+			dbName, dbUser, dbPassword);
 		return jdbcConnection;
 	}
 
@@ -126,16 +132,22 @@ public final class PostgresqlDatabaseConnectionSingleton {
 	 * @throws DatabaseUnitException
 	 *             the database unit exception
 	 */
-	protected static IDatabaseConnection setFactory(final Connection jdbcConnection) throws DatabaseUnitException {
+	protected static IDatabaseConnection setFactory(final Connection jdbcConnection)
+		throws DatabaseUnitException
+	{
 		// Create the dbunit database connection...
 		IDatabaseConnection connection = new DatabaseConnection(jdbcConnection);
 		// Get database configuration...
 		DatabaseConfig dbConfig = connection.getConfig();
 		// Override the method to get a valid result...
-		PostgresqlDataTypeFactory factory = new PostgresqlDataTypeFactory() {
-			public boolean isEnumType(String sqlTypeName) {
-				for (String enumName : getEnumNames()) {
-					if (sqlTypeName.equalsIgnoreCase(enumName)) {
+		PostgresqlDataTypeFactory factory = new PostgresqlDataTypeFactory()
+		{
+			public boolean isEnumType(String sqlTypeName)
+			{
+				for (String enumName : getEnumNames())
+				{
+					if (sqlTypeName.equalsIgnoreCase(enumName))
+					{
 						return true;
 					}
 				}

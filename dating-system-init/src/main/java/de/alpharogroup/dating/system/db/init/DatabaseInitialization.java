@@ -31,13 +31,16 @@ import java.util.Properties;
 
 import de.alpharogroup.db.init.AbstractDatabaseInitialization;
 
-public class DatabaseInitialization extends AbstractDatabaseInitialization {
+public class DatabaseInitialization extends AbstractDatabaseInitialization
+{
 
-	public DatabaseInitialization(Properties databaseProperties) {
+	public DatabaseInitialization(Properties databaseProperties)
+	{
 		super(databaseProperties);
 	}
 
-	protected List<File> getScriptFiles() {
+	protected List<File> getScriptFiles()
+	{
 		final File insertsDir = getInsertDir();
 		List<File> scriptFiles = new ArrayList<>();
 
@@ -47,7 +50,8 @@ public class DatabaseInitialization extends AbstractDatabaseInitialization {
 		scriptFiles.add(new File(insertsDir, "insertAllFederalStates.sql"));
 		scriptFiles.add(new File(insertsDir, "insertAllKnownZipcodes.sql"));
 		scriptFiles.add(new File(insertsDir, "insertDefaultImages.sql"));
-		scriptFiles.add(new File(insertsDir, "insertGermanSpeekingCountriesZipcodesToAddresses.sql"));
+		scriptFiles
+			.add(new File(insertsDir, "insertGermanSpeekingCountriesZipcodesToAddresses.sql"));
 		return scriptFiles;
 	}
 

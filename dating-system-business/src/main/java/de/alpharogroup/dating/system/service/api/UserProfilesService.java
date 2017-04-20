@@ -35,7 +35,8 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The interface {@link UserProfilesService}.
  */
-public interface UserProfilesService extends BusinessService<UserProfiles, Integer> {
+public interface UserProfilesService extends BusinessService<UserProfiles, Integer>
+{
 
 	/**
 	 * Find the profile image from the given user.
@@ -65,8 +66,8 @@ public interface UserProfilesService extends BusinessService<UserProfiles, Integ
 	List<UserProfiles> findUserProfiles(final Users user);
 
 	/**
-	 * Persists the default image to the profile image from the given user. In
-	 * case an image already exists this will be returned.
+	 * Persists the default image to the profile image from the given user. In case an image already
+	 * exists this will be returned.
 	 *
 	 * @param user
 	 *            the user
@@ -75,8 +76,8 @@ public interface UserProfilesService extends BusinessService<UserProfiles, Integ
 	UserProfiles persistDefaultProfileImage(final Users user);
 
 	/**
-	 * Persists the default image to the profile image from the given user. In
-	 * case an image already exists this will be returned.
+	 * Persists the default image to the profile image from the given user. In case an image already
+	 * exists this will be returned.
 	 *
 	 * @param user
 	 *            the user
@@ -87,8 +88,7 @@ public interface UserProfilesService extends BusinessService<UserProfiles, Integ
 	UserProfiles persistDefaultProfileImage(final Users user, Resources defaultImage);
 
 	/**
-	 * Persists the given ResourceModel as the profile image from the given
-	 * user.
+	 * Persists the given ResourceModel as the profile image from the given user.
 	 *
 	 * @param resourceModel
 	 *            the resource model

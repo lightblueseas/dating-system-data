@@ -34,7 +34,8 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The Interface FavoriteMembersService.
  */
-public interface FavoriteMembersService extends BusinessService<FavoriteMembers, Integer> {
+public interface FavoriteMembersService extends BusinessService<FavoriteMembers, Integer>
+{
 
 	/**
 	 * Gets a List from FavoriteMembers that own the given Users object.
@@ -46,9 +47,8 @@ public interface FavoriteMembersService extends BusinessService<FavoriteMembers,
 	List<FavoriteMembers> find(Users owner);
 
 	/**
-	 * Gets a FavoriteMembers object from the given parameters that can be null
-	 * if they shell be ignored in the query. If no result is found null will be
-	 * returned.
+	 * Gets a FavoriteMembers object from the given parameters that can be null if they shell be
+	 * ignored in the query. If no result is found null will be returned.
 	 *
 	 * @param owner
 	 *            the owner
@@ -59,8 +59,8 @@ public interface FavoriteMembersService extends BusinessService<FavoriteMembers,
 	FavoriteMembers find(Users owner, UserProfiles favorite);
 
 	/**
-	 * Gets a List from FavoriteMembers with the given parameters that can be
-	 * null if they shell be ignored in the query.
+	 * Gets a List from FavoriteMembers with the given parameters that can be null if they shell be
+	 * ignored in the query.
 	 *
 	 * @param owner
 	 *            the owner

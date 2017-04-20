@@ -77,7 +77,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserProfiles extends BaseEntity<Integer> implements Cloneable {
+public class UserProfiles extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 8626651299912885319L;
 	/** Field mapping */
@@ -131,8 +132,8 @@ public class UserProfiles extends BaseEntity<Integer> implements Cloneable {
 	@JoinColumn(name = "user_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_USER_PROFILE_USER_ID"))
 	private Users user;
 	/**
-	 * The image from the profile. The userImage attribute that references to
-	 * the Entity class {@link Resources }.
+	 * The image from the profile. The userImage attribute that references to the Entity class
+	 * {@link Resources }.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "image_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_PROFILE_IMAGE_ID"))

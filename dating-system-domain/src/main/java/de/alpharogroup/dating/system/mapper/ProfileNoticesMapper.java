@@ -34,6 +34,7 @@ import de.alpharogroup.db.entitymapper.AbstractEntityDOMapper;
  * The class {@link ProfileNoticesMapper}.
  */
 @Component
-public class ProfileNoticesMapper extends AbstractEntityDOMapper<ProfileNotices, ProfileNotice> {
+public class ProfileNoticesMapper extends AbstractEntityDOMapper<ProfileNotices, ProfileNotice>
+{
 
 }

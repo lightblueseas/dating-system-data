@@ -38,8 +38,11 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 @Transactional
 @Service("profileNoticeDomainService")
 public class ProfileNoticeDomainService
-		extends AbstractDomainService<Integer, ProfileNotice, ProfileNotices, ProfileNoticesDao, ProfileNoticesMapper>
-		implements ProfileNoticeService {
+	extends
+		AbstractDomainService<Integer, ProfileNotice, ProfileNotices, ProfileNoticesDao, ProfileNoticesMapper>
+	implements
+		ProfileNoticeService
+{
 	/**
 	 * Sets the specific {@link ProfileNoticesMapper}.
 	 *
@@ -47,7 +50,8 @@ public class ProfileNoticeDomainService
 	 *            the new {@link ProfileNoticesMapper}.
 	 */
 	@Autowired
-	public void setProfileNoticesMapper(ProfileNoticesMapper mapper) {
+	public void setProfileNoticesMapper(ProfileNoticesMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

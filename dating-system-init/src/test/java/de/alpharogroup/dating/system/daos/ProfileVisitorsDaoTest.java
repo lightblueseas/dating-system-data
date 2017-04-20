@@ -36,19 +36,22 @@ import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.service.api.ProfileVisitorsService;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class ProfileVisitorsDaoTest extends AbstractTestNGSpringContextTests {
+public class ProfileVisitorsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private ProfileVisitorsService profileVisitorsService;
 
 	@Test(enabled = false)
-	public void getAllProfileVisitors() {
+	public void getAllProfileVisitors()
+	{
 		initProfileVisitors();
 		final List<ProfileVisitors> list = profileVisitorsService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
 
-	protected void initProfileVisitors() {
+	protected void initProfileVisitors()
+	{
 		ProfileVisitors profileVisitors = new ProfileVisitors();
 		// TODO init model class
 		profileVisitorsService.merge(profileVisitors);

@@ -43,8 +43,12 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("favoriteMembersService")
-public class FavoriteMembersBusinessService extends
-		AbstractBusinessService<FavoriteMembers, Integer, FavoriteMembersDao> implements FavoriteMembersService {
+public class FavoriteMembersBusinessService
+	extends
+		AbstractBusinessService<FavoriteMembers, Integer, FavoriteMembersDao>
+	implements
+		FavoriteMembersService
+{
 
 	/**
 	 * 
@@ -52,7 +56,8 @@ public class FavoriteMembersBusinessService extends
 	private static final long serialVersionUID = 1L;
 
 	@SuppressWarnings("unchecked")
-	public List<FavoriteMembers> find(Users owner) {
+	public List<FavoriteMembers> find(Users owner)
+	{
 		final String hqlString = HqlStringCreator.forFavoriteMembers(owner, null);
 		final Query query = getQuery(hqlString);
 		query.setParameter("owner", owner);
@@ -61,20 +66,24 @@ public class FavoriteMembersBusinessService extends
 	}
 
 	@Transactional
-	public FavoriteMembers find(Users owner, UserProfiles favorite) {
+	public FavoriteMembers find(Users owner, UserProfiles favorite)
+	{
 		final List<FavoriteMembers> favoriteMembers = findAll(owner, favorite);
 		return ListExtensions.getFirst(favoriteMembers);
 	}
 
 	@Transactional
 	@SuppressWarnings("unchecked")
-	public List<FavoriteMembers> findAll(Users owner, UserProfiles favorite) {
+	public List<FavoriteMembers> findAll(Users owner, UserProfiles favorite)
+	{
 		final String hqlString = HqlStringCreator.forFavoriteMembers(owner, favorite);
 		final Query query = getQuery(hqlString);
-		if (owner != null) {
+		if (owner != null)
+		{
 			query.setParameter("owner", owner);
 		}
-		if (favorite != null) {
+		if (favorite != null)
+		{
 			query.setParameter("favorite", favorite);
 		}
 		final List<FavoriteMembers> favoriteMembers = query.getResultList();
@@ -82,7 +91,8 @@ public class FavoriteMembersBusinessService extends
 	}
 
 	@Autowired
-	public void setFavoriteMembersDao(FavoriteMembersDao favoriteMembersDao) {
+	public void setFavoriteMembersDao(FavoriteMembersDao favoriteMembersDao)
+	{
 		setDao(favoriteMembersDao);
 	}
 

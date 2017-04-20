@@ -36,19 +36,22 @@ import de.alpharogroup.dating.system.entities.ProfileRatings;
 import de.alpharogroup.dating.system.service.api.ProfileRatingsService;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class ProfileRatingsDaoTest extends AbstractTestNGSpringContextTests {
+public class ProfileRatingsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private ProfileRatingsService profileRatingsService;
 
 	@Test(enabled = false)
-	public void getAllProfileRatings() {
+	public void getAllProfileRatings()
+	{
 		initProfileRatings();
 		final List<ProfileRatings> list = profileRatingsService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
 
-	protected void initProfileRatings() {
+	protected void initProfileRatings()
+	{
 		ProfileRatings profileRatings = new ProfileRatings();
 		// TODO init model class
 		profileRatingsService.merge(profileRatings);

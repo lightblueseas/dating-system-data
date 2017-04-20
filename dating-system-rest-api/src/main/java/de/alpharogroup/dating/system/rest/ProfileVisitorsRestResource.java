@@ -29,7 +29,11 @@ import de.alpharogroup.dating.system.rest.api.ProfileVisitorsResource;
 import de.alpharogroup.dating.system.service.api.ProfileVisitorService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class ProfileVisitorsRestResource extends AbstractRestfulResource<Integer, ProfileVisitor, ProfileVisitorService>
-		implements ProfileVisitorsResource {
+public class ProfileVisitorsRestResource
+	extends
+		AbstractRestfulResource<Integer, ProfileVisitor, ProfileVisitorService>
+	implements
+		ProfileVisitorsResource
+{
 
 }

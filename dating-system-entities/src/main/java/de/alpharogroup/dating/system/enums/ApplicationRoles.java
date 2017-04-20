@@ -27,7 +27,8 @@ package de.alpharogroup.dating.system.enums;
 /**
  * The Enum ApplicationRoles.
  */
-public enum ApplicationRoles {
+public enum ApplicationRoles
+{
 
 	/** The public. */
 	PUBLIC(ApplicationRoles.PUBLIC_ROLE),
@@ -57,7 +58,8 @@ public enum ApplicationRoles {
 	 * @param rolename
 	 *            the rolename
 	 */
-	private ApplicationRoles(String rolename) {
+	private ApplicationRoles(String rolename)
+	{
 		this.rolename = rolename;
 	}
 
@@ -66,7 +68,8 @@ public enum ApplicationRoles {
 	 * 
 	 * @return the rolename
 	 */
-	public String getRolename() {
+	public String getRolename()
+	{
 		return rolename;
 	}
 

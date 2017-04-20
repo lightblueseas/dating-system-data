@@ -42,8 +42,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Object mapping for hibernate-handled table: search_criteria. Used for the
- * users profile search.
+ * Object mapping for hibernate-handled table: search_criteria. Used for the users profile search.
  */
 @Entity
 @Table(name = "search_criteria")
@@ -53,7 +52,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class SearchCriterias extends BaseEntity<Integer> implements Cloneable {
+public class SearchCriterias extends BaseEntity<Integer> implements Cloneable
+{
 
 	/**
 	 * The Constant serialVersionUID.

@@ -42,15 +42,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link ProfileNotices} is keeping the information for the
- * notices for a profile from a user.
+ * The Entity class {@link ProfileNotices} is keeping the information for the notices for a profile
+ * from a user.
  */
 @Entity
 @Table(name = "profile_notice")
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProfileNotices extends BaseEntity<Integer> implements Cloneable, Comparable<ProfileNotices> {
+public class ProfileNotices extends BaseEntity<Integer>
+	implements
+		Cloneable,
+		Comparable<ProfileNotices>
+{
 
 	/**
 	 * The Constant serialVersionUID.
@@ -62,8 +66,8 @@ public class ProfileNotices extends BaseEntity<Integer> implements Cloneable, Co
 	private String notice;
 
 	/**
-	 * The user attribute that references to the Entity class {@link Users} that
-	 * owns the notice for this user profile.
+	 * The user attribute that references to the Entity class {@link Users} that owns the notice for
+	 * this user profile.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_PROFILE_NOTICE_USER_ID"))
@@ -77,7 +81,8 @@ public class ProfileNotices extends BaseEntity<Integer> implements Cloneable, Co
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int compareTo(ProfileNotices o) {
+	public int compareTo(ProfileNotices o)
+	{
 		return CompareObjectExtensions.compareToQuietly(this.getUser(), o.getUser(), "username");
 	}
 

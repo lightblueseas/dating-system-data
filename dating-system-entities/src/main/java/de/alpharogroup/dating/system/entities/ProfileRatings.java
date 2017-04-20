@@ -40,8 +40,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Class ProfileRatings extends the Ratings class that contains the general
- * data for rating entities.
+ * The Class ProfileRatings extends the Ratings class that contains the general data for rating
+ * entities.
  */
 @Entity
 @Table(name = "profile_ratings")
@@ -51,7 +51,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProfileRatings extends Ratings {
+public class ProfileRatings extends Ratings
+{
 
 	/**
 	 * The Constant serialVersionUID.

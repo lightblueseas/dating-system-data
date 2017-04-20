@@ -41,7 +41,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SearchCriteria extends BaseDomainObject<Integer> {
+public class SearchCriteria extends BaseDomainObject<Integer>
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

@@ -31,7 +31,8 @@ import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.user.entities.Users;
 
-public interface ProfileNoticesService extends BusinessService<ProfileNotices, Integer> {
+public interface ProfileNoticesService extends BusinessService<ProfileNotices, Integer>
+{
 
 	List<ProfileNotices> find(Users user);
 

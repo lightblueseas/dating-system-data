@@ -44,7 +44,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FriendshipRequest extends BaseDomainObject<Integer> {
+public class FriendshipRequest extends BaseDomainObject<Integer>
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

@@ -41,7 +41,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FavoriteMember extends BaseDomainObject<Integer> {
+public class FavoriteMember extends BaseDomainObject<Integer>
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

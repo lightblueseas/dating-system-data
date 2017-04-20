@@ -31,10 +31,12 @@ import de.alpharogroup.dating.system.entities.UserProfiles;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
 import de.alpharogroup.user.entities.Users;
 
-public class HqlStringCreatorTest {
+public class HqlStringCreatorTest
+{
 
 	@Test(enabled = true)
-	public void testForFavoriteMembers() {
+	public void testForFavoriteMembers()
+	{
 		String actual;
 		String expected;
 		actual = HqlStringCreator.forFavoriteMembers(new Users(), new UserProfiles());
@@ -55,11 +57,13 @@ public class HqlStringCreatorTest {
 	}
 
 	@Test(enabled = true)
-	public void testForFriendshipRequests() {
+	public void testForFriendshipRequests()
+	{
 		String actual;
 		String expected;
 
-		actual = HqlStringCreator.forFriendshipRequests(new Users(), new Users(), FriendshipRequestsState.ACCEPTED);
+		actual = HqlStringCreator.forFriendshipRequests(new Users(), new Users(),
+			FriendshipRequestsState.ACCEPTED);
 		expected = "select fr from FriendshipRequests fr where fr.requestor=:requestor and fr.requestedUser=:requestedUser and fr.state=:state";
 		AssertJUnit.assertEquals(expected, actual);
 
@@ -79,21 +83,25 @@ public class HqlStringCreatorTest {
 		expected = "select fr from FriendshipRequests fr";
 		AssertJUnit.assertEquals(expected, actual);
 
-		actual = HqlStringCreator.forFriendshipRequests(null, new Users(), FriendshipRequestsState.ACCEPTED);
+		actual = HqlStringCreator.forFriendshipRequests(null, new Users(),
+			FriendshipRequestsState.ACCEPTED);
 		expected = "select fr from FriendshipRequests fr where fr.requestedUser=:requestedUser and fr.state=:state";
 		AssertJUnit.assertEquals(expected, actual);
 
-		actual = HqlStringCreator.forFriendshipRequests(new Users(), null, FriendshipRequestsState.ACCEPTED);
+		actual = HqlStringCreator.forFriendshipRequests(new Users(), null,
+			FriendshipRequestsState.ACCEPTED);
 		expected = "select fr from FriendshipRequests fr where fr.requestor=:requestor and fr.state=:state";
 		AssertJUnit.assertEquals(expected, actual);
 
-		actual = HqlStringCreator.forFriendshipRequests(null, null, FriendshipRequestsState.ACCEPTED);
+		actual = HqlStringCreator.forFriendshipRequests(null, null,
+			FriendshipRequestsState.ACCEPTED);
 		expected = "select fr from FriendshipRequests fr where fr.state=:state";
 		AssertJUnit.assertEquals(expected, actual);
 	}
 
 	@Test(enabled = true)
-	public void testForProfileNotice() {
+	public void testForProfileNotice()
+	{
 		String actual;
 		String expected;
 		actual = HqlStringCreator.forProfileNotice(new Users(), new UserProfiles());

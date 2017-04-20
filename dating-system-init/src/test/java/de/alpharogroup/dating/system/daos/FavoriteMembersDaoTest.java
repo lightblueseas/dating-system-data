@@ -36,19 +36,22 @@ import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.dating.system.service.api.FavoriteMembersService;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class FavoriteMembersDaoTest extends AbstractTestNGSpringContextTests {
+public class FavoriteMembersDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	FavoriteMembersService favoriteMembersService;
 
 	@Test(enabled = false)
-	public void getAllFavoriteMembers() {
+	public void getAllFavoriteMembers()
+	{
 		initFavoriteMembers();
 		final List<FavoriteMembers> list = favoriteMembersService.findAll();
 		AssertJUnit.assertEquals(2, list.size());
 	}
 
-	protected void initFavoriteMembers() {
+	protected void initFavoriteMembers()
+	{
 		FavoriteMembers favoriteMembers = new FavoriteMembers();
 		// TODO init model class
 		favoriteMembersService.merge(favoriteMembers);

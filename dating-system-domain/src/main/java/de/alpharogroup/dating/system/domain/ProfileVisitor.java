@@ -43,7 +43,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProfileVisitor extends BaseDomainObject<Integer> {
+public class ProfileVisitor extends BaseDomainObject<Integer>
+{
 	/**
 	 * The Constant serialVersionUID.
 	 */

@@ -35,7 +35,8 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The Interface ProfileVisitorsService.
  */
-public interface ProfileVisitorsService extends BusinessService<ProfileVisitors, Integer> {
+public interface ProfileVisitorsService extends BusinessService<ProfileVisitors, Integer>
+{
 
 	/**
 	 * Find the first occurence from the given parameters.

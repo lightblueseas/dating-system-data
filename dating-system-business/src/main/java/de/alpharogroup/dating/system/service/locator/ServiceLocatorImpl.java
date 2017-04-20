@@ -76,7 +76,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Service("serviceLocator")
-public class ServiceLocatorImpl implements Serializable, ServiceLocator {
+public class ServiceLocatorImpl implements Serializable, ServiceLocator
+{
 
 	/**
 	 * The serialVersionUID.

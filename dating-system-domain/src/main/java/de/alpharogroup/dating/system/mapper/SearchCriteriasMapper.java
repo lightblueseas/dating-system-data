@@ -34,6 +34,7 @@ import de.alpharogroup.db.entitymapper.AbstractEntityDOMapper;
  * The class {@link SearchCriteriasMapper}.
  */
 @Component
-public class SearchCriteriasMapper extends AbstractEntityDOMapper<SearchCriterias, SearchCriteria> {
+public class SearchCriteriasMapper extends AbstractEntityDOMapper<SearchCriterias, SearchCriteria>
+{
 
 }

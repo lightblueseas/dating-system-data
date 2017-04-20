@@ -34,6 +34,9 @@ import de.alpharogroup.db.entitymapper.AbstractEntityDOMapper;
  * The class {@link FriendshipRequestsMapper}.
  */
 @Component
-public class FriendshipRequestsMapper extends AbstractEntityDOMapper<FriendshipRequests, FriendshipRequest> {
+public class FriendshipRequestsMapper
+	extends
+		AbstractEntityDOMapper<FriendshipRequests, FriendshipRequest>
+{
 
 }

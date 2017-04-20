@@ -43,40 +43,50 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("profileVisitorsService")
-public class ProfileVisitorsBusinessService extends
-		AbstractBusinessService<ProfileVisitors, Integer, ProfileVisitorsDao> implements ProfileVisitorsService {
+public class ProfileVisitorsBusinessService
+	extends
+		AbstractBusinessService<ProfileVisitors, Integer, ProfileVisitorsDao>
+	implements
+		ProfileVisitorsService
+{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ProfileVisitors find(Users visitor, UserProfiles visitedProfile) {
+	public ProfileVisitors find(Users visitor, UserProfiles visitedProfile)
+	{
 		final List<ProfileVisitors> profileVisitors = findAll(visitor, visitedProfile);
 		return ListExtensions.getFirst(profileVisitors);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<ProfileVisitors> findAll(Users visitor, UserProfiles visitedProfile) {
+	public List<ProfileVisitors> findAll(Users visitor, UserProfiles visitedProfile)
+	{
 		final String hqlString = HqlStringCreator.forProfileVisitors(visitor, visitedProfile);
 		final Query query = getQuery(hqlString);
-		if (visitor != null) {
+		if (visitor != null)
+		{
 			query.setParameter("visitor", visitor);
 		}
-		if (visitedProfile != null) {
+		if (visitedProfile != null)
+		{
 			query.setParameter("visitedProfile", visitedProfile);
 		}
 		final List<ProfileVisitors> profileVisitors = query.getResultList();
 		return profileVisitors;
 	}
 
-	public List<ProfileVisitors> findProfileVisitors(UserProfiles visitedProfile) {
+	public List<ProfileVisitors> findProfileVisitors(UserProfiles visitedProfile)
+	{
 		final List<ProfileVisitors> profileVisitors = findAll(null, visitedProfile);
 		return profileVisitors;
 	}
 
 	@Autowired
-	public void setProfileVisitorsDao(ProfileVisitorsDao profileVisitorsDao) {
+	public void setProfileVisitorsDao(ProfileVisitorsDao profileVisitorsDao)
+	{
 		setDao(profileVisitorsDao);
 	}
 

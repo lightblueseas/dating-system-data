@@ -55,10 +55,11 @@ import de.alpharogroup.user.rest.api.RolesResource;
 import lombok.Getter;
 
 /**
- * The class {@link DatingSystemRestClient} is a rest client for the
- * dating-system that are persists in the database.
+ * The class {@link DatingSystemRestClient} is a rest client for the dating-system that are persists
+ * in the database.
  */
-public class DatingSystemRestClient extends AbstractRestClient {
+public class DatingSystemRestClient extends AbstractRestClient
+{
 
 	/**
 	 * The {@link AddressesResource}.
@@ -223,10 +224,10 @@ public class DatingSystemRestClient extends AbstractRestClient {
 	private final MessageRecipientsResource messageRecipientsResource;
 
 	/**
-	 * Instantiates a new {@link DatingSystemRestClient} with the default base
-	 * url.
+	 * Instantiates a new {@link DatingSystemRestClient} with the default base url.
 	 */
-	public DatingSystemRestClient() {
+	public DatingSystemRestClient()
+	{
 		this(DEFAULT_BASE_HTTP_URL);
 	}
 
@@ -236,7 +237,8 @@ public class DatingSystemRestClient extends AbstractRestClient {
 	 * @param baseUrl
 	 *            the base url
 	 */
-	public DatingSystemRestClient(final String baseUrl) {
+	public DatingSystemRestClient(final String baseUrl)
+	{
 		super(baseUrl);
 
 		favoriteMembersResource = newResource(FavoriteMembersResource.class);

@@ -30,7 +30,8 @@ import de.alpharogroup.dating.system.entities.SearchCriterias;
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 
 @Repository("searchCriteriasDao")
-public class SearchCriteriasDao extends JpaEntityManagerDao<SearchCriterias, Integer> {
+public class SearchCriteriasDao extends JpaEntityManagerDao<SearchCriterias, Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

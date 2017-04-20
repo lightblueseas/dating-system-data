@@ -34,6 +34,7 @@ import de.alpharogroup.db.entitymapper.AbstractEntityDOMapper;
  * The class {@link FavoriteMembersMapper}.
  */
 @Component
-public class FavoriteMembersMapper extends AbstractEntityDOMapper<FavoriteMembers, FavoriteMember> {
+public class FavoriteMembersMapper extends AbstractEntityDOMapper<FavoriteMembers, FavoriteMember>
+{
 
 }
