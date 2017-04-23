@@ -1,8 +1,14 @@
-# dating-system-data
+# Overview
 
 Parent project that holds module projects for the persistence of user data for dating.
 
 The project holds backend data for the persistence of user data for dating.
+
+# ERD-Diagramm
+
+The erd-diagramm for this database looks as follows: ![erd-diagramm](https://raw.githubusercontent.com/lightblueseas/dating-system-data/develop/dating-system-init/src/main/resources/erd/dating-system-erd.jpa.png)
+
+This erd-diagramm was created with [Jeddict plugin from netbeans as JPA Modeler](http://plugins.netbeans.org/plugin/53057/jpa-modeler)  and [Jeddict](https://jeddict.github.io/)
 
 ## License
 
@@ -121,6 +127,9 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 			</dependency>
 			...
 		</dependencies>
+		 
+## Open Issues
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/dating-system-data.svg?style=flat)](https://github.com/astrapi69/dating-system-data/issues) 
 
 ## Want to Help and improve it? ###
 
