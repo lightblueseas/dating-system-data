@@ -8,7 +8,7 @@ The project holds backend data for the persistence of user data for dating.
 
 The source code comes under the liberal MIT License, making dating-system-data great for all types of dating applications.
 
-# Build status and latest maven version
+# Build status
 [![Build Status](https://travis-ci.org/lightblueseas/dating-system-data.svg?branch=master)](https://travis-ci.org/lightblueseas/dating-system-data)
 
 ## Maven Central
