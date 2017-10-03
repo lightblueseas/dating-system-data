@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.dating.system.daos.FavoriteMembersDao;
 import de.alpharogroup.dating.system.entities.FavoriteMembers;
 import de.alpharogroup.dating.system.entities.UserProfiles;
@@ -51,10 +51,11 @@ public class FavoriteMembersBusinessService
 {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<FavoriteMembers> find(Users owner)
 	{
@@ -65,6 +66,7 @@ public class FavoriteMembersBusinessService
 		return favoriteMembers;
 	}
 
+	@Override
 	@Transactional
 	public FavoriteMembers find(Users owner, UserProfiles favorite)
 	{
@@ -72,6 +74,7 @@ public class FavoriteMembersBusinessService
 		return ListExtensions.getFirst(favoriteMembers);
 	}
 
+	@Override
 	@Transactional
 	@SuppressWarnings("unchecked")
 	public List<FavoriteMembers> findAll(Users owner, UserProfiles favorite)

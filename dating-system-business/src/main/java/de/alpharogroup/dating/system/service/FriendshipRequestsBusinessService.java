@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.dating.system.daos.FriendshipRequestsDao;
 import de.alpharogroup.dating.system.entities.FriendshipRequests;
 import de.alpharogroup.dating.system.enums.FriendshipRequestsState;
@@ -51,15 +51,17 @@ public class FriendshipRequestsBusinessService
 {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	public FriendshipRequests find(Users requestor, Users requestedUser)
 	{
 		return find(requestor, requestedUser, null);
 	}
 
+	@Override
 	public FriendshipRequests find(Users requestor, Users requestedUser,
 		FriendshipRequestsState state)
 	{
@@ -68,6 +70,7 @@ public class FriendshipRequestsBusinessService
 		return ListExtensions.getFirst(friendshipRequests);
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<FriendshipRequests> findAll(Users requestor, Users requestedUser,
 		FriendshipRequestsState state)

@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.dating.system.daos.ProfileVisitorsDao;
 import de.alpharogroup.dating.system.entities.ProfileVisitors;
 import de.alpharogroup.dating.system.entities.UserProfiles;
@@ -51,16 +51,18 @@ public class ProfileVisitorsBusinessService
 {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	public ProfileVisitors find(Users visitor, UserProfiles visitedProfile)
 	{
 		final List<ProfileVisitors> profileVisitors = findAll(visitor, visitedProfile);
 		return ListExtensions.getFirst(profileVisitors);
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<ProfileVisitors> findAll(Users visitor, UserProfiles visitedProfile)
 	{
@@ -78,6 +80,7 @@ public class ProfileVisitorsBusinessService
 		return profileVisitors;
 	}
 
+	@Override
 	public List<ProfileVisitors> findProfileVisitors(UserProfiles visitedProfile)
 	{
 		final List<ProfileVisitors> profileVisitors = findAll(null, visitedProfile);
